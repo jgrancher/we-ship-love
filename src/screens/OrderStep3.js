@@ -2,8 +2,9 @@ import React from 'react-native';
 import t from 'tcomb-form-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import OrderStep4 from './OrderStep4';
 import CallToAction from '../components/CallToAction';
-import { setDeliveryAddress } from '../actions/cart';
+import { setDelivery } from '../actions/cart';
 import { DeliveryForm, deliveryOptions } from '../data/forms';
 import styles from '../styles/components/form';
 
@@ -11,12 +12,12 @@ const { ScrollView, Text, View } = React;
 const { func, object } = React.PropTypes;
 const { Form } = t.form;
 
-class OrderStep2 extends React.Component {
+class OrderStep3 extends React.Component {
 
     static propTypes = {
         delivery: object.isRequired,
         navigator: object.isRequired,
-        setDeliveryAddress: func.isRequired,
+        setDelivery: func.isRequired,
     };
 
     constructor(props) {
@@ -38,9 +39,9 @@ class OrderStep2 extends React.Component {
 
         if (!value) return;
 
-        this.props.setDeliveryAddress(value);
+        this.props.setDelivery(value);
         this.props.navigator.push({
-            component: View,
+            component: OrderStep4,
             index: 3,
         });
     }
@@ -80,5 +81,5 @@ class OrderStep2 extends React.Component {
 
 export default connect(
     (state) => ({ delivery: state.cart.delivery }),
-    (dispatch) => bindActionCreators({ setDeliveryAddress }, dispatch)
-)(OrderStep2);
+    (dispatch) => bindActionCreators({ setDelivery }, dispatch)
+)(OrderStep3);

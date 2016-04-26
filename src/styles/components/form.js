@@ -7,6 +7,7 @@ import * as sizes from '../../config/sizes';
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingTop: sizes.spaceNormal,
         paddingHorizontal: 60,
     },

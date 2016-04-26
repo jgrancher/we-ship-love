@@ -1,15 +1,15 @@
 import {
     ADD_ITEM,
     SET_MESSAGE,
-    SET_BILLING_ADDRESS,
-    SET_DELIVERY_ADDRESS,
-    SET_DELIVERY_METHOD,
+    SET_BILLING,
+    SET_DELIVERY,
+    SET_SHIPPING,
 } from '../data/constants';
 
 const defaultState = {
     billing: {},
     delivery: {},
-    deliveryMethod: {},
+    shipping: {},
     items: [],
     message: 'Love you!',
 };
@@ -27,19 +27,19 @@ export const cart = (state = defaultState, action) => {
             message: action.message,
         });
 
-    case SET_BILLING_ADDRESS:
+    case SET_BILLING:
         return Object.assign({}, state, {
             billingAddress: action.billing,
         });
 
-    case SET_DELIVERY_ADDRESS:
+    case SET_DELIVERY:
         return Object.assign({}, state, {
             delivery: action.delivery,
         });
 
-    case SET_DELIVERY_METHOD:
+    case SET_SHIPPING:
         return Object.assign({}, state, {
-            deliveryMethod: action.deliveryMethod,
+            shipping: action.shipping,
         });
 
     default:
