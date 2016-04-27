@@ -4,33 +4,42 @@ import styles from '../styles/components/shippingButton';
 const { Text, TouchableHighlight, View } = React;
 const { bool, func, number, string } = React.PropTypes;
 
-const ShippingButton = (props) => (
-    <TouchableHighlight onPress={props.onPress}>
-        <View style={styles.container}>
-            <View style={styles.content}>
-                <Text style={styles.description}>{props.description}</Text>
+const ShippingButton = (props) => {
+    const stylesLozenge = [styles.lozenge, props.active && styles.lozengeActive];
+    const stylesDescription = [styles.description, props.active && styles.descriptionActive];
+
+    return (
+        <TouchableHighlight
+            onPress={props.onPress}
+            style={styles.container}
+            underlayColor="transparent"
+        >
+            <View>
+                <View style={styles.content}>
+                    <Text style={stylesDescription}>{props.description}</Text>
+                </View>
+                <View style={stylesLozenge} />
+                <View style={styles.priceContainer}>
+                    <Text style={styles.price}>{props.price}</Text>
+                    <Text style={[styles.price, styles.priceCurrency]}>€</Text>
+                </View>
             </View>
-            <View style={styles.lozenge} />
-            <View style={styles.priceContainer}>
-                <Text style={styles.price}>{props.price}</Text>
-                <Text style={[styles.price, styles.priceCurrency]}>€</Text>
-            </View>
-        </View>
-    </TouchableHighlight>
-);
+        </TouchableHighlight>
+    );
+};
 
 ShippingButton.propTypes = {
+    active: bool,
     description: string,
     onPress: func,
     price: number,
-    selected: bool,
 };
 
 ShippingButton.defaultProps = {
+    active: false,
     description: '',
     onPress: () => {},
     price: 12,
-    selected: false,
 };
 
 export default ShippingButton;

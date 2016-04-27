@@ -3,21 +3,24 @@
 import { StyleSheet } from 'react-native';
 import * as colors from '../../config/colors';
 import * as fonts from '../../config/fonts';
-// import * as sizes from '../../config/sizes';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        marginBottom: 30,
     },
 
     lozenge: {
-        backgroundColor: colors.green,
+        backgroundColor: colors.grey,
         height: 50,
         left: -20,
         position: 'absolute',
         top: 15,
         transform: [{ skewX: '-7deg' }, { skewY: '-7deg' }],
         width: 70,
+    },
+
+    lozengeActive: {
+        backgroundColor: colors.green,
     },
 
     priceContainer: {
@@ -50,8 +53,13 @@ const styles = StyleSheet.create({
     },
 
     description: {
+        color: colors.greyDark,
         fontFamily: fonts.source,
         fontSize: 16,
+    },
+
+    descriptionActive: {
+        color: colors.black,
     },
 });
 
