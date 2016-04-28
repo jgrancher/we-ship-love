@@ -31,7 +31,7 @@ class OrderStep4 extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, styles.content]}>
                 <View>
                     <ShippingButton
                         active

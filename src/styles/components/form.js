@@ -7,11 +7,14 @@ import * as sizes from '../../config/sizes';
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
         flex: 1,
-        paddingBottom: sizes.heightCTA,
-        paddingTop: sizes.spaceNormal,
         paddingHorizontal: 60,
+        paddingTop: sizes.spaceNormal,
+    },
+
+    content: {
+        justifyContent: 'center',
+        paddingBottom: sizes.heightCTA,
     },
 
     input: {
