@@ -3,7 +3,6 @@ TODO
 
 # Roadmap
 
-* Center the ShippingButtons in the view (iPhone 5)
 * Interact with the Shopify API to get the available shippings
 
 

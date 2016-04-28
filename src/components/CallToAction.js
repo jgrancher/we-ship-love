@@ -26,7 +26,7 @@ const CallToAction = (props) => {
             underlayColor="transparent"
         >
             <View style={{ flex: 1 }}>
-                <Image source={ctaBackground} style={styles.background} />
+                <Image resizeMode="stretch" source={ctaBackground} style={styles.background} />
                 <View style={styles.content}>
                     <Text style={styles.step}>{props.step}</Text>
                     <View style={{ flex: 1 }}>
