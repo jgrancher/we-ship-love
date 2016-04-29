@@ -3,7 +3,7 @@
  * https://apikey:password@hostname/admin/resource.json
  */
 
-import { API_HOSTNAME, API_KEY, API_PASSWORD } from '../data/constants';
+import { API_HOSTNAME, API_KEY, API_PASSWORD } from '../data/config';
 
 const Shopify = {
 
