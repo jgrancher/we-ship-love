@@ -19,7 +19,7 @@ export function fetchProducts() {
 
         dispatch({ type: FETCH_PRODUCTS });
 
-        return Shopify.get(`/products/410882840/variants.json`)
+        return Shopify.get('/products/410882840/variants.json')
             .then((data) => {
                 dispatch({
                     type: FETCH_PRODUCTS_SUCCESS,
