@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
 
     text: {
         color: colors.brownDark,
-        fontFamily: fonts.base,
+        fontFamily: fonts.source,
+        fontSize: 16,
     },
 });
 
