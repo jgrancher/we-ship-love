@@ -14,5 +14,5 @@ Used this cool [React Native Starter](https://github.com/mcnamee/react-native-st
 
 ### Get started
 
-* Create a file './data/config.js' which exports 'API_HOSTNAME', 'API_KEY', 'API_PASSWORD', variables that you get from your Shopify administration.
+* Create a file './config/API.js' which exports 'API_HOSTNAME', 'API_KEY', 'API_PASSWORD', variables that you get from your Shopify administration.
 * Run the project: `react-native run-ios`

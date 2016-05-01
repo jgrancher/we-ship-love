@@ -1,11 +1,12 @@
 /**
- * Shopify object - Helper to build requests like this
+ * API object - Helper to build requests like this
  * https://apikey:password@hostname/admin/resource.json
  */
 
-import { API_HOSTNAME, API_KEY, API_PASSWORD } from '../data/config';
+import { timeout } from './helpers';
+import { API_HOSTNAME, API_KEY, API_PASSWORD } from '../config/API';
 
-const Shopify = {
+const API = {
 
     get(endpoint) {
         return this.request(endpoint, 'GET');
@@ -17,9 +18,7 @@ const Shopify = {
 
     request(endpoint, method) {
         const url = `https://${API_KEY}:${API_PASSWORD}@${API_HOSTNAME}/admin/${endpoint}`;
-        return fetch(url, { method })
-            .then(this.handleResponse)
-            .catch(e => console.log('An error occured during the fetch.', e));
+        return timeout(fetch(url, { method })).then(this.handleResponse);
     },
 
     handleResponse(response) {
@@ -32,4 +31,4 @@ const Shopify = {
 
 };
 
-export default Shopify;
+export default API;
