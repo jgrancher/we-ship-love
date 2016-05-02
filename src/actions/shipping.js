@@ -13,7 +13,7 @@ import {
 export function fetchShippingOptions() {
     return (dispatch, getState) => {
         // If data already exists, return a resolved promise
-        if (getState().shipping.data.length) {
+        if (getState().shipping.options.length) {
             return Promise.resolve();
         }
 

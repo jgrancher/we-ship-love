@@ -14,6 +14,7 @@ import { fetchProducts } from '../actions/products';
 import { addItem } from '../actions/cart';
 
 // Styles
+import appStyles from '../styles/base/application';
 import styles from '../styles/components/swiper';
 import * as colors from '../config/colors';
 import * as sizes from '../config/sizes';
@@ -83,7 +84,7 @@ class OrderStep1 extends React.Component {
 
     renderContent() {
         if (this.props.isFetching) {
-            return <ActivityIndicatorIOS color={colors.turquoise} style={styles.indicator} />;
+            return <ActivityIndicatorIOS color={colors.turquoise} style={appStyles.indicator} />;
         }
 
         if (!this.props.isFetching && !this.props.products.length) {
@@ -116,7 +117,7 @@ class OrderStep1 extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <View style={styles.content}>{this.renderContent()}</View>
+                <View style={appStyles.content}>{this.renderContent()}</View>
                 <CallToAction enabled={hasProducts} onPress={this.onNextStep} />
             </View>
         );

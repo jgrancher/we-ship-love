@@ -5,8 +5,8 @@ import {
 } from '../data/constants';
 
 const defaultState = {
-    data: [],
     isFetching: false,
+    options: [],
 };
 
 export const shipping = (state = defaultState, action) => {
@@ -25,7 +25,7 @@ export const shipping = (state = defaultState, action) => {
     case FETCH_SHIPPING_SUCCESS:
         return Object.assign({}, state, {
             isFetching: false,
-            data: action.data,
+            options: action.data.shipping_zones,
         });
 
     default:
