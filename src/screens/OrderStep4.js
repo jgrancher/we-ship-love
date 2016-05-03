@@ -74,7 +74,7 @@ class OrderStep4 extends React.Component {
                     {this.renderContent()}
                 </ScrollView>
                 <CallToAction
-                    enabled={this.props.options.length}
+                    enabled={this.props.options.length > 0}
                     onPress={this.onNextStep}
                     text="Frais de port"
                     step={4}
