@@ -76,8 +76,8 @@ class OrderStep4 extends React.Component {
                 <CallToAction
                     enabled={this.props.options.length > 0}
                     onPress={this.onNextStep}
-                    text="Frais de port"
                     step={4}
+                    text="Frais de port"
                 />
             </View>
         );

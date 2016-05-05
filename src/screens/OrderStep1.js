@@ -130,5 +130,8 @@ export default connect(
         isFetching: state.products.isFetching,
         products: state.products.data,
     }),
-    (dispatch) => bindActionCreators({ addItem, fetchProducts }, dispatch)
+    (dispatch) => bindActionCreators({
+        addItem,
+        fetchProducts,
+    }, dispatch)
 )(OrderStep1);
