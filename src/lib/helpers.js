@@ -21,3 +21,12 @@ export const timeout = (promise, time = FETCH_TIMEOUT) => (
 export const isStoreFetching = (store) => (
     Object.keys(store).some((key) => store[key].isFetching === true)
 );
+
+/**
+ * Formatting function of shipping options to get countries array
+ * @param  {Array} options  The shipping options array initially formatted
+ * @return {Array}          The countries array formatted
+ */
+export const getOptionsCountries = (options) => (
+    options.map((o) => o.countries).reduce((a, b) => a.concat(b), [])
+);
