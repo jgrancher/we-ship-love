@@ -14,4 +14,5 @@ export const SET_DELIVERY = 'SET_DELIVERY';
 export const SET_SHIPPING = 'SET_SHIPPING';
 
 // Misc
+export const DEFAULT_COUNTRY_ID = 20489252; // Default country Id used in select options (France)
 export const FETCH_TIMEOUT = 15000; // Timeout to fetch, in ms.

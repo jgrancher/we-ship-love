@@ -51,7 +51,7 @@ class OrderStep3 extends React.Component {
 
         // Extending the form by adding the formatted countries
         const options = props.countries.map((c) => ({ [c.id]: c.name }));
-        const country = t.enums(Object.assign({}, ...options));
+        const country = t.enums(Object.assign(...options));
         const form = DeliveryForm.extend({ country });
         this.setState({ form });
     }

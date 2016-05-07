@@ -85,13 +85,6 @@ export const deliveryOptions = {
         city: {
             placeholder: 'Ville',
         },
-        country: {
-            nullOption: {
-                value: '',
-                label: 'Sélectionner un pays',
-            },
-            placeholder: 'Pays',
-        },
         email: {
             placeholder: 'Email',
             keyboardType: 'email-address',
@@ -99,6 +92,10 @@ export const deliveryOptions = {
         phone: {
             placeholder: 'Téléphone',
             keyboardType: 'phone-pad',
+        },
+        country: {
+            nullOption: false,
+            order: 'asc',
         },
     },
 };

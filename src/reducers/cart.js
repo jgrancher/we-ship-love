@@ -4,11 +4,14 @@ import {
     SET_BILLING,
     SET_DELIVERY,
     SET_SHIPPING,
+    DEFAULT_COUNTRY_ID,
 } from '../data/constants';
 
 const defaultState = {
     billing: {},
-    delivery: {},
+    delivery: {
+        country: DEFAULT_COUNTRY_ID,
+    },
     shipping: {},
     items: [],
     message: 'Love you!',
