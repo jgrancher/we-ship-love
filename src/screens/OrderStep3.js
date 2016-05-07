@@ -33,7 +33,6 @@ class OrderStep3 extends React.Component {
 
     constructor(props) {
         super(props);
-        this.onChange = this.onChange.bind(this);
         this.onNextStep = this.onNextStep.bind(this);
     }
 
@@ -54,10 +53,6 @@ class OrderStep3 extends React.Component {
         const country = t.enums(Object.assign(...options));
         const form = DeliveryForm.extend({ country });
         this.setState({ form });
-    }
-
-    onChange(value) {
-        this.setState({ value });
     }
 
     onNextStep() {
@@ -86,7 +81,6 @@ class OrderStep3 extends React.Component {
                     <Form
                         ref="form"
                         type={this.state.form}
-                        onChange={this.onChange}
                         options={deliveryOptions}
                         value={this.state.value}
                     />
