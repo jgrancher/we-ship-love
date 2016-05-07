@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     indicator: {
         flex: 1,
         marginBottom: sizes.heightCTA,
+        marginTop: sizes.heightNavigationBar,
     },
 
     text: {
