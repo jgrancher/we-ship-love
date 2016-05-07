@@ -54,16 +54,6 @@ export const DeliveryForm = t.struct({
     address2: t.maybe(t.String),
     zipcode: t.Number,
     city: t.String,
-    // country: t.enums({
-    //     France: 'France',
-    //     Belgique: 'Belgique',
-    //     Suisse: 'Suisse',
-    //     'Royaume-Uni': 'Royaume-Uni',
-    //     'Pays-Bas': 'Pays-Bas',
-    //     Espagne: 'Espagne',
-    //     Portugal: 'Portugal',
-    //     Allemagne: 'Allemagne',
-    // }),
     email: t.String,
     phone: t.Number,
 });

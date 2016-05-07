@@ -42,9 +42,9 @@ class OrderStep4 extends React.Component {
         shipping: this.props.options[0],
     };
 
-    componentWillMount() {
-        this.props.fetchShippingOptions();
-    }
+    // componentWillMount() {
+    //     this.props.fetchShippingOptions();
+    // }
 
     onNextStep() {
 

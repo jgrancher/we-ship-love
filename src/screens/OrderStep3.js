@@ -4,20 +4,31 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import OrderStep4 from './OrderStep4';
 import CallToAction from '../components/CallToAction';
+import LoadingIndicator from '../components/LoadingIndicator';
 import { setDelivery } from '../actions/cart';
+import { fetchShippingOptions } from '../actions/shipping';
+import { getOptionsCountries } from '../lib/helpers';
 import { DeliveryForm, deliveryOptions } from '../data/forms';
 import styles from '../styles/components/form';
 
 const { ScrollView, Text, View } = React;
-const { func, object } = React.PropTypes;
+const { array, bool, func, object } = React.PropTypes;
 const { Form } = t.form;
 
 class OrderStep3 extends React.Component {
 
     static propTypes = {
+        countries: array.isRequired,
         delivery: object.isRequired,
+        fetchShippingOptions: func.isRequired,
+        isFetching: bool,
         navigator: object.isRequired,
         setDelivery: func.isRequired,
+    };
+
+    static defaultProps = {
+        countries: [],
+        isFetching: false,
     };
 
     constructor(props) {
@@ -27,8 +38,23 @@ class OrderStep3 extends React.Component {
     }
 
     state = {
+        form: DeliveryForm,
         value: this.props.delivery,
     };
+
+    componentWillMount() {
+        this.props.fetchShippingOptions();
+    }
+
+    componentWillReceiveProps(props) {
+        if (!props.countries.length) return;
+
+        // Extending the form by adding the formatted countries
+        const options = props.countries.map((c) => ({ [c.id]: c.name }));
+        const country = t.enums(Object.assign({}, ...options));
+        const form = DeliveryForm.extend({ country });
+        this.setState({ form });
+    }
 
     onChange(value) {
         this.setState({ value });
@@ -47,6 +73,10 @@ class OrderStep3 extends React.Component {
     }
 
     render() {
+        if (this.props.isFetching) {
+            return <LoadingIndicator />;
+        }
+
         return (
             <View style={{ flex: 1 }}>
                 <ScrollView
@@ -55,7 +85,7 @@ class OrderStep3 extends React.Component {
                 >
                     <Form
                         ref="form"
-                        type={DeliveryForm}
+                        type={this.state.form}
                         onChange={this.onChange}
                         options={deliveryOptions}
                         value={this.state.value}
@@ -71,8 +101,8 @@ class OrderStep3 extends React.Component {
                 </ScrollView>
                 <CallToAction
                     onPress={this.onNextStep}
-                    text="C'est pour qui?"
                     step={3}
+                    text="C'est pour qui?"
                 />
             </View>
         );
@@ -80,6 +110,13 @@ class OrderStep3 extends React.Component {
 }
 
 export default connect(
-    (state) => ({ delivery: state.cart.delivery }),
-    (dispatch) => bindActionCreators({ setDelivery }, dispatch)
+    (state) => ({
+        isFetching: state.shipping.isFetching,
+        countries: getOptionsCountries(state.shipping.options),
+        delivery: state.cart.delivery,
+    }),
+    (dispatch) => bindActionCreators({
+        fetchShippingOptions,
+        setDelivery,
+    }, dispatch)
 )(OrderStep3);
