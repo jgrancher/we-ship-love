@@ -1,10 +1,11 @@
 // Forms styles and options declarations
+import React, { StyleSheet } from 'react-native';
 import t from 'tcomb-form-native';
-import { StyleSheet } from 'react-native';
+import AccordionPicker from '../components/AccordionPicker';
 import styles from '../styles/components/form';
 
 /**
- * Override global styles of forms
+ * Global styles override of forms
  */
 const formStyles = Object.assign({}, t.form.Form.stylesheet, {
     textbox: {
@@ -96,6 +97,13 @@ export const deliveryOptions = {
         country: {
             nullOption: false,
             order: 'asc',
+            template: (data) => (
+                <AccordionPicker
+                    defaultValue={data.options.find((o) => o.value === data.value)}
+                    onChange={data.onChange}
+                    options={data.options}
+                />
+            ),
         },
     },
 };

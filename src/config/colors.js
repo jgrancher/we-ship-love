@@ -1,6 +1,7 @@
 // Colors
 export const white = '#fff';
 export const lightest = '#f0f0f0';
+export const greyLight = '#c1c1c1';
 export const grey = '#999';
 export const greyDark = '#5b5b5b';
 export const brown = '#3a3a3a';
