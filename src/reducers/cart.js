@@ -10,6 +10,13 @@ import {
 const defaultState = {
     billing: {},
     delivery: {
+        name: 'Jobs',
+        firstname: 'Steve',
+        address: '1 Infinite Loop',
+        zipcode: '95014',
+        city: 'Cupertino',
+        email: 'steve@apple.com',
+        phone: '0601020304',
         country: DEFAULT_COUNTRY_ID,
     },
     shipping: {},
