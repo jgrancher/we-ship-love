@@ -1,4 +1,5 @@
 import OrderStep1 from '../screens/OrderStep1';
+import PageFAQ from '../screens/PageFAQ';
 
 // Icons
 import iconHeart from '../images/icon-heart.png';
@@ -21,7 +22,7 @@ export const items = [
         id: 'FAQ',
         icon: iconQuestionMark,
         title: 'F.A.Q.',
-        component: View,
+        component: PageFAQ,
     },
     {
         id: 'About',
