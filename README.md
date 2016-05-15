@@ -13,13 +13,11 @@ This repository is the iOS application built with React-Native. **Still in devel
 * Intall 'react-native-cli' globally: `npm install -g react-native-cli`.
 * Install all the node modules required: `npm install`.
 
-
 ### Get started
 
 * You will need your Shopify administration access to get it running!
-* Create a file `./config/API.js` which exports `API_HOSTNAME`, `API_KEY`, `API_PASSWORD`, variables that you get from your Shopify administration.
+* In `config/API.js`, set the `API_HOSTNAME`, `API_KEY` and `API_PASSWORD` constants that you get from your Shopify administration.
 * Run the project: `react-native run-ios`.
-
 
 ### Links
 * This cool [React Native Starter](https://github.com/mcnamee/react-native-starter-app) has been used to start the development.
