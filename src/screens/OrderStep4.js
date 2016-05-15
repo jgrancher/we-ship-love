@@ -1,9 +1,10 @@
-// External
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { ActivityIndicatorIOS, ScrollView, View } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Components
+// Screens & components
 import CallToAction from '../components/CallToAction';
 import ShippingButton from '../components/ShippingButton';
 
@@ -16,7 +17,6 @@ import appStyles from '../styles/base/application';
 import styles from '../styles/components/form';
 import * as colors from '../config/colors';
 
-const { ActivityIndicatorIOS, ScrollView, View } = React;
 const { array, bool, func, object } = React.PropTypes;
 
 class OrderStep4 extends React.Component {

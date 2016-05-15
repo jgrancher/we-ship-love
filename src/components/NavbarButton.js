@@ -1,7 +1,10 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, TouchableOpacity } from 'react-native';
+
+// Styles
 import styles from '../styles/components/navbar';
 
-const { Image, TouchableOpacity } = React;
 const { func, node } = React.PropTypes;
 
 const NavbarButton = (props) => (

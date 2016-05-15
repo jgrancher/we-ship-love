@@ -1,7 +1,10 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Text, TouchableHighlight } from 'react-native';
+
+// Styles
 import styles from '../styles/components/refreshButton';
 
-const { Text, TouchableHighlight } = React;
 const { func, string } = React.PropTypes;
 
 const RefreshButton = (props) => (

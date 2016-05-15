@@ -1,7 +1,10 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Text, TouchableHighlight, View } from 'react-native';
+
+// Styles
 import styles from '../styles/components/shippingButton';
 
-const { Text, TouchableHighlight, View } = React;
 const { bool, func, number, string } = React.PropTypes;
 
 const ShippingButton = (props) => {

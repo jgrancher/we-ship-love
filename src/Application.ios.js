@@ -1,14 +1,16 @@
-// External
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, Navigator, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 import SideMenu from 'react-native-side-menu';
 import { Provider } from 'react-redux';
 
-// Components
+// Screens & components
 import NavbarButton from './components/NavbarButton';
 import Menu from './components/Menu';
 
 // Data
+import createStore from './store';
 import { items } from './data/menu';
 
 // Styles
@@ -22,10 +24,6 @@ import logo from './images/logo.png';
 import iconBack from './images/icon-back.png';
 import iconHamburger from './images/icon-hamburger.png';
 
-// Store
-import createStore from './store';
-
-const { Image, Navigator, View } = React;
 const store = createStore();
 
 class Application extends React.Component {

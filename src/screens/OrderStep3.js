@@ -1,17 +1,26 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import t from 'tcomb-form-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+// Screens & components
 import OrderStep4 from './OrderStep4';
 import CallToAction from '../components/CallToAction';
 import LoadingIndicator from '../components/LoadingIndicator';
+
+// Actions
 import { setDelivery } from '../actions/cart';
 import { fetchShippingOptions } from '../actions/shipping';
+
+// Data
 import { getOptionsCountries } from '../lib/helpers';
 import { DeliveryForm, deliveryOptions } from '../data/forms';
+
+// Styles
 import styles from '../styles/components/form';
 
-const { ScrollView, Text, View } = React;
 const { array, bool, func, object } = React.PropTypes;
 const { Form } = t.form;
 

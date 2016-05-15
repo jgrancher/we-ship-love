@@ -1,8 +1,11 @@
+// Modules
 import React from 'react';
+import { ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+// Actions
 import { fetchPages } from '../actions/pages';
-import { ScrollView, Text } from 'react-native';
 
 const { array, func } = React.PropTypes;
 

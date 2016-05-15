@@ -1,4 +1,8 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, Text, TouchableHighlight, View } from 'react-native';
+
+// Styles
 import styles from '../styles/components/callToAction';
 
 // Images
@@ -6,7 +10,6 @@ import ctaBackground from '../images/cta-bg.png';
 import ctaBtnEnabled from '../images/cta-btn.png';
 import ctaBtnDisabled from '../images/cta-btn-disabled.png';
 
-const { Image, Text, TouchableHighlight, View } = React;
 const { bool, func, number, string } = React.PropTypes;
 
 const CallToAction = (props) => {

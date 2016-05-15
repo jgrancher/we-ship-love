@@ -1,10 +1,11 @@
-// External
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Components
+// Screens & components
 import OrderStep2 from './OrderStep2';
 import CallToAction from '../components/CallToAction';
 import LoadingIndicator from '../components/LoadingIndicator';
@@ -29,7 +30,6 @@ import balloonRed from '../images/slider-red.jpg';
 import balloonWhite from '../images/slider-white.jpg';
 import balloonYellow from '../images/slider-yellow.jpg';
 
-const { Image, View } = React;
 const { array, bool, func, object } = React.PropTypes;
 
 const balloonsImages = {
@@ -69,7 +69,7 @@ class OrderStep1 extends React.Component {
     onNextStep() {
         const { addItem: addItemToCart, navigator, products } = this.props;
 
-        addItemToCart(products[this._swiper.state.index]);
+        addItemToCart(products[this.swiper.state.index]);
 
         navigator.push({
             component: OrderStep2,
@@ -97,7 +97,7 @@ class OrderStep1 extends React.Component {
             <Swiper
                 buttonWrapperStyle={{ height: sizes.heightScene - sizes.heightCTA }}
                 height={sizes.heightSwiper}
-                ref={(s) => { this._swiper = s; }}
+                ref={(s) => { this.swiper = s; }}
                 showsButtons
                 nextButton={<Image source={btnSliderNext} />}
                 prevButton={<Image source={btnSliderPrev} />}

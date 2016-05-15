@@ -1,15 +1,26 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, ScrollView, View } from 'react-native';
 import t from 'tcomb-form-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+// Screens & components
 import OrderStep3 from './OrderStep3';
 import CallToAction from '../components/CallToAction';
+
+// Actions
 import { setMessage } from '../actions/cart';
+
+// Data
 import { MessageForm, messageOptions } from '../data/forms';
-import bgMessage from '../images/bg-message.png';
+
+// Styles
 import styles from '../styles/components/form';
 
-const { Image, ScrollView, View } = React;
+// Images
+import bgMessage from '../images/bg-message.png';
+
 const { func, object, string } = React.PropTypes;
 const { Form } = t.form;
 

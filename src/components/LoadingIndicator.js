@@ -1,8 +1,11 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { ActivityIndicatorIOS } from 'react-native';
+
+// Styles
 import appStyles from '../styles/base/application';
 import { turquoise } from '../config/colors';
 
-const { ActivityIndicatorIOS } = React;
 const { string } = React.PropTypes;
 
 const LoadingIndicator = (props) => (

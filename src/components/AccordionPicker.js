@@ -1,10 +1,15 @@
-import React from 'react-native';
+// Modules
+import React from 'react';
+import { Image, Picker, Text, TouchableHighlight, View } from 'react-native';
 import Collapsible from 'react-native-collapsible';
+
+// Styles
 import styles from '../styles/components/accordionPicker';
-import iconChevron from '../images/icon-chevron.png';
 import { greyLight } from '../config/colors';
 
-const { Image, Picker, Text, TouchableHighlight, View } = React;
+// Images
+import iconChevron from '../images/icon-chevron.png';
+
 const { arrayOf, func, number, oneOfType, shape, string } = React.PropTypes;
 
 const optionShape = shape({

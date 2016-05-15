@@ -1,5 +1,6 @@
 // Forms styles and options declarations
-import React, { StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import t from 'tcomb-form-native';
 import AccordionPicker from '../components/AccordionPicker';
 import styles from '../styles/components/form';
