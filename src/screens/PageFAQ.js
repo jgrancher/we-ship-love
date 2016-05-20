@@ -21,8 +21,6 @@ class PageFAQ extends React.Component {
     }
 
     render() {
-        console.log(this.props.pages);
-
         return (
             <ScrollView>
                 <Text>Test</Text>
