@@ -88,6 +88,10 @@ class OrderStep2 extends React.Component {
 }
 
 export default connect(
-    (state) => ({ message: state.cart.message }),
-    (dispatch) => bindActionCreators({ setMessage }, dispatch)
+    (state) => ({
+        message: state.cart.message,
+    }),
+    (dispatch) => bindActionCreators({
+        setMessage,
+    }, dispatch)
 )(OrderStep2);
