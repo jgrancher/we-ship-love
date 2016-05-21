@@ -12,7 +12,6 @@ import {
  */
 export function fetchShippingOptions() {
     return (dispatch, getState) => {
-        // If data already exists, return a resolved promise
         if (getState().shipping.options.length) {
             return Promise.resolve();
         }
@@ -21,16 +20,12 @@ export function fetchShippingOptions() {
 
         return API.get('shipping_zones.json')
             .then((data) => {
-                dispatch({
-                    type: FETCH_SHIPPING_SUCCESS,
-                    data,
-                });
+                dispatch({ type: FETCH_SHIPPING_SUCCESS, data });
+                return Promise.resolve(data);
             })
             .catch((error) => {
-                dispatch({
-                    type: FETCH_SHIPPING_FAIL,
-                    error,
-                });
+                dispatch({ type: FETCH_SHIPPING_FAIL, error });
+                return Promise.reject(error.message);
             });
     };
 }

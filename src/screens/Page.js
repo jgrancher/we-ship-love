@@ -7,13 +7,15 @@ import { bindActionCreators } from 'redux';
 // Actions
 import { fetchPages } from '../actions/pages';
 
-const { array, func } = React.PropTypes;
+const { bool, func, string } = React.PropTypes;
 
-class PageFAQ extends React.Component {
+class Page extends React.Component {
 
     static propTypes = {
+        content: string,
         fetchPages: func.isRequired,
-        pages: array.isRequired,
+        isFetching: bool,
+        title: string,
     };
 
     componentWillMount() {
@@ -30,8 +32,15 @@ class PageFAQ extends React.Component {
 }
 
 export default connect(
-    (state) => ({ pages: state.pages.data }),
+    (state, props) => {
+        const page = state.pages.data.find((p) => p.id === props.route.id) || {};
+        return {
+            content: page.body_html,
+            isFetching: state.pages.isFetching,
+            title: page.title,
+        };
+    },
     (dispatch) => bindActionCreators({
         fetchPages,
     }, dispatch),
-)(PageFAQ);
+)(Page);

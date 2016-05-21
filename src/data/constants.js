@@ -18,5 +18,4 @@ export const FETCH_PAGES_SUCCESS = 'FETCH_PAGES_SUCCESS';
 export const FETCH_PAGES_FAIL = 'FETCH_PAGES_FAIL';
 
 // Misc
-export const DEFAULT_COUNTRY_ID = 20489252; // Default country Id used in select options (France)
 export const FETCH_TIMEOUT = 15000; // Timeout to fetch, in ms.

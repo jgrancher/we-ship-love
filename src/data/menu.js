@@ -1,14 +1,21 @@
+// Screens & components
+import { View } from 'react-native';
 import OrderStep1 from '../screens/OrderStep1';
-import PageFAQ from '../screens/PageFAQ';
+import Page from '../screens/Page';
 
-// Icons
+// Images
 import iconHeart from '../images/icon-heart.png';
 import iconQuestionMark from '../images/icon-questionmark.png';
 import iconSettings from '../images/icon-settings.png';
 import iconSmiley from '../images/icon-smiley.png';
 import iconUser from '../images/icon-user.png';
 
-import { View } from 'react-native';
+// Data
+import {
+    API_PAGE_ABOUT,
+    API_PAGE_FAQ,
+    API_PAGE_PRO,
+} from '../config/API';
 
 // Menu items
 export const items = [
@@ -22,13 +29,19 @@ export const items = [
         id: 'FAQ',
         icon: iconQuestionMark,
         title: 'F.A.Q.',
-        component: PageFAQ,
+        component: Page,
+        props: {
+            id: API_PAGE_FAQ,
+        },
     },
     {
         id: 'About',
         icon: iconSmiley,
         title: 'Qui sommes-nous',
-        component: View,
+        component: Page,
+        props: {
+            id: API_PAGE_ABOUT,
+        },
     },
     {
         id: 'MyOrders',
@@ -41,6 +54,9 @@ export const items = [
         icon: iconUser,
         title: 'Espace Pro',
         component: View,
+        props: {
+            id: API_PAGE_PRO,
+        },
     },
 ];
 

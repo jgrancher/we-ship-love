@@ -12,7 +12,6 @@ import {
  */
 export function fetchProducts() {
     return (dispatch, getState) => {
-        // If data already exists, return a resolved promise
         if (getState().products.data.length) {
             return Promise.resolve();
         }
@@ -21,16 +20,12 @@ export function fetchProducts() {
 
         return API.get('products/410882840/variants.json')
             .then((data) => {
-                dispatch({
-                    type: FETCH_PRODUCTS_SUCCESS,
-                    data,
-                });
+                dispatch({ type: FETCH_PRODUCTS_SUCCESS, data });
+                return Promise.resolve(data);
             })
             .catch((error) => {
-                dispatch({
-                    type: FETCH_PRODUCTS_FAIL,
-                    error,
-                });
+                dispatch({ type: FETCH_PRODUCTS_FAIL, error });
+                return Promise.reject(error.message);
             });
     };
 }

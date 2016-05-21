@@ -1,4 +1,5 @@
 import API from '../lib/API';
+
 import {
     FETCH_PAGES,
     FETCH_PAGES_FAIL,
@@ -11,7 +12,6 @@ import {
  */
 export function fetchPages() {
     return (dispatch, getState) => {
-        // If data already exists, return a resolved promise
         if (getState().pages.data.length) {
             return Promise.resolve();
         }
@@ -20,16 +20,12 @@ export function fetchPages() {
 
         return API.get('pages.json')
             .then((data) => {
-                dispatch({
-                    type: FETCH_PAGES_SUCCESS,
-                    data,
-                });
+                dispatch({ type: FETCH_PAGES_SUCCESS, data });
+                return Promise.resolve(data);
             })
             .catch((error) => {
-                dispatch({
-                    type: FETCH_PAGES_FAIL,
-                    error,
-                });
+                dispatch({ type: FETCH_PAGES_FAIL, error });
+                return Promise.reject(error.message);
             });
     };
 }

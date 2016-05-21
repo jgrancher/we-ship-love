@@ -4,7 +4,11 @@
  */
 
 import { timeout } from './helpers';
-import { API_HOSTNAME, API_KEY, API_PASSWORD } from '../config/API';
+import {
+    API_HOSTNAME,
+    API_KEY,
+    API_PASSWORD,
+} from '../config/API';
 
 const API = {
 

@@ -1,10 +1,10 @@
+import { API_DEFAULT_COUNTRY } from '../config/API';
 import {
     ADD_ITEM,
     SET_MESSAGE,
     SET_BILLING,
     SET_DELIVERY,
     SET_SHIPPING,
-    DEFAULT_COUNTRY_ID,
 } from '../data/constants';
 
 const defaultState = {
@@ -17,7 +17,7 @@ const defaultState = {
         city: 'Cupertino',
         email: 'steve@apple.com',
         phone: '0601020304',
-        country: DEFAULT_COUNTRY_ID,
+        country: API_DEFAULT_COUNTRY,
     },
     shipping: {},
     items: [],

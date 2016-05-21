@@ -1,7 +1,15 @@
 /* eslint-disable no-useless-escape */
 // Modules
 import React from 'react';
-import { Alert, Image, Linking, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import {
+    Alert,
+    Image,
+    Linking,
+    Text,
+    TouchableHighlight,
+    TouchableOpacity,
+    View,
+} from 'react-native';
 
 // Data
 import { items, socials, website } from '../data/menu';
@@ -21,11 +29,7 @@ const message = 'Impossible d\'ouvrir ce lien. Pardon. ¯\_(ツ)_/¯';
 class Menu extends React.Component {
 
     static propTypes = {
-        navigate: func,
-    };
-
-    static defaultProps = {
-        navigate: () => {},
+        navigate: func.isRequired,
     };
 
     constructor(props) {
@@ -46,7 +50,7 @@ class Menu extends React.Component {
     }
 
     showScreen(route) {
-        this.props.navigate(route.title, route.component);
+        this.props.navigate(route);
     }
 
     renderItem(item, i) {

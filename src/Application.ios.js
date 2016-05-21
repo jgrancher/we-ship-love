@@ -39,7 +39,7 @@ class Application extends React.Component {
         isMenuOpen: false,
     };
 
-    navigate(title, component) {
+    navigate(route) {
         // Toggle Menu
         this.setState({
             isMenuOpen: !this.state.isMenuOpen,
@@ -47,9 +47,10 @@ class Application extends React.Component {
 
         // Navigate to Screen
         this.refs.rootNavigator.replace({
-            title,
-            component,
+            component: route.component,
             navigator: this.refs.rootNavigator,
+            title: route.title,
+            ...route.props,
         });
     }
 
@@ -74,7 +75,11 @@ class Application extends React.Component {
                     style={navStyles.navbar}
                     tintColor={colors.white}
                 />
-                <route.component navigator={navigator} route={route} />
+                <route.component
+                    {...route.props}
+                    navigator={navigator}
+                    route={route}
+                />
             </View>
         );
     }
