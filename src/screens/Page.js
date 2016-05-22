@@ -1,6 +1,6 @@
 // Modules
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { WebView } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -24,9 +24,10 @@ class Page extends React.Component {
 
     render() {
         return (
-            <ScrollView>
-                <Text>Test</Text>
-            </ScrollView>
+            <WebView
+                source={{ html: this.props.content }}
+                style={{ flex: 1 }}
+            />
         );
     }
 }
