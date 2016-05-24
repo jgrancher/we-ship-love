@@ -53,7 +53,7 @@ export const items = [
         id: 'Pro',
         icon: iconUser,
         title: 'Espace Pro',
-        component: View,
+        component: Page,
         props: {
             id: API_PAGE_PRO,
         },
