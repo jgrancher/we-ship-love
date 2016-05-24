@@ -12,8 +12,16 @@ import { fetchPages } from '../actions/pages';
 
 // Styles
 import { brown, turquoise } from '../config/colors';
-import { spaceNormal } from '../config/sizes';
+import { spaceNormal, spaceBig } from '../config/sizes';
 import { source } from '../config/fonts';
+
+// WebView styles
+const style = `
+    body { font-family: ${source}, sans-serif; text-align: center; }
+    h1, strong { color: ${turquoise}; font-size: 22px; margin: ${spaceBig}px 0 ${spaceNormal}px; }
+    p { color: ${brown}; font-size: 16px; margin: ${spaceNormal}px; }
+    strong { display: block; font-size: 17px; }
+`;
 
 const { bool, func, string } = React.PropTypes;
 
@@ -35,14 +43,8 @@ class Page extends React.Component {
             return <LoadingIndicator />;
         }
 
-        const html =
-            `<style>
-                p { color: ${brown}; font-family: ${source}, sans-serif; font-size: 16px;
-                    text-align: justify; margin: 20px; }
-                strong { color: ${turquoise}; display: block; font-size: 22px;
-                    margin: ${spaceNormal}px; text-align: center; }
-            </style>
-            ${this.props.content}`;
+        const body = `<h1>${this.props.title}</h1><div>${this.props.content}</div>`;
+        const html = `<style>${style}</style><body>${body}</body>`;
 
         return <WebView source={{ html }} />;
     }
