@@ -15,11 +15,11 @@ import { setMessage } from '../actions/cart';
 // Data
 import { MessageForm, messageOptions } from '../data/forms';
 
-// Styles
-import styles from '../styles/components/form';
-
 // Images
 import bgMessage from '../images/bg-message.png';
+
+// Styles
+import styles from '../styles/components/form';
 
 const { func, object, string } = React.PropTypes;
 const { Form } = t.form;

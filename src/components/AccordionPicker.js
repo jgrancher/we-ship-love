@@ -3,12 +3,12 @@ import React from 'react';
 import { Image, Picker, Text, TouchableHighlight, View } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 
+// Images
+import iconChevron from '../images/icon-chevron.png';
+
 // Styles
 import styles from '../styles/components/accordionPicker';
 import { greyLight } from '../config/colors';
-
-// Images
-import iconChevron from '../images/icon-chevron.png';
 
 const { arrayOf, func, number, oneOfType, shape, string } = React.PropTypes;
 

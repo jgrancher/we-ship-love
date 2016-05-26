@@ -2,13 +2,13 @@
 import React from 'react';
 import { Image, Text, TouchableHighlight, View } from 'react-native';
 
-// Styles
-import styles from '../styles/components/callToAction';
-
 // Images
 import ctaBackground from '../images/cta-bg.png';
 import ctaBtnEnabled from '../images/cta-btn.png';
 import ctaBtnDisabled from '../images/cta-btn-disabled.png';
+
+// Styles
+import styles from '../styles/components/callToAction';
 
 const { bool, func, number, string } = React.PropTypes;
 

@@ -15,11 +15,6 @@ import RefreshButton from '../components/RefreshButton';
 import { fetchProducts } from '../actions/products';
 import { addItem } from '../actions/cart';
 
-// Styles
-import appStyles from '../styles/base/application';
-import styles from '../styles/components/swiper';
-import * as sizes from '../config/sizes';
-
 // Images
 import btnSliderNext from '../images/btn-slider-next.png';
 import btnSliderPrev from '../images/btn-slider-previous.png';
@@ -29,6 +24,11 @@ import balloonPink from '../images/slider-pink.jpg';
 import balloonRed from '../images/slider-red.jpg';
 import balloonWhite from '../images/slider-white.jpg';
 import balloonYellow from '../images/slider-yellow.jpg';
+
+// Styles
+import appStyles from '../styles/base/application';
+import styles from '../styles/components/swiper';
+import * as sizes from '../config/sizes';
 
 const { array, bool, func, object } = React.PropTypes;
 
