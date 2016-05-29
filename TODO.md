@@ -3,8 +3,7 @@ TODO
 
 # Roadmap
 
-* Interact with the Shopify API to get the available shippings
-* Update the 'shipping options' page based on the country selected before
+* Update the 'shipping options' (OrderStep4) page based on the country selected before
 * Get the static pages (My orders, FAQ, etc.) done
 
 # Optimisations
