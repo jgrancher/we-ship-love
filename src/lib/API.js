@@ -3,12 +3,14 @@
  * https://apikey:password@hostname/admin/resource.json
  */
 
+// Modules
+import Config from 'react-native-config';
+
+// Data
 import { timeout } from './helpers';
-import {
-    API_HOSTNAME,
-    API_KEY,
-    API_PASSWORD,
-} from '../config/API';
+import { API_HOSTNAME } from '../data/constants';
+
+const URL = `https://${Config.SHOPIFY_KEY}:${Config.SHOPIFY_PASSWORD}@${API_HOSTNAME}/admin/`;
 
 const API = {
 
@@ -21,8 +23,7 @@ const API = {
     },
 
     request(endpoint, method) {
-        const url = `https://${API_KEY}:${API_PASSWORD}@${API_HOSTNAME}/admin/${endpoint}`;
-        return timeout(fetch(url, { method })).then(this.handleResponse);
+        return timeout(fetch(`${URL}${endpoint}`, { method })).then(this.handleResponse);
     },
 
     handleResponse(response) {

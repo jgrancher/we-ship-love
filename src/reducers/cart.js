@@ -1,5 +1,5 @@
-import { API_DEFAULT_COUNTRY } from '../config/API';
 import {
+    API_DEFAULT_COUNTRY,
     ADD_ITEM,
     SET_MESSAGE,
     SET_BILLING,

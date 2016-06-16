@@ -2,7 +2,7 @@
 
 > [Mieux Que Des Fleurs](http://www.mieuxquedesfleurs.com/) (*Better Than Flowers*) is a french website whose aim is to spread love with parcels: order and send baloons to your beloved ones!
 
-*This is the iOS application of MQDF, built with React-Native. It can be used as a showcase, a demonstration of what is possible to do with React-Native and Shopify.* **Still in development!**
+*This is the iOS application of MQDF, built with React-Native and Shopify API.* **Still in development!**
 
 ![Screenshots](https://cloud.githubusercontent.com/assets/5517450/15112550/4a1e31ae-1632-11e6-9b11-87af0af066ac.png "Better Than Flowers - Screenshots")
 
@@ -16,7 +16,7 @@
 ## Get started
 
 * You will need your Shopify administration access to get it running!
-* In `config/API.js`, set the `API_HOSTNAME`, `API_KEY` and `API_PASSWORD` constants that you get from your Shopify administration.
+* Create a `.env` file where you define `SHOPIFY_KEY` and `SHOPIFY_PASSWORD` that you get from your Shopify administration.
 * Run the project: `react-native run-ios`.
 
 ## Links

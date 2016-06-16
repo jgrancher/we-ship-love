@@ -15,7 +15,7 @@ import {
     API_PAGE_ABOUT,
     API_PAGE_FAQ,
     API_PAGE_PRO,
-} from '../config/API';
+} from '../data/constants';
 
 // Menu items
 export const items = [

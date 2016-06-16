@@ -1,3 +1,14 @@
+// API - Hostname
+export const API_HOSTNAME = 'mieuxquedesfleurs.myshopify.com';
+
+// API - Pages
+export const API_PAGE_ABOUT = 18738948;
+export const API_PAGE_FAQ = 18739472;
+export const API_PAGE_PRO = 78604741;
+
+// API - Shipping countries
+export const API_DEFAULT_COUNTRY = 20489252; // France
+
 // Redux actions
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
