@@ -17,7 +17,7 @@ import styles from '../styles/components/callToAction';
 
 const CallToAction = (props) => (
     <TouchableHighlight
-        onPress={props.enabled && props.onPress}
+        onPress={props.enabled ? props.onPress : null}
         style={styles.container}
         underlayColor="transparent"
     >
@@ -54,8 +54,8 @@ CallToAction.propTypes = {
     enabled: React.PropTypes.bool,
     onPress: React.PropTypes.func,
     step: React.PropTypes.number,
-    text: React.PropTypes.tring,
-    textComplement: React.PropTypes.tring,
+    text: React.PropTypes.string,
+    textComplement: React.PropTypes.string,
 };
 
 CallToAction.defaultProps = {
