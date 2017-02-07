@@ -1,11 +1,13 @@
 // Modules
 import React from 'react';
-import { Text, TouchableHighlight, View } from 'react-native';
+import {
+    Text,
+    TouchableHighlight,
+    View,
+} from 'react-native';
 
 // Styles
 import styles from '../styles/components/shippingButton';
-
-const { bool, func, number, string } = React.PropTypes;
 
 const ShippingButton = (props) => {
     const stylesLozenge = [styles.lozenge, props.active && styles.lozengeActive];
@@ -19,12 +21,18 @@ const ShippingButton = (props) => {
         >
             <View>
                 <View style={styles.content}>
-                    <Text style={stylesDescription}>{props.description}</Text>
+                    <Text style={stylesDescription}>
+                        {props.description}
+                    </Text>
                 </View>
                 <View style={stylesLozenge} />
                 <View style={styles.priceContainer}>
-                    <Text style={styles.price}>{props.price}</Text>
-                    <Text style={[styles.price, styles.priceCurrency]}>€</Text>
+                    <Text style={styles.price}>
+                        {props.price}
+                    </Text>
+                    <Text style={[styles.price, styles.priceCurrency]}>
+                        €
+                    </Text>
                 </View>
             </View>
         </TouchableHighlight>
@@ -32,10 +40,10 @@ const ShippingButton = (props) => {
 };
 
 ShippingButton.propTypes = {
-    active: bool,
-    description: string,
-    onPress: func,
-    price: number,
+    active: React.PropTypes.bool,
+    description: React.PropTypes.string,
+    onPress: React.PropTypes.func,
+    price: React.PropTypes.number,
 };
 
 ShippingButton.defaultProps = {

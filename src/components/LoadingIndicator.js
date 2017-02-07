@@ -6,8 +6,6 @@ import { ActivityIndicator } from 'react-native';
 import appStyles from '../styles/base/application';
 import { turquoise } from '../config/colors';
 
-const { string } = React.PropTypes;
-
 const LoadingIndicator = (props) => (
     <ActivityIndicator
         color={props.color}
@@ -16,7 +14,7 @@ const LoadingIndicator = (props) => (
 );
 
 LoadingIndicator.propTypes = {
-    color: string,
+    color: React.PropTypes.string,
 };
 
 LoadingIndicator.defaultProps = {

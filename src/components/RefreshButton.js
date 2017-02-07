@@ -1,11 +1,12 @@
 // Modules
 import React from 'react';
-import { Text, TouchableHighlight } from 'react-native';
+import {
+    Text,
+    TouchableHighlight,
+} from 'react-native';
 
 // Styles
 import styles from '../styles/components/refreshButton';
-
-const { func, string } = React.PropTypes;
 
 const RefreshButton = (props) => (
     <TouchableHighlight
@@ -13,18 +14,23 @@ const RefreshButton = (props) => (
         style={styles.container}
         underlayColor="transparent"
     >
-        <Text numberOfLines={4} style={styles.text}>
+        <Text
+            numberOfLines={4}
+            style={styles.text}
+        >
             {props.text}
         </Text>
     </TouchableHighlight>
 );
 
 RefreshButton.propTypes = {
-    onPress: func.isRequired,
-    text: string,
+    numberOfLines: React.PropTypes.number,
+    onPress: React.PropTypes.func.isRequired,
+    text: React.PropTypes.string,
 };
 
 RefreshButton.defaultProps = {
+    numberOfLines: 4,
     text: `Une erreur est survenue...\nCliquez ici pour rafraichir.\n\n¯\\_(ツ)_/¯`,
 };
 

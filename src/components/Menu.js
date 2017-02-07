@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 // Modules
 import React from 'react';
 import {
@@ -23,23 +22,27 @@ import iconInstagram from '../images/icon-social-insta.png';
 import styles from '../styles/components/menu';
 import { brownDark } from '../config/colors';
 
-const { func } = React.PropTypes;
-const message = 'Impossible d\'ouvrir ce lien. Pardon. ¯\_(ツ)_/¯';
+const message = `Impossible d'ouvrir ce lien. Pardon. ¯\_(ツ)_/¯`; // eslint-disable-line quotes
 
 class Menu extends React.Component {
 
     static propTypes = {
-        navigate: func.isRequired,
+        navigate: React.PropTypes.func.isRequired,
     };
 
-    constructor(props) {
-        super(props);
-        this.openURL = this.openURL.bind(this);
-        this.showScreen = this.showScreen.bind(this);
-        this.renderItem = this.renderItem.bind(this);
+    openFacebook = () => {
+        this.openURL(socials.facebook);
     }
 
-    openURL(url) {
+    openInstagram = () => {
+        this.openURL(socials.instagram);
+    }
+
+    openTwitter = () => {
+        this.openURL(socials.twitter);
+    }
+
+    openURL = (url) => {
         Linking.canOpenURL(url).then((supported) => {
             if (!supported) {
                 return Alert.alert('Une erreur est survenue.', message);
@@ -49,11 +52,11 @@ class Menu extends React.Component {
         });
     }
 
-    showScreen(route) {
+    showScreen = (route) => {
         this.props.navigate(route);
     }
 
-    renderItem(item, i) {
+    renderItem = (item, i) => {
         const onPress = () => this.showScreen(item);
 
         return (
@@ -63,30 +66,15 @@ class Menu extends React.Component {
                 underlayColor={brownDark}
             >
                 <View style={styles.menuItem}>
-                    <Image source={item.icon} style={styles.menuItemImage} />
-                    <Text style={styles.menuItemText}>{item.title}</Text>
+                    <Image
+                        source={item.icon}
+                        style={styles.menuItemImage}
+                    />
+                    <Text style={styles.menuItemText}>
+                        {item.title}
+                    </Text>
                 </View>
             </TouchableHighlight>
-        );
-    }
-
-    renderSocials() {
-        const openFacebook = () => this.openURL(socials.facebook);
-        const openTwitter = () => this.openURL(socials.twitter);
-        const openInstagram = () => this.openURL(socials.instagram);
-
-        return (
-            <View style={styles.socials}>
-                <TouchableOpacity onPress={openTwitter}>
-                    <Image source={iconTwitter} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={openFacebook}>
-                    <Image source={iconFacebook} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={openInstagram}>
-                    <Image source={iconInstagram} />
-                </TouchableOpacity>
-            </View>
         );
     }
 
@@ -99,9 +87,24 @@ class Menu extends React.Component {
                     {items.map((item, i) => this.renderItem(item, i))}
                 </View>
                 <View style={styles.links}>
-                    {this.renderSocials()}
-                    <TouchableOpacity onPress={openWebsite} style={styles.linkWebsite}>
-                        <Text style={styles.menuItemText}>Voir le site</Text>
+                    <View style={styles.socials}>
+                        <TouchableOpacity onPress={this.openTwitter}>
+                            <Image source={iconTwitter} />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.openFacebook}>
+                            <Image source={iconFacebook} />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.openInstagram}>
+                            <Image source={iconInstagram} />
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity
+                        onPress={openWebsite}
+                        style={styles.linkWebsite}
+                    >
+                        <Text style={styles.menuItemText}>
+                            Voir le site
+                        </Text>
                     </TouchableOpacity>
                 </View>
             </View>

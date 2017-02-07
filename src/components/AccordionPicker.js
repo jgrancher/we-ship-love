@@ -1,7 +1,13 @@
 // Modules
 import React from 'react';
-import { Image, Picker, Text, TouchableHighlight, View } from 'react-native';
 import Collapsible from 'react-native-collapsible';
+import {
+    Image,
+    Picker,
+    Text,
+    TouchableHighlight,
+    View,
+} from 'react-native';
 
 // Images
 import iconChevron from '../images/icon-chevron.png';
@@ -10,12 +16,11 @@ import iconChevron from '../images/icon-chevron.png';
 import styles from '../styles/components/accordionPicker';
 import { greyLight } from '../config/colors';
 
-const { arrayOf, func, number, oneOfType, shape, string } = React.PropTypes;
-
-const optionShape = shape({
-    text: oneOfType([string, number]),
-    value: oneOfType([string, number]),
+const optionShape = React.PropTypes.shape({
+    text: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
+    value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
 });
+
 const defaultOption = {
     text: 'Veuillez sélectionner un élément',
     value: '',
@@ -25,39 +30,26 @@ class AccordionPicker extends React.Component {
 
     static propTypes = {
         defaultValue: optionShape,
-        options: arrayOf(optionShape).isRequired,
-        onChange: func,
+        onChange: React.PropTypes.func,
+        options: React.PropTypes.arrayOf(optionShape).isRequired,
     };
 
     static defaultProps = {
         defaultValue: defaultOption,
-        options: [defaultOption],
         onChange: () => {},
+        options: [defaultOption],
     };
-
-    constructor(props) {
-        super(props);
-        this.onChange = this.onChange.bind(this);
-        this.toggleOpen = this.toggleOpen.bind(this);
-    }
 
     state = {
         open: false,
     };
 
-    onChange(value) {
-        this.props.onChange(value);
-    }
-
-    toggleOpen() {
+    toggleOpen = () => {
         this.setState({ open: !this.state.open });
     }
 
     render() {
-        const { defaultValue, options } = this.props;
-        const { open } = this.state;
-
-        const styleIcon = [styles.pickerIcon, open ? styles.pickerOpenIcon : null];
+        const styleIcon = [styles.pickerIcon, this.state.open && styles.pickerOpenIcon];
 
         return (
             <View>
@@ -67,19 +59,28 @@ class AccordionPicker extends React.Component {
                     underlayColor={greyLight}
                 >
                     <View style={styles.pickerTouchableContent}>
-                        <Text style={styles.pickerText}>{defaultValue.text}</Text>
-                        <Image source={iconChevron} style={styleIcon} />
+                        <Text style={styles.pickerText}>
+                            {this.props.defaultValue.text}
+                        </Text>
+                        <Image
+                            source={iconChevron}
+                            style={styleIcon}
+                        />
                     </View>
                 </TouchableHighlight>
-                <Collapsible collapsed={!open}>
+                <Collapsible collapsed={!this.state.open}>
                     <Picker
-                        onValueChange={this.onChange}
-                        selectedValue={defaultValue.value}
+                        onValueChange={this.props.onChange}
+                        selectedValue={this.props.defaultValue.value}
                         style={styles.picker}
                         itemStyle={styles.pickerItem}
                     >
-                        {options.map((option, i) =>
-                            <Picker.Item key={i} label={option.text} value={option.value} />
+                        {this.props.options.map((option, i) =>
+                            <Picker.Item
+                                key={i}
+                                label={option.text}
+                                value={option.value}
+                            />
                         )}
                     </Picker>
                 </Collapsible>

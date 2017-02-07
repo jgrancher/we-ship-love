@@ -5,8 +5,6 @@ import { Image, TouchableOpacity } from 'react-native';
 // Styles
 import styles from '../styles/components/navbar';
 
-const { func, node } = React.PropTypes;
-
 const NavbarButton = (props) => (
     <TouchableOpacity
         activeOpacity={0.6}
@@ -18,8 +16,8 @@ const NavbarButton = (props) => (
 );
 
 NavbarButton.propTypes = {
-    image: node,
-    onPress: func.isRequired,
+    image: React.PropTypes.node,
+    onPress: React.PropTypes.func.isRequired,
 };
 
 NavbarButton.defaultProps = {
