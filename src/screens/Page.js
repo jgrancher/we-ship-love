@@ -1,8 +1,12 @@
 // Modules
 import React from 'react';
-import { Image, View, WebView } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {
+    Image,
+    View,
+    WebView,
+} from 'react-native';
 
 // Components
 import LoadingIndicator from '../components/LoadingIndicator';
@@ -28,15 +32,13 @@ const style = `
     p { color: ${brown}; font-size: 16px; margin-bottom: ${spaceBig}px; }
 `;
 
-const { bool, func, string } = React.PropTypes;
-
 class Page extends React.Component {
 
     static propTypes = {
-        content: string,
-        fetchPages: func.isRequired,
-        isFetching: bool,
-        title: string,
+        content: React.PropTypes.string,
+        fetchPages: React.PropTypes.func.isRequired,
+        isFetching: React.PropTypes.bool,
+        title: React.PropTypes.string,
     };
 
     componentWillMount() {
@@ -53,8 +55,15 @@ class Page extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <WebView source={{ html }} style={styles.webview} />
-                <Image resizeMode="stretch" source={ctaBackground} style={styles.background} />
+                <WebView
+                    source={{ html }}
+                    style={styles.webview}
+                />
+                <Image
+                    resizeMode="stretch"
+                    source={ctaBackground}
+                    style={styles.background}
+                />
             </View>
         );
     }
