@@ -21,9 +21,8 @@ const styles = StyleSheet.create({
     menuItem: {
         borderBottomColor: colors.brownDark,
         borderBottomWidth: 2,
-        padding: sizes.spaceNormal,
-        flex: 1,
         flexDirection: 'row',
+        padding: sizes.spaceNormal,
     },
 
     menuItemImage: {
@@ -33,7 +32,6 @@ const styles = StyleSheet.create({
 
     menuItemText: {
         color: colors.white,
-        flex: 1,
         fontFamily: fonts.raleway,
         fontSize: 17,
         fontWeight: '600',
