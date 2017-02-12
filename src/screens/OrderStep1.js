@@ -1,9 +1,12 @@
 // Modules
 import React from 'react';
-import { Image, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {
+    Image,
+    View,
+} from 'react-native';
 
 // Screens & components
 import OrderStep2 from './OrderStep2';
@@ -30,8 +33,7 @@ import appStyles from '../styles/base/application';
 import styles from '../styles/components/swiper';
 import * as sizes from '../config/sizes';
 
-const { array, bool, func, object } = React.PropTypes;
-
+// Data
 const balloonsImages = {
     1124110652: balloonRed,
     1516785796: balloonMagenta,
@@ -44,29 +46,22 @@ const balloonsImages = {
 class OrderStep1 extends React.Component {
 
     static propTypes = {
-        addItem: func.isRequired,
-        fetchProducts: func.isRequired,
-        isFetching: bool,
-        navigator: object.isRequired,
-        products: array,
+        addItem: React.PropTypes.func.isRequired,
+        fetchProducts: React.PropTypes.func.isRequired,
+        isFetching: React.PropTypes.bool,
+        navigator: React.PropTypes.object.isRequired,
+        products: React.PropTypes.array,
     };
 
     static defaultProps = {
         isFetching: false,
     };
 
-    constructor(props) {
-        super(props);
-        this.onNextStep = this.onNextStep.bind(this);
-        this.fetchProducts = this.fetchProducts.bind(this);
-        this.renderContent = this.renderContent.bind(this);
-    }
-
     componentWillMount() {
-        this.fetchProducts();
+        this.props.fetchProducts();
     }
 
-    onNextStep() {
+    onNextStep = () => {
         const { addItem: addItemToCart, navigator, products } = this.props;
 
         addItemToCart(products[this.swiper.state.index]);
@@ -78,32 +73,26 @@ class OrderStep1 extends React.Component {
         });
     }
 
-    fetchProducts() {
-        this.props.fetchProducts();
-    }
-
     renderContent() {
-        const { isFetching, products } = this.props;
-
-        if (isFetching) {
+        if (this.props.isFetching) {
             return <LoadingIndicator />;
         }
 
-        if (!isFetching && !products.length) {
-            return <RefreshButton onPress={this.fetchProducts} />;
+        if (!this.props.isFetching && !this.props.products.length) {
+            return <RefreshButton onPress={this.props.fetchProducts} />;
         }
 
         return (
             <Swiper
                 buttonWrapperStyle={{ height: sizes.heightScene - sizes.heightCTA }}
                 height={sizes.heightSwiper}
-                ref={(s) => { this.swiper = s; }}
-                showsButtons
                 nextButton={<Image source={btnSliderNext} />}
                 prevButton={<Image source={btnSliderPrev} />}
+                ref={(s) => { this.swiper = s; }}
+                showsButtons
                 showsPagination={false}
             >
-                {products.map((item, i) => (
+                {this.props.products.map((item, i) => (
                     <Image
                         key={i}
                         source={balloonsImages[item.id]}
@@ -119,8 +108,13 @@ class OrderStep1 extends React.Component {
 
         return (
             <View style={{ flex: 1 }}>
-                <View style={appStyles.content}>{this.renderContent()}</View>
-                <CallToAction enabled={hasProducts} onPress={this.onNextStep} />
+                <View style={appStyles.content}>
+                    {this.renderContent()}
+                </View>
+                <CallToAction
+                    enabled={hasProducts}
+                    onPress={this.onNextStep}
+                />
             </View>
         );
     }

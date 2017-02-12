@@ -1,9 +1,13 @@
 // Modules
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
 import t from 'tcomb-form-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {
+    ScrollView,
+    Text,
+    View,
+} from 'react-native';
 
 // Screens & components
 import OrderStep4 from './OrderStep4';
@@ -21,29 +25,23 @@ import { DeliveryForm, deliveryOptions } from '../data/forms';
 // Styles
 import styles from '../styles/components/form';
 
-const { array, bool, func, object } = React.PropTypes;
 const { Form } = t.form;
 
 class OrderStep3 extends React.Component {
 
     static propTypes = {
-        countries: array.isRequired,
-        delivery: object.isRequired,
-        fetchShippingOptions: func.isRequired,
-        isFetching: bool,
-        navigator: object.isRequired,
-        setDelivery: func.isRequired,
+        countries: React.PropTypes.array.isRequired,
+        delivery: React.PropTypes.object.isRequired,
+        fetchShippingOptions: React.PropTypes.func.isRequired,
+        isFetching: React.PropTypes.bool,
+        navigator: React.PropTypes.object.isRequired,
+        setDelivery: React.PropTypes.func.isRequired,
     };
 
     static defaultProps = {
         countries: [],
         isFetching: false,
     };
-
-    constructor(props) {
-        super(props);
-        this.onNextStep = this.onNextStep.bind(this);
-    }
 
     state = {
         form: DeliveryForm,
@@ -64,7 +62,7 @@ class OrderStep3 extends React.Component {
         this.setState({ form });
     }
 
-    onNextStep() {
+    onNextStep = () => {
         const value = this.refs.form.getValue();
 
         if (!value) return;

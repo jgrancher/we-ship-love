@@ -1,8 +1,12 @@
 // Modules
 import React from 'react';
-import { ActivityIndicatorIOS, ScrollView, View } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {
+    ActivityIndicatorIOS,
+    ScrollView,
+    View,
+} from 'react-native';
 
 // Screens & components
 import CallToAction from '../components/CallToAction';
@@ -17,26 +21,18 @@ import appStyles from '../styles/base/application';
 import styles from '../styles/components/form';
 import * as colors from '../config/colors';
 
-const { array, bool, func, object } = React.PropTypes;
-
 class OrderStep4 extends React.Component {
 
     static propTypes = {
-        isFetching: bool,
-        navigator: object.isRequired,
-        options: array.isRequired,
-        fetchShippingOptions: func.isRequired,
+        isFetching: React.PropTypes.bool,
+        navigator: React.PropTypes.object.isRequired,
+        options: React.PropTypes.array.isRequired,
+        fetchShippingOptions: React.PropTypes.func.isRequired,
     };
 
     static defaultProps = {
         isFetching: false,
     };
-
-    constructor(props) {
-        super(props);
-        this.onNextStep = this.onNextStep.bind(this);
-        this.renderContent = this.renderContent.bind(this);
-    }
 
     state = {
         shipping: this.props.options[0],
@@ -46,13 +42,20 @@ class OrderStep4 extends React.Component {
     //     this.props.fetchShippingOptions();
     // }
 
-    onNextStep() {
+    onNextStep = () => {
 
     }
 
     renderContent() {
         if (this.props.isFetching) {
-            return <ActivityIndicatorIOS color={colors.turquoise} style={appStyles.indicator} />;
+            return null;
+            // TODO: LoadingIndicator here?
+            return (
+                <ActivityIndicatorIOS
+                    color={colors.turquoise}
+                    style={appStyles.indicator}
+                />
+            );
         }
 
         // TODO: Loop through the options to render buttons
