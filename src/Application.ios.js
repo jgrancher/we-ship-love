@@ -1,9 +1,13 @@
 // Modules
 import React from 'react';
-import { Image, Navigator, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 import SideMenu from 'react-native-side-menu';
 import { Provider } from 'react-redux';
+import {
+    Image,
+    Navigator,
+    View,
+} from 'react-native';
 
 // Screens & components
 import NavbarButton from './components/NavbarButton';
