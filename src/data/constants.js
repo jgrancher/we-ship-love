@@ -22,7 +22,6 @@ export const PRODUCTS = {
 // API - Pages
 export const API_PAGE_ABOUT = 18738948;
 export const API_PAGE_FAQ = 18739472;
-export const API_PAGE_PRO = 78604741;
 
 // API - Shipping countries
 export const API_DEFAULT_COUNTRY = 20489252; // France

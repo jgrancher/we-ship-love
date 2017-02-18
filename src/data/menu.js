@@ -10,13 +10,11 @@ import iconHeart from '../images/icon-heart.png';
 import iconQuestionMark from '../images/icon-questionmark.png';
 import iconSettings from '../images/icon-settings.png';
 import iconSmiley from '../images/icon-smiley.png';
-import iconUser from '../images/icon-user.png';
 
 // Data
 import {
   API_PAGE_ABOUT,
   API_PAGE_FAQ,
-  API_PAGE_PRO,
 } from '../data/constants';
 
 // Menu items
@@ -50,15 +48,6 @@ export const items = [
     icon: iconSettings,
     title: 'Mes commandes',
     component: View,
-  },
-  {
-    id: 'Pro',
-    icon: iconUser,
-    title: 'Espace Pro',
-    component: Page,
-    props: {
-      id: API_PAGE_PRO,
-    },
   },
 ];
 
