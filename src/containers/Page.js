@@ -35,14 +35,16 @@ const style = `
 class Page extends React.Component {
 
   static propTypes = {
-    content: PropTypes.string.isRequired,
+    content: PropTypes.string,
     fetchPages: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
   };
 
   static defaultProps = {
+    content: null,
     isFetching: false,
+    title: null,
   };
 
   componentWillMount() {
