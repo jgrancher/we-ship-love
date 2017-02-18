@@ -1,8 +1,8 @@
 import {
-    ADD_ITEM,
-    SET_MESSAGE,
-    SET_DELIVERY,
-    SET_SHIPPING,
+  ADD_ITEM,
+  SET_MESSAGE,
+  SET_DELIVERY,
+  SET_SHIPPING,
 } from '../data/constants';
 
 /**
@@ -10,9 +10,9 @@ import {
  * @param  {Object} item The item object to add to the cart
  * @return {Object}      The action created
  */
-export const addItem = (item) => ({
-    type: ADD_ITEM,
-    item,
+export const addItem = item => ({
+  type: ADD_ITEM,
+  item,
 });
 
 /**
@@ -20,9 +20,9 @@ export const addItem = (item) => ({
  * @param  {String} message The message linked to the order
  * @return {Object}         The action created
  */
-export const setMessage = (message) => ({
-    type: SET_MESSAGE,
-    message,
+export const setMessage = message => ({
+  type: SET_MESSAGE,
+  message,
 });
 
 /**
@@ -30,9 +30,9 @@ export const setMessage = (message) => ({
  * @param  {Object} delivery    The delivery object containing all the address fields
  * @return {Object}             The action created
  */
-export const setDelivery = (delivery) => ({
-    type: SET_DELIVERY,
-    delivery,
+export const setDelivery = delivery => ({
+  type: SET_DELIVERY,
+  delivery,
 });
 
 /**
@@ -40,7 +40,7 @@ export const setDelivery = (delivery) => ({
  * @param  {Object} shipping    The shipping object (name, price, etc.)
  * @return {Object}             The action created
  */
-export const setShipping = (shipping) => ({
-    type: SET_SHIPPING,
-    shipping,
+export const setShipping = shipping => ({
+  type: SET_SHIPPING,
+  shipping,
 });

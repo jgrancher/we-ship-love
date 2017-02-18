@@ -1,3 +1,4 @@
+// Constants
 import { FETCH_TIMEOUT } from '../data/constants';
 
 /**
@@ -7,10 +8,10 @@ import { FETCH_TIMEOUT } from '../data/constants';
  * @return {Promise}            The promise returned (either resolved or rejected by timeout)
  */
 export const timeout = (promise, time = FETCH_TIMEOUT) => (
-    new Promise((resolve, reject) => {
-        setTimeout(() => reject(new Error('Timeout')), time);
-        promise.then(resolve, reject);
-    })
+  new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('Timeout')), time);
+    promise.then(resolve, reject);
+  })
 );
 
 /**
@@ -18,8 +19,8 @@ export const timeout = (promise, time = FETCH_TIMEOUT) => (
  * @param  {Object} store   The store which contains the global app state
  * @return {Boolean}        Whether the store is fetching
  */
-export const isStoreFetching = (store) => (
-    Object.keys(store).some((key) => store[key].isFetching === true)
+export const isStoreFetching = store => (
+  Object.keys(store).some(key => store[key].isFetching === true)
 );
 
 /**
@@ -27,6 +28,38 @@ export const isStoreFetching = (store) => (
  * @param  {Array} options  The shipping options array initially formatted
  * @return {Array}          The countries array formatted
  */
-export const getOptionsCountries = (options) => (
-    options.map((o) => o.countries).reduce((a, b) => a.concat(b), [])
+export const getOptionsCountries = options => (
+  options.map(o => o.countries).reduce((a, b) => a.concat(b), [])
 );
+
+/**
+ * Helper to dispatch a succedeed fetch
+ * @param  {Function} dispatch  The store dispatch function
+ * @param  {String} type        The action type
+ * @param  {Object} data        The data object
+ * @return {Promise}
+ */
+export const fetchSuccess = (dispatch, type, data) => {
+  dispatch({
+    type,
+    data,
+  });
+
+  return Promise.resolve(data);
+};
+
+/**
+ * Helper to dispatch a failed fetch
+ * @param  {Function} dispatch  The store dispatch function
+ * @param  {String} type        The action type
+ * @param  {Error} error        The error object
+ * @return {Promise}
+ */
+export const fetchFail = (dispatch, type, error) => {
+  dispatch({
+    type,
+    error,
+  });
+
+  return Promise.reject(error.message);
+};

@@ -1,7 +1,9 @@
-// Screens & components
+// Externals
 import { View } from 'react-native';
-import OrderStep1 from '../screens/OrderStep1';
-import Page from '../screens/Page';
+
+// Containers & components
+import OrderStep1 from '../containers/OrderStep1';
+import Page from '../containers/Page';
 
 // Images
 import iconHeart from '../images/icon-heart.png';
@@ -12,58 +14,58 @@ import iconUser from '../images/icon-user.png';
 
 // Data
 import {
-    API_PAGE_ABOUT,
-    API_PAGE_FAQ,
-    API_PAGE_PRO,
+  API_PAGE_ABOUT,
+  API_PAGE_FAQ,
+  API_PAGE_PRO,
 } from '../data/constants';
 
 // Menu items
 export const items = [
-    {
-        id: 'NewOrder',
-        icon: iconHeart,
-        title: 'Boutique',
-        component: OrderStep1,
+  {
+    id: 'NewOrder',
+    icon: iconHeart,
+    title: 'Boutique',
+    component: OrderStep1,
+  },
+  {
+    id: 'FAQ',
+    icon: iconQuestionMark,
+    title: 'F.A.Q.',
+    component: Page,
+    props: {
+      id: API_PAGE_FAQ,
     },
-    {
-        id: 'FAQ',
-        icon: iconQuestionMark,
-        title: 'F.A.Q.',
-        component: Page,
-        props: {
-            id: API_PAGE_FAQ,
-        },
+  },
+  {
+    id: 'About',
+    icon: iconSmiley,
+    title: 'Qui sommes-nous',
+    component: Page,
+    props: {
+      id: API_PAGE_ABOUT,
     },
-    {
-        id: 'About',
-        icon: iconSmiley,
-        title: 'Qui sommes-nous',
-        component: Page,
-        props: {
-            id: API_PAGE_ABOUT,
-        },
+  },
+  {
+    id: 'MyOrders',
+    icon: iconSettings,
+    title: 'Mes commandes',
+    component: View,
+  },
+  {
+    id: 'Pro',
+    icon: iconUser,
+    title: 'Espace Pro',
+    component: Page,
+    props: {
+      id: API_PAGE_PRO,
     },
-    {
-        id: 'MyOrders',
-        icon: iconSettings,
-        title: 'Mes commandes',
-        component: View,
-    },
-    {
-        id: 'Pro',
-        icon: iconUser,
-        title: 'Espace Pro',
-        component: Page,
-        props: {
-            id: API_PAGE_PRO,
-        },
-    },
+  },
 ];
 
 export const socials = {
-    facebook: 'https://www.facebook.com/mieuxquedesfleurs/',
-    twitter: 'https://twitter.com/faitesmieux',
-    instagram: 'https://www.instagram.com/mieuxquedesfleurs',
+  facebook: 'https://www.facebook.com/mieuxquedesfleurs/',
+  twitter: 'https://twitter.com/faitesmieux',
+  instagram: 'https://www.instagram.com/mieuxquedesfleurs',
 };
 
 export const website = 'http://mieuxquedesfleurs.com/';

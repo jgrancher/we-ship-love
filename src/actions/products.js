@@ -1,31 +1,36 @@
+// API
 import API from '../lib/API';
 
+// Helpers
 import {
-    FETCH_PRODUCTS,
-    FETCH_PRODUCTS_FAIL,
-    FETCH_PRODUCTS_SUCCESS,
+  fetchFail,
+  fetchSuccess,
+} from '../lib/helpers';
+
+// Data
+import {
+  FETCH_PRODUCTS,
+  FETCH_PRODUCTS_FAIL,
+  FETCH_PRODUCTS_SUCCESS,
 } from '../data/constants';
 
 /**
  * Fetch all the products variants (for a specific product ID)
  * @return {Promise}    The promise containing the request
  */
-export function fetchProducts() {
-    return (dispatch, getState) => {
-        if (getState().products.data.length) {
-            return Promise.resolve();
-        }
+export default () =>
+  (dispatch, getState) => {
+    const products = getState().products.data;
 
-        dispatch({ type: FETCH_PRODUCTS });
+    // If data is already existing, return it.
+    if (products && products.length) {
+      return Promise.resolve(products);
+    }
 
-        return API.get('products/410882840/variants.json')
-            .then((data) => {
-                dispatch({ type: FETCH_PRODUCTS_SUCCESS, data });
-                return Promise.resolve(data);
-            })
-            .catch((error) => {
-                dispatch({ type: FETCH_PRODUCTS_FAIL, error });
-                return Promise.reject(error.message);
-            });
-    };
-}
+    dispatch({ type: FETCH_PRODUCTS });
+
+    return API.get('products/410882840/variants.json')
+      .then(data => fetchSuccess(dispatch, FETCH_PRODUCTS_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, FETCH_PRODUCTS_FAIL, error));
+  }
+;

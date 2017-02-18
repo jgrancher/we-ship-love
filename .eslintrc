@@ -5,6 +5,7 @@
         "global-require": "off",
         "import/no-dynamic-require": "off",
         "import/no-unresolved": [2, { ignore: ['\.jpg$', '\.png$'] }],
+        "react/jsx-filename-extension": "off",
         "react/jsx-no-bind": ["error", { "ignoreRefs": true }]
     }
 }

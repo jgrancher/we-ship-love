@@ -6,32 +6,32 @@ import * as fonts from '../../config/fonts';
 import * as sizes from '../../config/sizes';
 
 const styles = StyleSheet.create({
-    appContainer: {
-        backgroundColor: colors.brownDark,
-        flex: 1,
-    },
+  appContainer: {
+    backgroundColor: colors.brownDark,
+    flex: 1,
+  },
 
-    scene: {
-        backgroundColor: colors.white,
-        flex: 1,
-    },
+  scene: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
 
-    content: {
-        flex: 1,
-        height: sizes.heightScene - sizes.heightCTA,
-    },
+  content: {
+    flex: 1,
+    height: sizes.heightScene - sizes.heightCTA,
+  },
 
-    indicator: {
-        flex: 1,
-        marginBottom: sizes.heightCTA,
-        marginTop: sizes.heightNavigationBar,
-    },
+  indicator: {
+    flex: 1,
+    marginBottom: sizes.heightCTA,
+    marginTop: sizes.heightNavigationBar,
+  },
 
-    text: {
-        color: colors.brownDark,
-        fontFamily: fonts.source,
-        fontSize: 16,
-    },
+  text: {
+    color: colors.brownDark,
+    fontFamily: fonts.source,
+    fontSize: 16,
+  },
 });
 
 export default styles;

@@ -1,17 +1,17 @@
-// Modules
+// Externals
 import React from 'react';
 import NavigationBar from 'react-native-navbar';
 import SideMenu from 'react-native-side-menu';
 import { Provider } from 'react-redux';
 import {
-    Image,
-    Navigator,
-    View,
+  Image,
+  Navigator,
+  View,
 } from 'react-native';
 
-// Screens & components
-import NavbarButton from './components/NavbarButton';
+// Containers & components
 import Menu from './components/Menu';
+import NavbarButton from './components/NavbarButton';
 
 // Data
 import createStore from './store';
@@ -32,87 +32,87 @@ const store = createStore();
 
 class Application extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.navigate = this.navigate.bind(this);
-        this.openMenu = this.openMenu.bind(this);
-        this.renderScene = this.renderScene.bind(this);
-    }
+  state = {
+    isMenuOpen: false,
+  };
 
-    state = {
-        isMenuOpen: false,
-    };
+  navigate = (route) => {
+    // Toggle Menu
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
 
-    navigate(route) {
-        // Toggle Menu
-        this.setState({
-            isMenuOpen: !this.state.isMenuOpen,
-        });
+    // Navigate to Screen
+    this.navigator.replace({
+      component: route.component,
+      navigator: this.navigator,
+      title: route.title,
+      ...route.props,
+    });
+  }
 
-        // Navigate to Screen
-        this.refs.rootNavigator.replace({
-            component: route.component,
-            navigator: this.refs.rootNavigator,
-            title: route.title,
-            ...route.props,
-        });
-    }
+  openMenu = () => {
+    this.setState({ isMenuOpen: true });
+  }
 
-    openMenu() {
-        this.setState({ isMenuOpen: true });
-    }
+  renderScene = (route, navigator) => {
+    // Determine which Icon component - hamburger or back?
+    const leftButton = route.index > 0
+      ? (
+        <NavbarButton
+          image={iconBack}
+          onPress={navigator.pop}
+        />
+      ) : (
+        <NavbarButton
+          image={iconHamburger}
+          onPress={this.openMenu}
+        />
+      );
 
-    renderScene(route, navigator) {
-        // Determine which Icon component - hamburger or back?
-        let leftButton = <NavbarButton image={iconHamburger} onPress={this.openMenu} />;
+    return (
+      <View style={appStyles.scene}>
+        <NavigationBar
+          leftButton={leftButton}
+          rightButton={<Image source={logo} />}
+          statusBar={{ style: 'light-content', tintColor: colors.brownDark }}
+          style={navStyles.navbar}
+          tintColor={colors.white}
+        />
+        <route.component
+          {...route.props}
+          navigator={navigator}
+          route={route}
+        />
+      </View>
+    );
+  }
 
-        if (route.index > 0) {
-            leftButton = <NavbarButton image={iconBack} onPress={this.refs.rootNavigator.pop} />;
-        }
-
-        return (
-            <View style={appStyles.scene}>
-                <NavigationBar
-                    leftButton={leftButton}
-                    rightButton={<Image source={logo} />}
-                    statusBar={{ style: 'light-content', tintColor: colors.brownDark }}
-                    style={navStyles.navbar}
-                    tintColor={colors.white}
-                />
-                <route.component
-                    {...route.props}
-                    navigator={navigator}
-                    route={route}
-                />
+  render() {
+    return (
+      <Provider store={store}>
+        <View style={appStyles.appContainer}>
+          <SideMenu
+            isOpen={this.state.isMenuOpen}
+            menu={<Menu navigate={this.navigate} />}
+            openMenuOffset={widthMenu}
+          >
+            <View style={appStyles.appContainer}>
+              <Navigator
+                initialRoute={{
+                  component: items[0].component,
+                  index: 0,
+                  navigator: this.navigator,
+                }}
+                ref={(c) => { this.navigator = c; }}
+                renderScene={this.renderScene}
+              />
             </View>
-        );
-    }
-
-    render() {
-        return (
-            <Provider store={store}>
-                <View style={appStyles.appContainer}>
-                    <SideMenu
-                        isOpen={this.state.isMenuOpen}
-                        menu={<Menu navigate={this.navigate} />}
-                        openMenuOffset={widthMenu}
-                    >
-                        <View style={appStyles.appContainer}>
-                            <Navigator
-                                initialRoute={{
-                                    component: items[0].component,
-                                    index: 0,
-                                    navigator: this.refs.rootNavigator,
-                                }}
-                                ref="rootNavigator"
-                                renderScene={this.renderScene}
-                            />
-                        </View>
-                    </SideMenu>
-                </View>
-            </Provider>
-        );
-    }
+          </SideMenu>
+        </View>
+      </Provider>
+    );
+  }
 }
 
 export default Application;

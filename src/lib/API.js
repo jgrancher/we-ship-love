@@ -3,7 +3,9 @@
  * https://apikey:password@hostname/admin/resource.json
  */
 
-// Modules
+/* global fetch */
+
+// Externals
 import Config from 'react-native-config';
 
 // Data
@@ -14,25 +16,25 @@ const URL = `https://${Config.SHOPIFY_KEY}:${Config.SHOPIFY_PASSWORD}@${API_HOST
 
 const API = {
 
-    get(endpoint) {
-        return this.request(endpoint, 'GET');
-    },
+  get(endpoint) {
+    return this.request(endpoint, 'GET');
+  },
 
-    post(endpoint, data) {
-        return this.request(endpoint, 'POST', data);
-    },
+  post(endpoint, data) {
+    return this.request(endpoint, 'POST', data);
+  },
 
-    request(endpoint, method) {
-        return timeout(fetch(`${URL}${endpoint}`, { method })).then(this.handleResponse);
-    },
+  request(endpoint, method) {
+    return timeout(fetch(`${URL}${endpoint}`, { method })).then(this.handleResponse);
+  },
 
-    handleResponse(response) {
-        if (!response.ok) {
-            return Promise.reject('An error occured. Please try again.');
-        }
+  handleResponse(response) {
+    if (!response.ok) {
+      return Promise.reject('An error occured. Please try again.');
+    }
 
-        return Promise.resolve(response.json());
-    },
+    return Promise.resolve(response.json());
+  },
 
 };
 
