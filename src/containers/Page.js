@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   Image,
+  Linking,
   View,
   WebView,
 } from 'react-native';
@@ -51,6 +52,13 @@ class Page extends React.Component {
     this.props.fetchPages();
   }
 
+  onNavigationStateChange = (event) => {
+    if (event.navigationType === 'click' && event.url) {
+      this.webview.stopLoading();
+      Linking.openURL(event.url);
+    }
+  }
+
   render() {
     if (this.props.isFetching) {
       return <LoadingIndicator />;
@@ -62,6 +70,8 @@ class Page extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <WebView
+          onNavigationStateChange={this.onNavigationStateChange}
+          ref={(c) => { this.webview = c; }}
           source={{ html }}
           style={styles.webview}
         />
