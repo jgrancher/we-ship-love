@@ -31,6 +31,8 @@ const style = `
   h1 { font-size: 22px; margin: 0 0 ${spaceBig}px; }
   strong { display: block; font-size: 17px; margin: 0 0 ${spaceNormal}px; }
   p { color: ${brown}; font-size: 16px; margin-bottom: ${spaceBig}px; }
+  img { height: auto; max-width: 100%; }
+  img:not(:last-of-type) { margin-bottom: ${spaceBig}px; }
 `;
 
 class Page extends React.Component {
