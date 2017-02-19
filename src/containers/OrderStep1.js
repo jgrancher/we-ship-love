@@ -42,6 +42,7 @@ class OrderStep1 extends React.Component {
 
   static defaultProps = {
     isFetching: false,
+    products: [],
   };
 
   constructor(props) {
@@ -100,6 +101,7 @@ class OrderStep1 extends React.Component {
 
   render() {
     const hasProducts = this.props.products.length > 0;
+    console.log(this.props);
 
     return (
       <View style={{ flex: 1 }}>
