@@ -10,6 +10,14 @@ const defaultState = {
   isFetching: false,
 };
 
+// Sanitize broken urls in content body
+function sanitize(data) {
+  return data.pages.map(page => ({
+    ...page,
+    body_html: page.body_html.replace(/("\/\/cdn)/gi, 'https://cdn'),
+  }));
+}
+
 export default (state = defaultState, action) => {
   switch (action.type) {
     case FETCH_PAGES:
@@ -25,7 +33,7 @@ export default (state = defaultState, action) => {
     case FETCH_PAGES_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
-        data: action.data.pages,
+        data: sanitize(action.data),
       });
 
     default:
