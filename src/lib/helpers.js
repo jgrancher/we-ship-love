@@ -61,5 +61,8 @@ export const fetchFail = (dispatch, type, error) => {
     error,
   });
 
+  // Warning
+  console.warn(error); // eslint-disable-line no-console
+
   return Promise.reject(error.message);
 };
