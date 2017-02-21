@@ -9,35 +9,36 @@ import {
 } from 'react-native';
 
 // Containers & components
-import OrderStep2 from './OrderStep2';
-import CallToAction from '../components/CallToAction';
-import LoadingIndicator from '../components/LoadingIndicator';
-import RefreshButton from '../components/RefreshButton';
+import CallToAction from '../../components/CallToAction';
+import LoadingIndicator from '../../components/LoadingIndicator';
+import RefreshButton from '../../components/RefreshButton';
 
 // Actions
-import fetchProducts from '../actions/products';
-import { addItem } from '../actions/cart';
+import {
+  addToCart,
+  fetchProducts,
+} from './actions';
 
 // Images
-import btnSliderNext from '../images/btn-slider-next.png';
-import btnSliderPrev from '../images/btn-slider-previous.png';
+import btnSliderNext from '../../images/btn-slider-next.png';
+import btnSliderPrev from '../../images/btn-slider-previous.png';
 
 // Data
-import { PRODUCTS } from '../data/constants';
+import { PRODUCTS } from '../../data/constants';
 
 // Styles
-import appStyles from '../styles/base/application';
-import styles from '../styles/components/swiper';
-import * as sizes from '../config/sizes';
+import appStyles from '../../styles/base/application';
+import styles from '../../styles/components/swiper';
+import * as sizes from '../../config/sizes';
 
-class OrderStep1 extends React.Component {
+class Products extends React.Component {
 
   static propTypes = {
-    addItem: PropTypes.func.isRequired,
+    addToCart: PropTypes.func.isRequired,
     fetchProducts: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    navigator: PropTypes.object.isRequired,
     products: PropTypes.array,
+    pushNextScene: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -61,12 +62,8 @@ class OrderStep1 extends React.Component {
     const product = this.props.products[this.swiper.state.index];
 
     // Add the currently diplayed product to cart and go to the next screen
-    this.props.addItem(product);
-    this.props.navigator.push({
-      component: OrderStep2,
-      index: 1,
-      navigator: this.props.navigator,
-    });
+    this.props.addToCart(product);
+    this.props.pushNextScene();
   }
 
   renderContent() {
@@ -123,7 +120,7 @@ export default connect(
     products: state.products.data,
   }),
   dispatch => bindActionCreators({
-    addItem,
+    addToCart,
     fetchProducts,
   }, dispatch),
-)(OrderStep1);
+)(Products);

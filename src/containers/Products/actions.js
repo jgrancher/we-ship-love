@@ -1,24 +1,25 @@
 // API
-import API from '../lib/API';
+import API from '../../utils/API';
 
 // Helpers
 import {
   fetchFail,
   fetchSuccess,
-} from '../lib/helpers';
+} from '../../utils/helpers';
 
 // Data
 import {
+  ADD_TO_CART,
   FETCH_PRODUCTS,
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_SUCCESS,
-} from '../data/constants';
+} from './constants';
 
 /**
  * Fetch all the products variants (for a specific product ID)
  * @return {Promise}    The promise containing the request
  */
-export default () =>
+export const fetchProducts = () =>
   (dispatch, getState) => {
     const products = getState().products.data;
 
@@ -34,3 +35,14 @@ export default () =>
       .catch(error => fetchFail(dispatch, FETCH_PRODUCTS_FAIL, error));
   }
 ;
+
+/**
+ * Add product to the cart
+ * @param  {Object} item The item object to add to the cart
+ * @return {Object}      The action created
+ */
+export const addToCart = (item, quantity = 1) => ({
+  type: ADD_TO_CART,
+  item,
+  quantity,
+});

@@ -1,24 +1,25 @@
 // API
-import API from '../lib/API';
+import API from '../../utils/API';
 
 // Helpers
 import {
   fetchFail,
   fetchSuccess,
-} from '../lib/helpers';
+} from '../../utils/helpers';
 
 // Data
 import {
   FETCH_SHIPPING,
   FETCH_SHIPPING_FAIL,
   FETCH_SHIPPING_SUCCESS,
-} from '../data/constants';
+  SET_SHIPPING,
+} from './constants';
 
 /**
  * Fetch all the shipping options
  * @return {Promise}    The promise containing the request
  */
-export default () =>
+export const fetchShippingOptions = () =>
   (dispatch, getState) => {
     const shipping = getState().shipping.options;
 
@@ -30,7 +31,17 @@ export default () =>
     dispatch({ type: FETCH_SHIPPING });
 
     return API.get('shipping_zones.json')
-        .then(data => fetchSuccess(dispatch, FETCH_SHIPPING_SUCCESS, data))
-        .catch(error => fetchFail(dispatch, FETCH_SHIPPING_FAIL, error));
+      .then(data => fetchSuccess(dispatch, FETCH_SHIPPING_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, FETCH_SHIPPING_FAIL, error));
   }
 ;
+
+/**
+ * Set the shipping method
+ * @param  {Object} shipping    The shipping object (name, price, etc.)
+ * @return {Object}             The action created
+ */
+export const setShipping = shipping => ({
+  type: SET_SHIPPING,
+  shipping,
+});

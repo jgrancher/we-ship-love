@@ -10,31 +10,30 @@ import {
 } from 'react-native';
 
 // Containers & components
-import OrderStep3 from './OrderStep3';
-import CallToAction from '../components/CallToAction';
+import CallToAction from '../../components/CallToAction';
 
 // Actions
-import { setMessage } from '../actions/cart';
+import { setMessage } from './actions';
 
 // Data
 import {
   MessageForm,
   messageOptions,
-} from '../data/forms';
+} from '../../data/forms';
 
 // Images
-import bgMessage from '../images/bg-message.png';
+import bgMessage from '../../images/bg-message.png';
 
 // Styles
-import styles from '../styles/components/form';
+import styles from '../../styles/components/form';
 
 const { Form } = t.form;
 
-class OrderStep2 extends React.Component {
+class Message extends React.Component {
 
   static propTypes = {
     message: PropTypes.string.isRequired,
-    navigator: PropTypes.object.isRequired,
+    pushNextScene: PropTypes.func.isRequired,
     setMessage: PropTypes.func.isRequired,
   };
 
@@ -54,10 +53,7 @@ class OrderStep2 extends React.Component {
     if (!value) return;
 
     this.props.setMessage(value.message);
-    this.props.navigator.push({
-      component: OrderStep3,
-      index: 2,
-    });
+    this.props.pushNextScene();
   }
 
   render() {
@@ -92,10 +88,10 @@ class OrderStep2 extends React.Component {
 }
 
 export default connect(
-    state => ({
-      message: state.cart.message,
-    }),
-    dispatch => bindActionCreators({
-      setMessage,
-    }, dispatch),
-)(OrderStep2);
+  state => ({
+    message: state.message,
+  }),
+  dispatch => bindActionCreators({
+    setMessage,
+  }, dispatch),
+)(Message);

@@ -3,8 +3,9 @@ import {
   FETCH_PAGES,
   FETCH_PAGES_FAIL,
   FETCH_PAGES_SUCCESS,
-} from '../data/constants';
+} from './constants';
 
+// Default state
 const defaultState = {
   data: [],
   isFetching: false,
@@ -21,20 +22,23 @@ function sanitize(data) {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case FETCH_PAGES:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: true,
-      });
+      };
 
     case FETCH_PAGES_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: false,
-      });
+      };
 
     case FETCH_PAGES_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: false,
         data: sanitize(action.data),
-      });
+      };
 
     default:
       return state;

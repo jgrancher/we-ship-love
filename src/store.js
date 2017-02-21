@@ -1,6 +1,6 @@
 // Externals
 import thunk from 'redux-thunk';
-import devTools from 'remote-redux-devtools';
+import devTools from 'remote-redux-devtools'; // eslint-disable-line import/no-extraneous-dependencies
 import {
   applyMiddleware,
   compose,
@@ -8,7 +8,7 @@ import {
 } from 'redux';
 
 // Reducers
-import reducers from '../reducers/index';
+import reducers from './reducers';
 
 export default function configureStore(initialState = {}) {
   const enhancer = compose(

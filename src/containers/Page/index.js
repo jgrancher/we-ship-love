@@ -10,19 +10,19 @@ import {
 } from 'react-native';
 
 // Components
-import LoadingIndicator from '../components/LoadingIndicator';
-
-// Actions
-import fetchPages from '../actions/pages';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 // Images
-import ctaBackground from '../images/cta-bg.png';
+import ctaBackground from '../../images/cta-bg.png';
+
+// Actions
+import { fetchPages } from './actions';
 
 // Styles
-import styles from '../styles/components/page';
-import { brown, turquoise } from '../config/colors';
-import { spaceNormal, spaceBig } from '../config/sizes';
-import { source } from '../config/fonts';
+import styles from '../../styles/components/page';
+import { brown, turquoise } from '../../config/colors';
+import { spaceNormal, spaceBig } from '../../config/sizes';
+import { source } from '../../config/fonts';
 
 // WebView styles
 const style = `
@@ -88,16 +88,16 @@ class Page extends React.Component {
 }
 
 export default connect(
-    (state, props) => {
-      const page = state.pages.data.find(p => p.id === props.route.id) || {};
+  (state, props) => {
+    const page = state.pages.data.find(p => p.id === props.route.id) || {};
 
-      return {
-        content: page.body_html,
-        isFetching: state.pages.isFetching,
-        title: page.title,
-      };
-    },
-    dispatch => bindActionCreators({
-      fetchPages,
-    }, dispatch),
+    return {
+      content: page.body_html,
+      isFetching: state.pages.isFetching,
+      title: page.title,
+    };
+  },
+  dispatch => bindActionCreators({
+    fetchPages,
+  }, dispatch),
 )(Page);

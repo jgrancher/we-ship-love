@@ -1,10 +1,10 @@
 {
-    "extends": "airbnb",
-    "parser": "babel-eslint",
-    "rules": {
-        "import/no-unresolved": [2, { ignore: ['\.jpg$', '\.png$'] }],
-        "react/forbid-prop-types": "off",
-        "react/jsx-filename-extension": "off",
-        "react/jsx-no-bind": ["error", { "ignoreRefs": true }]
-    }
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "import/prefer-default-export": "warn",
+    "react/forbid-prop-types": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-no-bind": ["error", { "ignoreRefs": true }]
+  }
 }

@@ -1,4 +1,7 @@
+// Externals
 import { AppRegistry } from 'react-native';
-import Application from './src/Application.ios';
+
+// Application
+import Application from './src';
 
 AppRegistry.registerComponent('mqdf', () => Application);

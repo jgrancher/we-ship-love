@@ -3,8 +3,10 @@ import {
   FETCH_SHIPPING,
   FETCH_SHIPPING_FAIL,
   FETCH_SHIPPING_SUCCESS,
-} from '../data/constants';
+  SET_SHIPPING,
+} from './constants';
 
+// Default state
 const defaultState = {
   isFetching: false,
   options: [],
@@ -12,22 +14,30 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-
     case FETCH_SHIPPING:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: true,
-      });
+      };
 
     case FETCH_SHIPPING_FAIL:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: false,
-      });
+      };
 
     case FETCH_SHIPPING_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: false,
         options: action.data.shipping_zones,
-      });
+      };
+
+    case SET_SHIPPING:
+      return {
+        ...state,
+        selected: action.shipping,
+      };
 
     default:
       return state;

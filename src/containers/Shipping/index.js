@@ -9,25 +9,28 @@ import {
 } from 'react-native';
 
 // Containers & components
-import CallToAction from '../components/CallToAction';
-import ShippingButton from '../components/ShippingButton';
+import CallToAction from '../../components/CallToAction';
+import ShippingButton from '../../components/ShippingButton';
 
 // Actions
-import fetchShippingOptions from '../actions/shipping';
-import { setShipping } from '../actions/cart';
+import {
+  setShipping,
+  fetchShippingOptions,
+} from './actions';
 
 // Styles
-import appStyles from '../styles/base/application';
-import styles from '../styles/components/form';
-import * as colors from '../config/colors';
+import appStyles from '../../styles/base/application';
+import styles from '../../styles/components/form';
+// import * as colors from '../../config/colors';
 
-class OrderStep4 extends React.Component {
+class Shipping extends React.Component {
 
   static propTypes = {
     fetchShippingOptions: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    navigator: PropTypes.object.isRequired,
-    options: PropTypes.array.isRequired,
+    // pushNextScene: PropTypes.func.isRequired,
+    shippingOptions: PropTypes.array.isRequired,
+    // setShipping: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -35,7 +38,7 @@ class OrderStep4 extends React.Component {
   };
 
   state = {
-    shipping: this.props.options[0],
+    shipping: this.props.shippingOptions[0],
   };
 
   // componentWillMount() {
@@ -77,7 +80,7 @@ class OrderStep4 extends React.Component {
           {this.renderContent()}
         </ScrollView>
         <CallToAction
-          enabled={this.props.options.length > 0}
+          enabled={this.props.shippingOptions.length > 0}
           onPress={this.onNextStep}
           step={4}
           text="Frais de port"
@@ -90,10 +93,10 @@ class OrderStep4 extends React.Component {
 export default connect(
     state => ({
       isFetching: state.shipping.isFetching,
-      options: state.shipping.options,
+      shippingOptions: state.shipping.options,
     }),
     dispatch => bindActionCreators({
       fetchShippingOptions,
       setShipping,
     }, dispatch),
-)(OrderStep4);
+)(Shipping);

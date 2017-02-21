@@ -10,36 +10,38 @@ import {
 } from 'react-native';
 
 // Containers & components
-import OrderStep4 from './OrderStep4';
-import CallToAction from '../components/CallToAction';
-import LoadingIndicator from '../components/LoadingIndicator';
+import CallToAction from '../../components/CallToAction';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 // Actions
-import fetchShippingOptions from '../actions/shipping';
-import { setDelivery } from '../actions/cart';
+import {
+  fetchShippingOptions,
+  setDelivery,
+} from './actions';
+
+// Helpers
+import { getOptionsCountries } from '../../utils/helpers';
 
 // Data
-import { getOptionsCountries } from '../lib/helpers';
-import { DeliveryForm, deliveryOptions } from '../data/forms';
+import { DeliveryForm, deliveryOptions } from '../../data/forms';
 
 // Styles
-import styles from '../styles/components/form';
+import styles from '../../styles/components/form';
 
 const { Form } = t.form;
 
-class OrderStep3 extends React.Component {
+class Delivery extends React.Component {
 
   static propTypes = {
     countries: PropTypes.array.isRequired,
     delivery: PropTypes.object.isRequired,
     fetchShippingOptions: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    navigator: PropTypes.object.isRequired,
+    pushNextScene: PropTypes.func.isRequired,
     setDelivery: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    countries: [],
     isFetching: false,
   };
 
@@ -68,10 +70,7 @@ class OrderStep3 extends React.Component {
     if (!value) return;
 
     this.props.setDelivery(value);
-    this.props.navigator.push({
-      component: OrderStep4,
-      index: 3,
-    });
+    this.props.pushNextScene();
   }
 
   render() {
@@ -113,11 +112,11 @@ class OrderStep3 extends React.Component {
 export default connect(
   state => ({
     countries: getOptionsCountries(state.shipping.options),
-    delivery: state.cart.delivery,
+    delivery: state.delivery,
     isFetching: state.shipping.isFetching,
   }),
   dispatch => bindActionCreators({
     fetchShippingOptions,
     setDelivery,
   }, dispatch),
-)(OrderStep3);
+)(Delivery);

@@ -2,7 +2,6 @@
 import { View } from 'react-native';
 
 // Containers & components
-import OrderStep1 from '../containers/OrderStep1';
 import Page from '../containers/Page';
 
 // Images
@@ -15,7 +14,9 @@ import iconSmiley from '../images/icon-smiley.png';
 import {
   API_PAGE_ABOUT,
   API_PAGE_FAQ,
-} from '../data/constants';
+} from './constants';
+
+import { orderRoutes } from './routes';
 
 // Menu items
 export const items = [
@@ -23,7 +24,7 @@ export const items = [
     id: 'NewOrder',
     icon: iconHeart,
     title: 'Boutique',
-    component: OrderStep1,
+    component: orderRoutes[0].component,
   },
   {
     id: 'FAQ',
