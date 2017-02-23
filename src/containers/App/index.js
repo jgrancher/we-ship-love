@@ -73,8 +73,6 @@ class Application extends React.Component {
 
     // Action to push to next scene
     const pushNextScene = () => {
-      console.log(route);
-      console.log(navigator);
       navigator.push(orderRoutes[route.index + 1]);
     };
 
