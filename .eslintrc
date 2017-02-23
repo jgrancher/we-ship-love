@@ -1,6 +1,9 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
+  "globals": {
+    "fetch": false,
+  },
   "rules": {
     "import/prefer-default-export": "warn",
     "react/forbid-prop-types": "warn",

@@ -3,8 +3,6 @@
  * https://apikey:password@hostname/admin/resource.json
  */
 
-/* global fetch */
-
 // Externals
 import Config from 'react-native-config';
 
