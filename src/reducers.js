@@ -7,6 +7,7 @@ import message from './containers/Message/reducer';
 import pages from './containers/Page/reducer';
 import products from './containers/Products/reducer';
 import shipping from './containers/Shipping/reducer';
+import shop from './containers/App/reducer';
 
 const reducers = combineReducers({
   delivery,
@@ -14,6 +15,7 @@ const reducers = combineReducers({
   pages,
   products,
   shipping,
+  shop,
 });
 
 export default reducers;
