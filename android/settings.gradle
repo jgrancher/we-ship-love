@@ -1,4 +1,6 @@
 rootProject.name = 'mqdf'
+include ':react-native-shopify'
+project(':react-native-shopify').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-shopify/android')
 include ':react-native-config'
 project(':react-native-config').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-config/android')
 

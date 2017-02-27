@@ -1,0 +1,1 @@
+../../../../Mobile-Buy-SDK/Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYCheckoutAttribute.h
