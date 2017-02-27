@@ -1,10 +1,9 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { ActivityIndicator } from 'react-native';
 
 // Styles
-import appStyles from '../styles/base/application';
-import { turquoise } from '../config/colors';
+import StyledActivityIndicator from './styles';
+import { turquoise } from '../../config/colors';
 
 const propTypes = {
   color: PropTypes.string,
@@ -15,9 +14,8 @@ const defaultProps = {
 };
 
 const LoadingIndicator = props => (
-  <ActivityIndicator
+  <StyledActivityIndicator
     color={props.color}
-    style={appStyles.indicator}
   />
 );
 

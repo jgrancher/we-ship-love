@@ -10,6 +10,7 @@ import {
 
 // Containers & components
 import CallToAction from '../../components/CallToAction';
+import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import RefreshButton from '../../components/RefreshButton';
 
@@ -100,7 +101,7 @@ class Products extends React.Component {
     const hasProducts = this.props.products.length > 0;
 
     return (
-      <View style={{ flex: 1 }}>
+      <FlexView>
         <View style={appStyles.content}>
           {this.renderContent()}
         </View>
@@ -108,7 +109,7 @@ class Products extends React.Component {
           enabled={hasProducts}
           onPress={this.onNextStep}
         />
-      </View>
+      </FlexView>
     );
   }
 
