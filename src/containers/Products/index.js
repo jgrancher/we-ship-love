@@ -42,7 +42,7 @@ class Products extends React.Component {
   };
 
   static defaultProps = {
-    isFetching: false,
+    isFetching: true,
     products: [],
   };
 
@@ -87,8 +87,8 @@ class Products extends React.Component {
       >
         {this.props.products.map(item => (
           <Image
-            key={item.id}
-            source={PRODUCTS[item.id]}
+            key={item.product_id}
+            source={{ uri: item.images[0].src }}
             style={styles.slide}
           />
         ))}
