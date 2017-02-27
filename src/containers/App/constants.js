@@ -1,0 +1,3 @@
+export const FETCH_SHOP = 'FETCH_SHOP';
+export const FETCH_SHOP_SUCCESS = 'FETCH_SHOP_SUCCESS';
+export const FETCH_SHOP_FAIL = 'FETCH_SHOP_FAIL';
