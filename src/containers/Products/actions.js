@@ -7,7 +7,7 @@ import {
   fetchSuccess,
 } from '../../utils/helpers';
 
-// Data
+// Constants
 import {
   ADD_TO_CART,
   FETCH_PRODUCTS,
@@ -15,8 +15,14 @@ import {
   FETCH_PRODUCTS_SUCCESS,
 } from './constants';
 
+import {
+  API_COLLECTION_FANTASIES,
+  API_COLLECTION_HEARTS,
+  API_COLLECTION_PACKS,
+} from '../../data/constants';
+
 /**
- * Fetch all the products variants (for a specific product ID)
+ * Fetch all the products (by collections)
  * @return {Promise}    The promise containing the request
  */
 export const fetchProducts = () =>
@@ -30,7 +36,12 @@ export const fetchProducts = () =>
 
     dispatch({ type: FETCH_PRODUCTS });
 
-    return API.get('products/410882840/variants.json')
+    return Promise.all([
+      API.getProducts(1, API_COLLECTION_HEARTS),
+      API.getProducts(1, API_COLLECTION_FANTASIES),
+      API.getProducts(1, API_COLLECTION_PACKS),
+    ])
+      .then(results => results.reduce((a, b) => a.concat(b)))
       .then(data => fetchSuccess(dispatch, FETCH_PRODUCTS_SUCCESS, data))
       .catch(error => fetchFail(dispatch, FETCH_PRODUCTS_FAIL, error));
   }

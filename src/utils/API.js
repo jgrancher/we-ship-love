@@ -1,39 +1,13 @@
-/**
- * API object - Helper to build requests like this
- * https://apikey:password@hostname/admin/resource.json
- */
-
 // Externals
 import Config from 'react-native-config';
+import Shopify from 'react-native-shopify';
 
-// Data
-import { timeout } from './helpers';
-import { API_HOSTNAME } from '../data/constants';
+// Configuration
+const {
+  SHOPIFY_DOMAIN,
+  SHOPIFY_MOBILE_KEY,
+} = Config;
 
-const URL = `https://${Config.SHOPIFY_KEY}:${Config.SHOPIFY_PASSWORD}@${API_HOSTNAME}/admin/`;
+Shopify.initialize(SHOPIFY_DOMAIN, SHOPIFY_MOBILE_KEY);
 
-const API = {
-
-  get(endpoint) {
-    return this.request(endpoint, 'GET');
-  },
-
-  post(endpoint, data) {
-    return this.request(endpoint, 'POST', data);
-  },
-
-  request(endpoint, method) {
-    return timeout(fetch(`${URL}${endpoint}`, { method })).then(this.handleResponse);
-  },
-
-  handleResponse(response) {
-    if (!response.ok) {
-      return Promise.reject('An error occured. Please try again.');
-    }
-
-    return Promise.resolve(response.json());
-  },
-
-};
-
-export default API;
+export default Shopify;

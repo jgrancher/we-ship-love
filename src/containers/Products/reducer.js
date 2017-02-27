@@ -40,7 +40,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        data: action.data.variants,
+        data: action.data,
       };
 
     default:
