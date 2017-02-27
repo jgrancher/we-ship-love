@@ -23,8 +23,8 @@ import {
 import btnSliderNext from '../../images/btn-slider-next.png';
 import btnSliderPrev from '../../images/btn-slider-previous.png';
 
-// Data
-import { PRODUCTS } from '../../data/constants';
+// Helpers
+import { productShape } from '../../utils/shapes';
 
 // Styles
 import appStyles from '../../styles/base/application';
@@ -37,7 +37,7 @@ class Products extends React.Component {
     addToCart: PropTypes.func.isRequired,
     fetchProducts: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    products: PropTypes.array,
+    products: PropTypes.arrayOf(productShape),
     pushNextScene: PropTypes.func.isRequired,
   };
 
