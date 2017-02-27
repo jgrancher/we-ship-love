@@ -7,7 +7,7 @@ import {
   fetchSuccess,
 } from '../../utils/helpers';
 
-// Data
+// Constants
 import {
   FETCH_PAGES,
   FETCH_PAGES_FAIL,

@@ -9,6 +9,3 @@ export const API_PAGE_FAQ = 18739472;
 
 // API - Shipping countries
 export const API_DEFAULT_COUNTRY = 20489252; // France
-
-// Misc
-export const FETCH_TIMEOUT = 15000; // Timeout to fetch, in ms.
