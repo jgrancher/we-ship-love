@@ -1,7 +1,7 @@
 // Externals
 import styled from 'styled-components/native';
 
-export default styled.View`
+export default styled.Image`
   flex: 1;
-  height: ${props => props.height};
+  margin-top: 10;
 `;

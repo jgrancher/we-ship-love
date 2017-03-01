@@ -1,5 +1,16 @@
 import { PropTypes } from 'react';
 
+// Children shape
+export const childrenShape = PropTypes.oneOfType([
+  PropTypes.element,
+  PropTypes.arrayOf(PropTypes.element),
+]);
+
+// Styles shape
+export const stylesShape = PropTypes.shape({
+  height: PropTypes.number,
+});
+
 // Product image from Shopify API
 export const productImageShape = PropTypes.shape({
   created_at: PropTypes.string,

@@ -1,12 +1,13 @@
-// Sizes
+// Externals
 import { Dimensions } from 'react-native';
 
-// Widths
+// Heights
 export const heightWindow = Dimensions.get('window').height;
-export const heightCTA = 143;
 export const heightStatusBar = 20;
 export const heightNavigationBar = 73;
 export const heightScene = heightWindow - heightStatusBar - heightNavigationBar;
+export const heightCTA = 143;
+export const heightContent = heightScene - heightCTA;
 
 // Widths
 export const widthWindow = Dimensions.get('window').width;
