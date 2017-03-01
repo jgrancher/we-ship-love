@@ -10,21 +10,14 @@ import {
 } from 'react-native';
 
 // Images
-import iconChevron from '../images/icon-chevron.png';
+import iconChevron from '../../images/icon-chevron.png';
+
+// Utils
+import { optionShape } from '../../utils/shapes';
 
 // Styles
-import styles from '../styles/components/accordionPicker';
-import { greyLight } from '../config/colors';
-
-const optionShape = PropTypes.shape({
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-});
-
-const defaultOption = {
-  text: 'Veuillez sélectionner un élément',
-  value: '',
-};
+import styles from '../../styles/components/accordionPicker';
+import { greyLight } from '../../config/colors';
 
 class AccordionPicker extends React.Component {
 
@@ -35,9 +28,11 @@ class AccordionPicker extends React.Component {
   };
 
   static defaultProps = {
-    defaultValue: defaultOption,
+    defaultValue: {
+      text: 'Veuillez sélectionner un élément',
+      value: '',
+    },
     onChange: () => {},
-    options: [defaultOption],
   };
 
   state = {

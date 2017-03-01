@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 // Styles
-import styles from '../styles/components/refreshButton';
+import styles from '../../styles/components/refreshButton';
 
 const propTypes = {
   numberOfLines: PropTypes.number,

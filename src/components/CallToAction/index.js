@@ -7,19 +7,22 @@ import {
   View,
 } from 'react-native';
 
+// Components
+import FlexView from '../FlexView';
+
 // Images
-import ctaBackground from '../images/cta-bg.png';
-import ctaBtnEnabled from '../images/cta-btn.png';
-import ctaBtnDisabled from '../images/cta-btn-disabled.png';
+import ctaBackground from '../../images/cta-bg.png';
+import ctaBtnEnabled from '../../images/cta-btn.png';
+import ctaBtnDisabled from '../../images/cta-btn-disabled.png';
 
 // Styles
-import styles from '../styles/components/callToAction';
+import styles from '../../styles/components/callToAction';
 
 const propTypes = {
   enabled: PropTypes.bool,
   onPress: PropTypes.func,
   step: PropTypes.number,
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   textComplement: PropTypes.string,
 };
 
@@ -27,7 +30,6 @@ const defaultProps = {
   enabled: true,
   onPress: () => {},
   step: 1,
-  text: 'Choisissez votre couleur!',
   textComplement: null,
 };
 
@@ -37,7 +39,7 @@ const CallToAction = props => (
     style={styles.container}
     underlayColor="transparent"
   >
-    <View style={{ flex: 1 }}>
+    <FlexView>
       <Image
         resizeMode="stretch"
         source={ctaBackground}
@@ -47,7 +49,7 @@ const CallToAction = props => (
         <Text style={styles.step}>
           {props.step}
         </Text>
-        <View style={{ flex: 1 }}>
+        <FlexView>
           <Text style={styles.text}>
             {props.text}
           </Text>
@@ -56,13 +58,13 @@ const CallToAction = props => (
               {props.textComplement}
             </Text>
           )}
-        </View>
+        </FlexView>
         <Image
           source={props.enabled ? ctaBtnEnabled : ctaBtnDisabled}
           style={styles.arrow}
         />
       </View>
-    </View>
+    </FlexView>
   </TouchableHighlight>
 );
 

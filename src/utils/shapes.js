@@ -11,7 +11,13 @@ export const stylesShape = PropTypes.shape({
   height: PropTypes.number,
 });
 
-// Product image from Shopify API
+// Options shape
+export const optionShape = PropTypes.shape({
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+});
+
+// API - Product image shape
 export const productImageShape = PropTypes.shape({
   created_at: PropTypes.string,
   id: PropTypes.number,
@@ -22,7 +28,7 @@ export const productImageShape = PropTypes.shape({
   variants_id: PropTypes.arrayOf(PropTypes.number),
 });
 
-// Product option from Shopify API
+// API - Product option shape
 export const productOptionShape = PropTypes.shape({
   id: PropTypes.number,
   name: PropTypes.string,
@@ -30,14 +36,14 @@ export const productOptionShape = PropTypes.shape({
   product_id: PropTypes.number,
 });
 
-// Variant option from Shopify API
+// API - Variant option shape
 export const variantOptionShape = PropTypes.shape({
   name: PropTypes.string,
   option_id: PropTypes.number,
   value: PropTypes.string,
 });
 
-// Variant from Shopify API
+// API - Variant shape
 export const variantShape = PropTypes.shape({
   available: PropTypes.bool,
   grams: PropTypes.string,
@@ -51,7 +57,7 @@ export const variantShape = PropTypes.shape({
   title: PropTypes.string,
 });
 
-// Product from Shopify API
+// API - Product shape
 export const productShape = PropTypes.shape({
   available: PropTypes.bool,
   body_html: PropTypes.string,

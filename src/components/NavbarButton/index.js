@@ -1,9 +1,12 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import {
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 
 // Styles
-import styles from '../styles/components/navbar';
+import styles from '../../styles/components/navbar';
 
 const propTypes = {
   image: PropTypes.node.isRequired,

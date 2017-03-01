@@ -89,6 +89,7 @@ class Products extends React.Component {
         <CallToAction
           enabled={hasProducts}
           onPress={this.onNextStep}
+          text="Choisissez votre couleur!"
         />
       </FlexView>
     );

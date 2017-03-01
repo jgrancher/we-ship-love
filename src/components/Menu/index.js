@@ -15,16 +15,16 @@ import {
   items,
   socials,
   website,
-} from '../data/menu';
+} from '../../data/menu';
 
 // Images
-import iconFacebook from '../images/icon-social-fb.png';
-import iconTwitter from '../images/icon-social-twitter.png';
-import iconInstagram from '../images/icon-social-insta.png';
+import iconFacebook from '../../images/icon-social-fb.png';
+import iconTwitter from '../../images/icon-social-twitter.png';
+import iconInstagram from '../../images/icon-social-insta.png';
 
 // Styles
-import styles from '../styles/components/menu';
-import { brownDark } from '../config/colors';
+import styles from '../../styles/components/menu';
+import { brownDark } from '../../config/colors';
 
 const message = 'Impossible d\'ouvrir ce lien. Pardon. 🎈';
 

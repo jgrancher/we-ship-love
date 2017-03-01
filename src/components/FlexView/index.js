@@ -7,22 +7,32 @@ import StyledView from './styles';
 // Utils
 import { childrenShape } from '../../utils/shapes';
 
-const propTypes = {
-  children: childrenShape.isRequired,
-  height: PropTypes.number,
-};
+class FlexView extends React.Component {
 
-const defaultProps = {
-  height: 0,
-};
+  static propTypes = {
+    children: childrenShape.isRequired,
+    height: PropTypes.number,
+  }
 
-const FlexView = props => (
-  <StyledView height={props.height}>
-    {props.children}
-  </StyledView>
-);
+  static defaultProps = {
+    height: 0,
+  };
 
-FlexView.propTypes = propTypes;
-FlexView.defaultProps = defaultProps;
+  setNativeProps(nativeProps) {
+    this.view.setNativeProps(nativeProps);
+  }
+
+  render() {
+    return (
+      <StyledView
+        {...this.props}
+        height={this.props.height}
+        ref={(c) => { this.view = c; }}
+      >
+        {this.props.children}
+      </StyledView>
+    );
+  }
+}
 
 export default FlexView;

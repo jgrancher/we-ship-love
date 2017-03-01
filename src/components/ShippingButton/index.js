@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 // Styles
-import styles from '../styles/components/shippingButton';
+import styles from '../../styles/components/shippingButton';
 
 const propTypes = {
   active: PropTypes.bool,
