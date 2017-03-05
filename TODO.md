@@ -1,8 +1,10 @@
 TODO
 =======
 
-* Update the 'shipping options' (OrderStep4) page based on the country selected before
-* Get the static pages (My orders, FAQ, etc.) done
+* Finishing to apply styled-components for each component, used in containers (no styles in there).
+* Getting rid of styles folder then.
+* Merging data & utils folders to lib.
+* Find a way to structure the state with shipping / delivery options.
 
 ### Optimizations
 
