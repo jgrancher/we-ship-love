@@ -17,6 +17,16 @@ export const optionShape = PropTypes.shape({
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 });
 
+// Redux-form - Input shape
+export const inputShape = PropTypes.shape({
+  checked: PropTypes.bool,
+  name: PropTypes.string,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  value: PropTypes.any,
+});
+
 // API - Product image shape
 export const productImageShape = PropTypes.shape({
   created_at: PropTypes.string,

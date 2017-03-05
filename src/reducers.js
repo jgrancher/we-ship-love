@@ -1,5 +1,6 @@
 // Externals
 import { combineReducers } from 'redux';
+import { reducer as forms } from 'redux-form';
 
 // Reducers
 import delivery from './containers/Delivery/reducer';
@@ -11,6 +12,7 @@ import shop from './containers/App/reducer';
 
 const reducers = combineReducers({
   delivery,
+  forms,
   message,
   pages,
   products,
