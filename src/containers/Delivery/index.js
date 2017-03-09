@@ -1,75 +1,30 @@
 // Externals
 import React, { PropTypes } from 'react';
-import t from 'tcomb-form-native';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
+  Field,
+  reduxForm,
+} from 'redux-form';
 
-// Containers & components
+// Components
 import CallToAction from '../../components/CallToAction';
+import Disclaimer from '../../components/Disclaimer';
+import FlexView from '../../components/FlexView';
+import Form from '../../components/Form';
+import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
-
-// Actions
-import {
-  fetchShippingOptions,
-  setDelivery,
-} from './actions';
-
-// Helpers
-import { getOptionsCountries } from '../../utils/helpers';
-
-// Data
-import { DeliveryForm, deliveryOptions } from '../../data/forms';
-
-// Styles
-import styles from '../../styles/components/form';
-
-const { Form } = t.form;
 
 class Delivery extends React.Component {
 
   static propTypes = {
-    countries: PropTypes.array.isRequired,
-    delivery: PropTypes.object.isRequired,
-    fetchShippingOptions: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
     pushNextScene: PropTypes.func.isRequired,
-    setDelivery: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     isFetching: false,
   };
 
-  state = {
-    form: DeliveryForm,
-    value: this.props.delivery,
-  };
-
-  componentWillMount() {
-    this.props.fetchShippingOptions();
-  }
-
-  componentWillReceiveProps(props) {
-    if (!props.countries.length) return;
-
-    // Extending the form by adding the formatted countries
-    const options = props.countries.map(c => ({ [c.id]: c.name }));
-    const country = t.enums(Object.assign(...options));
-    const form = DeliveryForm.extend({ country });
-    this.setState({ form });
-  }
-
   onNextStep = () => {
-    const value = this.form.getValue();
-
-    if (!value) return;
-
-    this.props.setDelivery(value);
     this.props.pushNextScene();
   }
 
@@ -79,44 +34,63 @@ class Delivery extends React.Component {
     }
 
     return (
-      <View style={{ flex: 1 }}>
-        <ScrollView
-          keyboardDismissMode="interactive"
-          style={styles.container}
-        >
-          <Form
-            ref={(c) => { this.form = c; }}
-            type={this.state.form}
-            options={deliveryOptions}
-            value={this.state.value}
+      <FlexView>
+        <Form>
+          <Field
+            component={Input}
+            name="name"
+            placeholder="Nom"
           />
-          <Text
-            numberOfLines={5}
-            style={styles.copyright}
-          >
-            Le numéro de téléphone de la personne sont utilisées pour
-            prévenir la personne qu’un colis lui ai destiné. Elle ne sera au courant
-            ni de l’expéditeur, ni du contenu.
-          </Text>
-        </ScrollView>
+          <Field
+            component={Input}
+            name="firstname"
+            placeholder="Prénom"
+          />
+          <Field
+            component={Input}
+            name="address"
+            placeholder="Adresse"
+          />
+          <Field
+            component={Input}
+            name="address2"
+            placeholder="Complément d'adresse"
+          />
+          <Field
+            component={Input}
+            keyboardType="numbers-and-punctuation"
+            name="zipcode"
+            placeholder="Code postal"
+          />
+          <Field
+            component={Input}
+            name="city"
+            placeholder="Ville"
+          />
+          <Field
+            component={Input}
+            keyboardType="email-address"
+            name="email"
+            placeholder="Email"
+          />
+          <Field
+            component={Input}
+            name="phone"
+            keyboardType="phone-pad"
+            placeholder="Téléphone"
+          />
+          <Disclaimer />
+        </Form>
         <CallToAction
           onPress={this.onNextStep}
           step={3}
           text="C'est pour qui?"
         />
-      </View>
+      </FlexView>
     );
   }
 }
 
-export default connect(
-  state => ({
-    countries: getOptionsCountries(state.shipping.options),
-    delivery: state.delivery,
-    isFetching: state.shipping.isFetching,
-  }),
-  dispatch => bindActionCreators({
-    fetchShippingOptions,
-    setDelivery,
-  }, dispatch),
-)(Delivery);
+export default reduxForm({
+  form: 'delivery',
+})(Delivery);
