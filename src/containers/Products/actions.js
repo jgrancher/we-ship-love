@@ -18,7 +18,6 @@ import {
 import {
   API_COLLECTION_FANTASIES,
   API_COLLECTION_HEARTS,
-  API_COLLECTION_PACKS,
 } from '../../data/constants';
 
 /**
@@ -39,7 +38,6 @@ export const fetchProducts = () =>
     return Promise.all([
       API.getProducts(1, API_COLLECTION_HEARTS),
       API.getProducts(1, API_COLLECTION_FANTASIES),
-      API.getProducts(1, API_COLLECTION_PACKS),
     ])
       .then(results => results.reduce((a, b) => a.concat(b)))
       .then(data => fetchSuccess(dispatch, FETCH_PRODUCTS_SUCCESS, data))
