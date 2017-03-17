@@ -19,10 +19,11 @@ export const optionShape = PropTypes.shape({
 
 // Redux-form - Input shape
 export const inputShape = PropTypes.shape({
-  checked: PropTypes.bool,
   name: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onDragStart: PropTypes.func,
+  onDrop: PropTypes.func,
   onFocus: PropTypes.func,
   value: PropTypes.any,
 });
