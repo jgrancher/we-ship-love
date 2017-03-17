@@ -14,6 +14,7 @@ import {
   FETCH_SHOP_SUCCESS,
   SET_ORDER_MESSAGE,
   SET_ORDER_PRODUCT,
+  SET_ORDER_DELIVERY,
 } from './constants';
 
 /**
@@ -53,4 +54,13 @@ export const setOrderProduct = product => ({
 export const setOrderMessage = message => ({
   type: SET_ORDER_MESSAGE,
   payload: message,
+});
+
+/**
+ * Set the order delivery
+ * @param {Object} delivery  The delivery object containing the whole address
+ */
+export const setOrderDelivery = delivery => ({
+  type: SET_ORDER_DELIVERY,
+  payload: delivery,
 });

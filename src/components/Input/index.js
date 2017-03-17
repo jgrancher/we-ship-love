@@ -1,8 +1,18 @@
 // Externals
-import React from 'react';
+import React, { PropTypes } from 'react';
+
+// Utils
+import { inputShape } from '../../utils/shapes';
 
 // Styles
 import StyledTextInput from './styles';
+
+const propTypes = {
+  input: inputShape.isRequired,
+  keyboardAppearance: PropTypes.string,
+  keyboardType: PropTypes.string,
+  returnKeyType: PropTypes.string,
+};
 
 const defaultProps = {
   keyboardAppearance: 'light',
@@ -10,10 +20,21 @@ const defaultProps = {
   returnKeyType: 'next',
 };
 
-const Input = props => (
-  <StyledTextInput {...props} />
-);
+const Input = (props) => {
+  const { input, ...inputProps } = props;
 
+  return (
+    <StyledTextInput
+      {...inputProps}
+      onBlur={input.onBlur}
+      onChangeText={input.onChange}
+      onFocus={input.onFocus}
+      value={input.value}
+    />
+  );
+};
+
+Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
 export default Input;

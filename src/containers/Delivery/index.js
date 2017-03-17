@@ -6,6 +6,7 @@ import {
 } from 'redux-form';
 
 // Components
+import AccordionPicker from '../../components/AccordionPicker';
 import CallToAction from '../../components/CallToAction';
 import Disclaimer from '../../components/Disclaimer';
 import FlexView from '../../components/FlexView';
@@ -13,20 +14,33 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
+// Actions
+import { setOrderDelivery } from '../App/actions';
+
+// Utils
+import { optionShape } from '../../utils/shapes';
+
 class Delivery extends React.Component {
 
   static propTypes = {
+    countries: PropTypes.arrayOf(optionShape),
+    handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
-    pushNextScene: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     isFetching: false,
+    countries: [
+      {
+        label: 'France',
+        value: 'fr',
+      }, {
+        label: 'Australie',
+        value: 'aus',
+      },
+    ],
   };
-
-  onNextStep = () => {
-    this.props.pushNextScene();
-  }
 
   render() {
     if (this.props.isFetching) {
@@ -40,27 +54,32 @@ class Delivery extends React.Component {
             component={Input}
             name="name"
             placeholder="Nom"
+            autoCapitalize="words"
           />
           <Field
             component={Input}
             name="firstname"
             placeholder="Prénom"
+            autoCapitalize="words"
           />
           <Field
             component={Input}
             name="address"
             placeholder="Adresse"
+            autoCapitalize="words"
           />
           <Field
             component={Input}
             name="address2"
             placeholder="Complément d'adresse"
+            autoCapitalize="words"
           />
           <Field
             component={Input}
             keyboardType="numbers-and-punctuation"
             name="zipcode"
             placeholder="Code postal"
+            autoCapitalize="none"
           />
           <Field
             component={Input}
@@ -72,6 +91,8 @@ class Delivery extends React.Component {
             keyboardType="email-address"
             name="email"
             placeholder="Email"
+            autoCapitalize="none"
+            autoCorrect={false}
           />
           <Field
             component={Input}
@@ -79,10 +100,15 @@ class Delivery extends React.Component {
             keyboardType="phone-pad"
             placeholder="Téléphone"
           />
+          <Field
+            component={AccordionPicker}
+            name="country"
+            options={this.props.countries}
+          />
           <Disclaimer />
         </Form>
         <CallToAction
-          onPress={this.onNextStep}
+          onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={3}
           text="C'est pour qui?"
         />
@@ -93,4 +119,9 @@ class Delivery extends React.Component {
 
 export default reduxForm({
   form: 'delivery',
+  onSubmit: (values, dispatch, props) => {
+    // Set the order delivery then go to the next screen
+    dispatch(setOrderDelivery(values));
+    props.pushNextScene();
+  },
 })(Delivery);

@@ -5,6 +5,7 @@ import {
   FETCH_SHOP_SUCCESS,
   SET_ORDER_PRODUCT,
   SET_ORDER_MESSAGE,
+  SET_ORDER_DELIVERY,
 } from './constants';
 
 // Default state
@@ -45,6 +46,7 @@ export const shop = (state = defaultShop, action) => {
 const defaultOrder = {
   product: null,
   message: null,
+  delivery: {},
 };
 
 export const order = (state = defaultOrder, action) => {
@@ -60,6 +62,12 @@ export const order = (state = defaultOrder, action) => {
       return {
         ...state,
         message: action.payload,
+      };
+
+    case SET_ORDER_DELIVERY:
+      return {
+        ...state,
+        delivery: action.payload,
       };
 
     default:

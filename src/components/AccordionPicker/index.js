@@ -1,38 +1,39 @@
 // Externals
 import React, { PropTypes } from 'react';
 import Collapsible from 'react-native-collapsible';
+import { View } from 'react-native';
+
+// Components
+import Picker from '../Picker';
+
+// Styles
 import {
-  Image,
-  Picker,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+  StyledImage,
+  StyledText,
+  StyledTouchableHighlight,
+  StyledView,
+  underlayColor,
+} from './styles';
 
 // Images
 import iconChevron from '../../images/icon-chevron.png';
 
 // Utils
-import { optionShape } from '../../utils/shapes';
-
-// Styles
-import styles from '../../styles/components/accordionPicker';
-import { greyLight } from '../../config/colors';
+import {
+  inputShape,
+  optionShape,
+} from '../../utils/shapes';
 
 class AccordionPicker extends React.Component {
 
   static propTypes = {
-    defaultValue: optionShape,
-    onChange: PropTypes.func,
+    input: inputShape.isRequired,
     options: PropTypes.arrayOf(optionShape).isRequired,
+    selectedValue: PropTypes.string,
   };
 
   static defaultProps = {
-    defaultValue: {
-      text: 'Veuillez sélectionner un élément',
-      value: '',
-    },
-    onChange: () => {},
+    selectedValue: null,
   };
 
   state = {
@@ -44,40 +45,32 @@ class AccordionPicker extends React.Component {
   }
 
   render() {
-    const styleIcon = [styles.pickerIcon, this.state.open && styles.pickerOpenIcon];
+    const { input, ...pickerProps } = this.props;
+    const option = this.props.options.find(o => o.value === input.value);
 
     return (
       <View>
-        <TouchableHighlight
+        <StyledTouchableHighlight
           onPress={this.toggleOpen}
-          style={styles.pickerTouchable}
-          underlayColor={greyLight}
+          underlayColor={underlayColor}
         >
-          <View style={styles.pickerTouchableContent}>
-            <Text style={styles.pickerText}>
-              {this.props.defaultValue.text}
-            </Text>
-            <Image
+          <StyledView>
+            <StyledText>
+              {option && option.label}
+            </StyledText>
+            <StyledImage
+              open={this.state.open}
               source={iconChevron}
-              style={styleIcon}
             />
-          </View>
-        </TouchableHighlight>
+          </StyledView>
+        </StyledTouchableHighlight>
         <Collapsible collapsed={!this.state.open}>
           <Picker
-            onValueChange={this.props.onChange}
-            selectedValue={this.props.defaultValue.value}
-            style={styles.picker}
-            itemStyle={styles.pickerItem}
-          >
-            {this.props.options.map(option => (
-              <Picker.Item
-                key={option.value}
-                label={option.text}
-                value={option.value}
-              />
-            ))}
-          </Picker>
+            {...pickerProps}
+            onValueChange={input.onChange}
+            options={this.props.options}
+            selectedValue={input.value}
+          />
         </Collapsible>
       </View>
     );
