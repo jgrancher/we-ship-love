@@ -18,5 +18,6 @@ export const orderRoutes = [
   },
   {
     component: Shipping,
+    index: 3,
   },
 ];
