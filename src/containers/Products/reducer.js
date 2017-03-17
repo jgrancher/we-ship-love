@@ -1,6 +1,5 @@
 // Constants
 import {
-  ADD_TO_CART,
   FETCH_PRODUCTS,
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_SUCCESS,
@@ -10,19 +9,10 @@ import {
 const defaultState = {
   data: [],
   isFetching: false,
-  selected: {},
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
-      return {
-        ...state,
-        selected: {
-          ...state.selected,
-          ...action.selected,
-        },
-      };
 
     case FETCH_PRODUCTS:
       return {

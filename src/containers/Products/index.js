@@ -13,10 +13,8 @@ import RefreshButton from '../../components/RefreshButton';
 import Slider from '../../components/Slider';
 
 // Actions
-import {
-  addToCart,
-  fetchProducts,
-} from './actions';
+import fetchProducts from './actions';
+import { setOrderProduct } from '../App/actions';
 
 // Utils
 import { productShape } from '../../utils/shapes';
@@ -24,11 +22,11 @@ import { productShape } from '../../utils/shapes';
 class Products extends React.Component {
 
   static propTypes = {
-    addToCart: PropTypes.func.isRequired,
     fetchProducts: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
     products: PropTypes.arrayOf(productShape),
     pushNextScene: PropTypes.func.isRequired,
+    setOrderProduct: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -103,7 +101,7 @@ export default connect(
     products: state.products.data,
   }),
   dispatch => bindActionCreators({
-    addToCart,
     fetchProducts,
+    setOrderProduct,
   }, dispatch),
 )(Products);

@@ -12,6 +12,8 @@ import {
   FETCH_SHOP,
   FETCH_SHOP_FAIL,
   FETCH_SHOP_SUCCESS,
+  SET_ORDER_MESSAGE,
+  SET_ORDER_PRODUCT,
 } from './constants';
 
 /**
@@ -34,3 +36,21 @@ export const fetchShop = () =>
       .catch(error => fetchFail(dispatch, FETCH_SHOP_FAIL, error));
   }
 ;
+
+/**
+ * Set the order product
+ * @param {Object} product  The product object that has been selected
+ */
+export const setOrderProduct = product => ({
+  type: SET_ORDER_PRODUCT,
+  payload: product,
+});
+
+/**
+ * Set the order message
+ * @param {String} message  The message to send within the order
+ */
+export const setOrderMessage = message => ({
+  type: SET_ORDER_MESSAGE,
+  payload: message,
+});

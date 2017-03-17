@@ -10,15 +10,15 @@ import CallToAction from '../../components/CallToAction';
 import FlexView from '../../components/FlexView';
 import Textarea from '../../components/Textarea';
 
-class Message extends React.Component {
+// Actions
+import { setOrderMessage } from '../App/actions';
+
+class Message extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
-    pushNextScene: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
   };
-
-  onNextStep = () => {
-    this.props.pushNextScene();
-  }
 
   render() {
     return (
@@ -28,7 +28,7 @@ class Message extends React.Component {
           name="message"
         />
         <CallToAction
-          onPress={this.onNextStep}
+          onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={2}
           text="Rédigez votre message"
           textComplement="(anonyme si vous ne signez pas)"
@@ -41,4 +41,9 @@ class Message extends React.Component {
 
 export default reduxForm({
   form: 'message',
+  onSubmit: (values, dispatch, props) => {
+    // Set the order message then go to the next screen
+    dispatch(setOrderMessage(values.message));
+    props.pushNextScene();
+  },
 })(Message);

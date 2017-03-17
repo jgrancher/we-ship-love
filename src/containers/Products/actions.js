@@ -9,7 +9,6 @@ import {
 
 // Constants
 import {
-  ADD_TO_CART,
   FETCH_PRODUCTS,
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_SUCCESS,
@@ -24,7 +23,7 @@ import {
  * Fetch all the products (by collections)
  * @return {Promise}    The promise containing the request
  */
-export const fetchProducts = () =>
+export default () =>
   (dispatch, getState) => {
     const products = getState().products.data;
 
@@ -44,14 +43,3 @@ export const fetchProducts = () =>
       .catch(error => fetchFail(dispatch, FETCH_PRODUCTS_FAIL, error));
   }
 ;
-
-/**
- * Add product to the cart
- * @param  {Object} item The item object to add to the cart
- * @return {Object}      The action created
- */
-export const addToCart = (item, quantity = 1) => ({
-  type: ADD_TO_CART,
-  item,
-  quantity,
-});

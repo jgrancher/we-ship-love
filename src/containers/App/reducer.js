@@ -3,16 +3,20 @@ import {
   FETCH_SHOP,
   FETCH_SHOP_FAIL,
   FETCH_SHOP_SUCCESS,
+  SET_ORDER_PRODUCT,
+  SET_ORDER_MESSAGE,
 } from './constants';
 
 // Default state
-const defaultState = {
+const defaultShop = {
   data: {},
   isFetching: false,
 };
 
-export default (state = defaultState, action) => {
+// TODO: check if needed!
+export const shop = (state = defaultShop, action) => {
   switch (action.type) {
+
     case FETCH_SHOP:
       return {
         ...state,
@@ -30,6 +34,32 @@ export default (state = defaultState, action) => {
         ...state,
         isFetching: false,
         data: action.data,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// Default state
+const defaultOrder = {
+  product: null,
+  message: null,
+};
+
+export const order = (state = defaultOrder, action) => {
+  switch (action.type) {
+
+    case SET_ORDER_PRODUCT:
+      return {
+        ...state,
+        product: action.payload.product_id,
+      };
+
+    case SET_ORDER_MESSAGE:
+      return {
+        ...state,
+        message: action.payload,
       };
 
     default:

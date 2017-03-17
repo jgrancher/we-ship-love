@@ -6,10 +6,11 @@ import { reducer as form } from 'redux-form';
 import pages from './containers/Page/reducer';
 import products from './containers/Products/reducer';
 import shipping from './containers/Shipping/reducer';
-import shop from './containers/App/reducer';
+import { order, shop } from './containers/App/reducer';
 
 const reducers = combineReducers({
   form,
+  order,
   pages,
   products,
   shipping,

@@ -13,7 +13,7 @@ export const stylesShape = PropTypes.shape({
 
 // Options shape
 export const optionShape = PropTypes.shape({
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 });
 

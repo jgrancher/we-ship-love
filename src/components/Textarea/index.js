@@ -1,5 +1,5 @@
 // Externals
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 // Utils
 import { inputShape } from '../../utils/shapes';
@@ -16,23 +16,37 @@ import {
 } from './styles';
 
 const propTypes = {
+  blurOnSubmit: PropTypes.bool,
   input: inputShape.isRequired,
+  numberOfLines: PropTypes.number,
 };
 
-const Textarea = props => (
-  <StyledKeyboardAvoidingView behavior="padding">
-    <StyledView>
-      <StyledImage source={bgMessage} />
-      <StyledTextInput
-        blurOnSubmit
-        multiline
-        numberOfLines={5}
-        onChangeText={props.input.onChange}
-      />
-    </StyledView>
-  </StyledKeyboardAvoidingView>
-);
+const defaultProps = {
+  blurOnSubmit: true,
+  numberOfLines: 5,
+};
+
+const Textarea = (props) => {
+  const { input, ...inputProps } = props;
+
+  return (
+    <StyledKeyboardAvoidingView behavior="padding">
+      <StyledView>
+        <StyledImage source={bgMessage} />
+        <StyledTextInput
+          {...inputProps}
+          multiline
+          onBlur={input.onBlur}
+          onChangeText={input.onChange}
+          onFocus={input.onFocus}
+          value={input.value}
+        />
+      </StyledView>
+    </StyledKeyboardAvoidingView>
+  );
+};
 
 Textarea.propTypes = propTypes;
+Textarea.defaultProps = defaultProps;
 
 export default Textarea;
