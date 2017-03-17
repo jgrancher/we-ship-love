@@ -8,6 +8,6 @@ TODO
 
 ### Optimizations
 
-* Navigator: Check why we need to pass 'index' on every push
-* Delivery form: Check the need of auto-correct for every field
+* styled-components: Use `attrs` for Picker.itemStyle, AccordionPicker.underlayColor...
+* Navigator: Move to react-navigation (or react-native-navigation / native-navigation)
 * Get rid of `import *` on every file
