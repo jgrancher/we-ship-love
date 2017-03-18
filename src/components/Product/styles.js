@@ -1,7 +1,14 @@
 // Externals
 import styled from 'styled-components/native';
 
+// Config
+import {
+  heightContent,
+  widthWindow,
+} from '../../config/sizes';
+
 export default styled.Image`
-  flex: 1;
-  margin-top: 10;
+  align-self: center;
+  height: ${heightContent};
+  width: ${widthWindow};
 `;

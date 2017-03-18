@@ -12,7 +12,10 @@ const propTypes = {
 };
 
 const Product = props => (
-  <StyledImage source={{ uri: props.product.images[0].src }} />
+  <StyledImage
+    source={{ uri: props.product.images[0].src }}
+    resizeMode="contain"
+  />
 );
 
 Product.propTypes = propTypes;
