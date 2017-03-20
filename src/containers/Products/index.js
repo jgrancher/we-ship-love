@@ -90,7 +90,7 @@ class Products extends React.Component {
         <CallToAction
           enabled={hasProducts}
           onPress={this.onNextStep}
-          text="Choisissez votre ballon!"
+          text="Choisissez votre ballon !"
           textComplement={productTitle}
         />
       </FlexView>
