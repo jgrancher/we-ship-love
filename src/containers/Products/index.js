@@ -49,8 +49,8 @@ class Products extends React.Component {
   onNextStep = () => {
     const product = this.props.products[this.state.index];
 
-    // Add the currently diplayed product to cart and go to the next screen
-    this.props.addToCart(product);
+    // Set the order's product and go to the next screen
+    this.props.setOrderProduct(product);
     this.props.pushNextScene();
   }
 
@@ -79,6 +79,9 @@ class Products extends React.Component {
     // Enable CTA only if there are products
     const hasProducts = this.props.products.length > 0;
 
+    // If products displayed, get the title of the product
+    const productTitle = hasProducts ? this.props.products[this.state.index].title : null;
+
     return (
       <FlexView>
         <ContentView>
@@ -88,6 +91,7 @@ class Products extends React.Component {
           enabled={hasProducts}
           onPress={this.onNextStep}
           text="Choisissez votre ballon!"
+          textComplement={productTitle}
         />
       </FlexView>
     );
