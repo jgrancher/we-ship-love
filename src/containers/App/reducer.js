@@ -1,61 +1,32 @@
 // Constants
 import {
-  FETCH_SHOP,
-  FETCH_SHOP_FAIL,
-  FETCH_SHOP_SUCCESS,
   SET_ORDER_PRODUCT,
+  SET_ORDER_VARIANT,
   SET_ORDER_MESSAGE,
   SET_ORDER_DELIVERY,
 } from './constants';
 
 // Default state
-const defaultShop = {
-  data: {},
-  isFetching: false,
-};
-
-// TODO: check if needed!
-export const shop = (state = defaultShop, action) => {
-  switch (action.type) {
-
-    case FETCH_SHOP:
-      return {
-        ...state,
-        isFetching: true,
-      };
-
-    case FETCH_SHOP_FAIL:
-      return {
-        ...state,
-        isFetching: false,
-      };
-
-    case FETCH_SHOP_SUCCESS:
-      return {
-        ...state,
-        isFetching: false,
-        data: action.data,
-      };
-
-    default:
-      return state;
-  }
-};
-
-// Default state
-const defaultOrder = {
+const defaultState = {
   product: null,
+  variant: null,
   message: null,
   delivery: {},
 };
 
-export const order = (state = defaultOrder, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
 
     case SET_ORDER_PRODUCT:
       return {
         ...state,
         product: action.payload.product_id,
+      };
+
+    case SET_ORDER_VARIANT:
+      return {
+        ...state,
+        variant: action.payload.id,
       };
 
     case SET_ORDER_MESSAGE:

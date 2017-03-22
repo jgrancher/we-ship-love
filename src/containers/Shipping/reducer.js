@@ -30,7 +30,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        options: action.data.shipping_zones,
+        options: action.payload.shipping_zones,
       };
 
     case SET_SHIPPING:

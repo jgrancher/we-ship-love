@@ -1,26 +1,30 @@
 /**
- * Formatting function of shipping options to get countries array
- * @param  {Array} options  The shipping options array initially formatted
- * @return {Array}          The countries array formatted
+ * Helper to handle a fetch response
+ * @param  {Response} response  The Response object from the Fetch API
+ * @return {Promise}            A Promise
  */
-export const getOptionsCountries = options => (
-  options.map(o => o.countries).reduce((a, b) => a.concat(b), [])
-);
+export const handleFetchResponse = (response) => {
+  if (!response.ok) {
+    return Promise.reject('An error occured. Please try again.');
+  }
+
+  return Promise.resolve(response.json());
+};
 
 /**
  * Helper to dispatch a succedeed fetch
  * @param  {Function} dispatch  The store dispatch function
  * @param  {String} type        The action type
- * @param  {Object} data        The data object
+ * @param  {Object} payload     The payload object
  * @return {Promise}
  */
-export const fetchSuccess = (dispatch, type, data) => {
+export const fetchSuccess = (dispatch, type, payload) => {
   dispatch({
     type,
-    data,
+    payload,
   });
 
-  return Promise.resolve(data);
+  return Promise.resolve(payload);
 };
 
 /**

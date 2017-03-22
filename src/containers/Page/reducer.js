@@ -37,7 +37,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        data: sanitize(action.data),
+        data: sanitize(action.payload),
       };
 
     default:

@@ -1,23 +1,30 @@
 // Externals
-import React from 'react';
-
-// Utils
-import { productShape } from '../../utils/shapes';
+import React, { PropTypes } from 'react';
 
 // Styles
 import StyledImage from './styles';
 
-const propTypes = {
-  product: productShape.isRequired,
-};
+class Product extends React.Component {
 
-const Product = props => (
-  <StyledImage
-    source={{ uri: props.product.images[0].src }}
-    resizeMode="contain"
-  />
-);
+  static propTypes = {
+    image: PropTypes.string,
+  };
 
-Product.propTypes = propTypes;
+  static defaultProps = {
+    image: null,
+  };
+
+  render() {
+    if (!this.props.image) return null;
+
+    return (
+      <StyledImage
+        source={{ uri: this.props.image }}
+        resizeMode="contain"
+      />
+    );
+  }
+
+}
 
 export default Product;

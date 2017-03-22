@@ -30,7 +30,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        data: action.data,
+        data: action.payload,
       };
 
     default:

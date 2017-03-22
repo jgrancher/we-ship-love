@@ -1,46 +1,18 @@
 // API
 import API from '../../utils/API';
 
-// Helpers
-import {
-  fetchFail,
-  fetchSuccess,
-} from '../../utils/helpers';
-
 // Constants
 import {
-  FETCH_SHOP,
-  FETCH_SHOP_FAIL,
-  FETCH_SHOP_SUCCESS,
   SET_ORDER_MESSAGE,
   SET_ORDER_PRODUCT,
+  SET_ORDER_VARIANT,
   SET_ORDER_DELIVERY,
 } from './constants';
 
 /**
- * Fetch the shop informations
- * @return {Promise}    The promise containing the request
- */
-export const fetchShop = () =>
-  (dispatch, getState) => {
-    const shop = getState().shop.data;
-
-    // If data is already existing, return it.
-    if (shop && Object.keys(shop).length) {
-      return Promise.resolve(shop);
-    }
-
-    dispatch({ type: FETCH_SHOP });
-
-    return API.getShop()
-      .then(data => fetchSuccess(dispatch, FETCH_SHOP_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, FETCH_SHOP_FAIL, error));
-  }
-;
-
-/**
  * Set the order product
  * @param {Object} product  The product object that has been selected
+ * @return {Object}         The action object
  */
 export const setOrderProduct = product => ({
   type: SET_ORDER_PRODUCT,
@@ -48,8 +20,31 @@ export const setOrderProduct = product => ({
 });
 
 /**
+ * Set the order variant
+ * @param {Object} variant  The product variant selected
+ * @return {Promise}        The action promise
+ */
+export const setOrderVariant = variant =>
+  (dispatch) => {
+    // Creating a cart object containing the product variant and its quantity
+    const cart = [{
+      quantity: 1,
+      variant,
+    }];
+
+    dispatch({
+      type: SET_ORDER_VARIANT,
+      payload: variant,
+    });
+
+    return API.checkout(cart);
+  }
+;
+
+/**
  * Set the order message
  * @param {String} message  The message to send within the order
+ * @return {Object}         The action object
  */
 export const setOrderMessage = message => ({
   type: SET_ORDER_MESSAGE,
@@ -58,7 +53,8 @@ export const setOrderMessage = message => ({
 
 /**
  * Set the order delivery
- * @param {Object} delivery  The delivery object containing the whole address
+ * @param {Object} delivery The delivery object containing the whole address
+ * @return {Object}         The action object
  */
 export const setOrderDelivery = delivery => ({
   type: SET_ORDER_DELIVERY,

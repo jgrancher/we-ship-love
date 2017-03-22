@@ -68,7 +68,7 @@ class Products extends React.Component {
         {this.props.products.map(item => (
           <Product
             key={item.product_id}
-            product={item}
+            image={item.images[0].src}
           />
         ))}
       </Slider>

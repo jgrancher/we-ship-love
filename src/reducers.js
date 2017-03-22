@@ -3,10 +3,10 @@ import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
 
 // Reducers
+import order from './containers/App/reducer';
 import pages from './containers/Page/reducer';
 import products from './containers/Products/reducer';
 import shipping from './containers/Shipping/reducer';
-import { order, shop } from './containers/App/reducer';
 
 const reducers = combineReducers({
   form,
@@ -14,7 +14,6 @@ const reducers = combineReducers({
   pages,
   products,
   shipping,
-  shop,
 });
 
 export default reducers;
