@@ -1,27 +1,36 @@
 // Constants
-import { API_DEFAULT_COUNTRY } from '../../data/constants';
-import { SET_DELIVERY } from './constants';
+import {
+  FETCH_COUNTRIES,
+  FETCH_COUNTRIES_FAIL,
+  FETCH_COUNTRIES_SUCCESS,
+} from './constants';
 
 // Default state
 const defaultState = {
-  delivery: {
-    name: 'Jobs',
-    firstname: 'Steve',
-    address: '1 Infinite Loop',
-    zipcode: '95014',
-    city: 'Cupertino',
-    email: 'steve@apple.com',
-    phone: '0601020304',
-    country: API_DEFAULT_COUNTRY,
-  },
+  data: [],
+  isFetching: false,
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case SET_DELIVERY:
+
+    case FETCH_COUNTRIES:
       return {
         ...state,
-        delivery: action.delivery,
+        isFetching: true,
+      };
+
+    case FETCH_COUNTRIES_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+      };
+
+    case FETCH_COUNTRIES_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        data: action.payload,
       };
 
     default:

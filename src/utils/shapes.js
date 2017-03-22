@@ -28,6 +28,29 @@ export const inputShape = PropTypes.shape({
   value: PropTypes.any,
 });
 
+// API - Country province shape
+export const countryProvinceShape = PropTypes.shape({
+  id: PropTypes.number,
+  country_id: PropTypes.number,
+  name: PropTypes.string,
+  code: PropTypes.string,
+  tax: PropTypes.number,
+  tax_name: PropTypes.string,
+  tax_type: PropTypes.string,
+  shipping_zone_id: PropTypes.number,
+  tax_percentage: PropTypes.number,
+});
+
+// API - Country shape
+export const countryShape = PropTypes.shape({
+  id: PropTypes.number,
+  name: PropTypes.string,
+  tax: PropTypes.number,
+  code: PropTypes.string,
+  tax_name: PropTypes.string,
+  provinces: PropTypes.arrayOf(countryProvinceShape),
+});
+
 // API - Product image shape
 export const productImageShape = PropTypes.shape({
   created_at: PropTypes.string,

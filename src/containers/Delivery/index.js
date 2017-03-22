@@ -15,15 +15,16 @@ import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
 // Actions
+import fetchCountries from './actions';
 import { setOrderDelivery } from '../App/actions';
 
 // Utils
-import { optionShape } from '../../utils/shapes';
+import { countryShape } from '../../utils/shapes';
 
 class Delivery extends React.Component {
 
   static propTypes = {
-    countries: PropTypes.arrayOf(optionShape),
+    countries: PropTypes.arrayOf(countryShape).isRequired,
     handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
     onSubmit: PropTypes.func.isRequired,
@@ -31,15 +32,6 @@ class Delivery extends React.Component {
 
   static defaultProps = {
     isFetching: false,
-    countries: [
-      {
-        label: 'France',
-        value: 'fr',
-      }, {
-        label: 'Australie',
-        value: 'aus',
-      },
-    ],
   };
 
   render() {
