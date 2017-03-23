@@ -38,72 +38,83 @@ class Delivery extends React.Component {
       .catch(e => console.warn(e)); // eslint-disable-line no-console
   }
 
-  render() {
+  renderContent() {
     if (this.props.isFetching) {
       return <LoadingIndicator />;
     }
 
     return (
+      <Form>
+        <Field
+          component={Input}
+          name="name"
+          autoCapitalize="words"
+          placeholder="Nom"
+        />
+        <Field
+          component={Input}
+          name="firstname"
+          autoCapitalize="words"
+          placeholder="Prénom"
+        />
+        <Field
+          component={Input}
+          name="address"
+          autoCapitalize="words"
+          placeholder="Adresse"
+        />
+        <Field
+          component={Input}
+          name="address2"
+          autoCapitalize="words"
+          placeholder="Complément d'adresse"
+        />
+        <Field
+          component={Input}
+          name="zipcode"
+          autoCapitalize="none"
+          keyboardType="numbers-and-punctuation"
+          placeholder="Code postal"
+        />
+        <Field
+          component={Input}
+          name="city"
+          placeholder="Ville"
+        />
+        <Field
+          component={Input}
+          name="email"
+          autoCapitalize="none"
+          autoCorrect={false}
+          keyboardType="email-address"
+          placeholder="Email"
+        />
+        <Field
+          component={Input}
+          name="phone"
+          keyboardType="phone-pad"
+          placeholder="Téléphone"
+        />
+        <Field
+          component={AccordionPicker}
+          name="country"
+          defaultValue="fr"
+          options={this.props.countries}
+        />
+        <Disclaimer />
+      </Form>
+    );
+  }
+
+  render() {
+    // Enable CTA only if there are countries
+    const hasCountries = this.props.countries.length > 0;
+
+    return (
       <FlexView>
-        <Form>
-          <Field
-            component={Input}
-            name="name"
-            placeholder="Nom"
-            autoCapitalize="words"
-          />
-          <Field
-            component={Input}
-            name="firstname"
-            placeholder="Prénom"
-            autoCapitalize="words"
-          />
-          <Field
-            component={Input}
-            name="address"
-            placeholder="Adresse"
-            autoCapitalize="words"
-          />
-          <Field
-            component={Input}
-            name="address2"
-            placeholder="Complément d'adresse"
-            autoCapitalize="words"
-          />
-          <Field
-            component={Input}
-            keyboardType="numbers-and-punctuation"
-            name="zipcode"
-            placeholder="Code postal"
-            autoCapitalize="none"
-          />
-          <Field
-            component={Input}
-            name="city"
-            placeholder="Ville"
-          />
-          <Field
-            component={Input}
-            keyboardType="email-address"
-            name="email"
-            placeholder="Email"
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-          <Field
-            component={Input}
-            name="phone"
-            keyboardType="phone-pad"
-            placeholder="Téléphone"
-          />
-          <Field
-            component={AccordionPicker}
-            name="country"
-            options={this.props.countries}
-          />
-          <Disclaimer />
-        </Form>
+        {this.renderContent()}
         <CallToAction
+          enabled={hasCountries}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={3}
           text="C'est pour qui?"
