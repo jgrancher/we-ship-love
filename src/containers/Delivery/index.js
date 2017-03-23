@@ -47,19 +47,19 @@ class Delivery extends React.Component {
       <Form>
         <Field
           component={Input}
-          name="name"
+          name="lastName"
           autoCapitalize="words"
           placeholder="Nom"
         />
         <Field
           component={Input}
-          name="firstname"
+          name="firstName"
           autoCapitalize="words"
           placeholder="Prénom"
         />
         <Field
           component={Input}
-          name="address"
+          name="address1"
           autoCapitalize="words"
           placeholder="Adresse"
         />
@@ -71,7 +71,7 @@ class Delivery extends React.Component {
         />
         <Field
           component={Input}
-          name="zipcode"
+          name="zip"
           autoCapitalize="none"
           keyboardType="numbers-and-punctuation"
           placeholder="Code postal"
@@ -97,7 +97,7 @@ class Delivery extends React.Component {
         />
         <Field
           component={AccordionPicker}
-          name="country"
+          name="countryCode"
           defaultValue="fr"
           options={this.props.countries}
         />
