@@ -1,5 +1,7 @@
 // Externals
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   Field,
   reduxForm,
@@ -19,20 +21,22 @@ import fetchCountries from './actions';
 import { setOrderDelivery } from '../App/actions';
 
 // Utils
-import { countryShape } from '../../utils/shapes';
+import { optionShape } from '../../utils/shapes';
 
 class Delivery extends React.Component {
 
   static propTypes = {
-    countries: PropTypes.arrayOf(countryShape).isRequired,
+    countries: PropTypes.arrayOf(optionShape).isRequired,
+    fetchCountries: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    isFetching: PropTypes.bool,
+    isFetching: PropTypes.bool.isRequired,
     onSubmit: PropTypes.func.isRequired,
   };
 
-  static defaultProps = {
-    isFetching: false,
-  };
+  componentWillMount() {
+    this.props.fetchCountries()
+      .catch(e => console.warn(e)); // eslint-disable-line no-console
+  }
 
   render() {
     if (this.props.isFetching) {
@@ -109,7 +113,8 @@ class Delivery extends React.Component {
   }
 }
 
-export default reduxForm({
+// Composes the component with reduxForm
+const DeliveryForm = reduxForm({
   form: 'delivery',
   onSubmit: (values, dispatch, props) => {
     // Set the order delivery then go to the next screen
@@ -117,3 +122,16 @@ export default reduxForm({
     props.pushNextScene();
   },
 })(Delivery);
+
+export default connect(
+  state => ({
+    isFetching: state.countries.isFetching,
+    countries: state.countries.data.map(c => ({
+      label: c.name,
+      value: c.code,
+    })),
+  }),
+  dispatch => bindActionCreators({
+    fetchCountries,
+  }, dispatch),
+)(DeliveryForm);
