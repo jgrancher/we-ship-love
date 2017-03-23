@@ -40,13 +40,12 @@ class Page extends React.Component {
   static propTypes = {
     content: PropTypes.string,
     fetchPages: PropTypes.func.isRequired,
-    isFetching: PropTypes.bool,
+    isFetching: PropTypes.bool.isRequired,
     title: PropTypes.string,
   };
 
   static defaultProps = {
     content: null,
-    isFetching: false,
     title: null,
   };
 

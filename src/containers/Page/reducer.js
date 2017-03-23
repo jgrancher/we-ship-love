@@ -12,8 +12,8 @@ const defaultState = {
 };
 
 // Sanitize broken urls in content body
-function sanitize(data) {
-  return data.pages.map(page => ({
+function sanitize(pages) {
+  return pages.map(page => ({
     ...page,
     body_html: page.body_html.replace(/("\/\/cdn)/gi, 'https://cdn'),
   }));
@@ -37,7 +37,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         isFetching: false,
-        data: sanitize(action.payload),
+        data: sanitize(action.payload.pages),
       };
 
     default:
