@@ -3,33 +3,28 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  ActivityIndicatorIOS,
-  ScrollView,
-  View,
-} from 'react-native';
+  Field,
+  reduxForm,
+} from 'redux-form';
 
 // Containers & components
 import CallToAction from '../../components/CallToAction';
+import FlexView from '../../components/FlexView';
+import Form from '../../components/Form';
+import LoadingIndicator from '../../components/LoadingIndicator';
 import ShippingButton from '../../components/ShippingButton';
 
 // Actions
-import {
-  setShipping,
-  fetchShippingOptions,
-} from './actions';
-
-// Styles
-import appStyles from '../../styles/base/application';
-import styles from '../../styles/components/form';
-// import * as colors from '../../config/colors';
+import fetchRates from './actions';
+import { setOrderShipping } from '../App/actions';
 
 class Shipping extends React.Component {
 
   static propTypes = {
-    fetchShippingOptions: PropTypes.func.isRequired,
+    fetchRates: PropTypes.func.isRequired,
     isFetching: PropTypes.bool,
     // pushNextScene: PropTypes.func.isRequired,
-    shippingOptions: PropTypes.array.isRequired,
+    rates: PropTypes.array.isRequired,
     // setShipping: PropTypes.func.isRequired,
   };
 
@@ -37,66 +32,64 @@ class Shipping extends React.Component {
     isFetching: false,
   };
 
-  state = {
-    shipping: this.props.shippingOptions[0],
-  };
-
-  // componentWillMount() {
-  //     this.props.fetchShippingOptions();
-  // }
-
-  onNextStep = () => {
-
+  componentWillMount() {
+    this.props.fetchRates()
+      .then(data => console.log('fdp =>', data))
+      .catch(e => console.warn(e));
   }
 
   renderContent() {
     if (this.props.isFetching) {
-      return null;
-      // TODO: LoadingIndicator here?
-      // return (
-      //   <ActivityIndicatorIOS
-      //     color={colors.turquoise}
-      //     style={appStyles.indicator}
-      //   />
-      // );
+      return <LoadingIndicator />;
     }
 
     // TODO: Loop through the options to render buttons
     return (
-      <ShippingButton
-        active
-        description="Colissimo 2 à 3 jours"
-      />
+      <Form>
+        <ShippingButton
+          active
+          description="Colissimo 2 à 3 jours"
+        />
+      </Form>
     );
   }
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <ScrollView
-          contentContainerStyle={appStyles.content}
-          style={styles.container}
-        >
-          {this.renderContent()}
-        </ScrollView>
+      <FlexView>
+        {this.renderContent()}
         <CallToAction
-          enabled={this.props.shippingOptions.length > 0}
+          enabled={this.props.rates.length > 0}
           onPress={this.onNextStep}
           step={4}
           text="Frais de port"
         />
-      </View>
+      </FlexView>
     );
   }
 }
 
+// Composes the component with reduxForm
+const ShippingForm = reduxForm({
+  form: 'shipping',
+  initialValues: {
+  },
+  onSubmit: (values, dispatch, props) => {
+    // TODO: Need to check the values here!
+    console.log('order shipping ->', values);
+    // Set the order delivery then go to the next screen
+    // dispatch(setOrderDelivery(values));
+    // props.pushNextScene();
+  },
+})(Shipping);
+
 export default connect(
     state => ({
-      isFetching: state.shipping.isFetching,
-      shippingOptions: state.shipping.options,
+      isFetching: state.rates.isFetching,
+      rates: state.rates.data,
     }),
     dispatch => bindActionCreators({
-      fetchShippingOptions,
-      setShipping,
+      fetchRates,
+      setOrderShipping,
     }, dispatch),
-)(Shipping);
+)(ShippingForm);

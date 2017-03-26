@@ -7,13 +7,13 @@ import countries from './containers/Delivery/reducer';
 import order from './containers/App/reducer';
 import pages from './containers/Page/reducer';
 import products from './containers/Products/reducer';
-import shipping from './containers/Shipping/reducer';
+import rates from './containers/Shipping/reducer';
 
 const reducers = combineReducers({
   countries,
   pages,
   products,
-  shipping,
+  rates,
   form,
   order,
 });

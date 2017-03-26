@@ -1,42 +1,37 @@
 // Constants
 import {
-  FETCH_SHIPPING,
-  FETCH_SHIPPING_FAIL,
-  FETCH_SHIPPING_SUCCESS,
-  SET_SHIPPING,
+  FETCH_RATES,
+  FETCH_RATES_FAIL,
+  FETCH_RATES_SUCCESS,
 } from './constants';
 
 // Default state
 const defaultState = {
+  data: [],
   isFetching: false,
-  options: [],
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case FETCH_SHIPPING:
+
+    case FETCH_RATES:
       return {
         ...state,
         isFetching: true,
       };
 
-    case FETCH_SHIPPING_FAIL:
+    case FETCH_RATES_FAIL:
       return {
         ...state,
         isFetching: false,
       };
 
-    case FETCH_SHIPPING_SUCCESS:
+    case FETCH_RATES_SUCCESS:
+      console.log(action.payload);
       return {
         ...state,
         isFetching: false,
-        options: action.payload.shipping_zones,
-      };
-
-    case SET_SHIPPING:
-      return {
-        ...state,
-        selected: action.shipping,
+        data: action.payload,
       };
 
     default:

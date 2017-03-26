@@ -7,41 +7,30 @@ import {
   fetchSuccess,
 } from '../../utils/helpers';
 
-// Data
+// Constants
 import {
-  FETCH_SHIPPING,
-  FETCH_SHIPPING_FAIL,
-  FETCH_SHIPPING_SUCCESS,
-  SET_SHIPPING,
+  FETCH_RATES,
+  FETCH_RATES_FAIL,
+  FETCH_RATES_SUCCESS,
 } from './constants';
 
 /**
- * Fetch all the shipping options
+ * Fetch all the shipping rates of the cart
  * @return {Promise}    The promise containing the request
  */
-export const fetchShippingOptions = () =>
+export default () =>
   (dispatch, getState) => {
-    const shipping = getState().shipping.options;
+    const rates = getState().rates.data;
 
     // If data is already existing, return it.
-    if (shipping && shipping.length) {
-      return Promise.resolve(shipping);
+    if (rates && rates.length) {
+      return Promise.resolve(rates);
     }
 
-    dispatch({ type: FETCH_SHIPPING });
+    dispatch({ type: FETCH_RATES });
 
-    return API.get('shipping_zones.json')
-      .then(data => fetchSuccess(dispatch, FETCH_SHIPPING_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, FETCH_SHIPPING_FAIL, error));
+    return API.getShippingRates()
+      .then(data => fetchSuccess(dispatch, FETCH_RATES_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, FETCH_RATES_FAIL, error));
   }
 ;
-
-/**
- * Set the shipping method
- * @param  {Object} shipping    The shipping object (name, price, etc.)
- * @return {Object}             The action created
- */
-export const setShipping = shipping => ({
-  type: SET_SHIPPING,
-  shipping,
-});
