@@ -60,3 +60,13 @@ export const setOrderDelivery = delivery => ({
   type: SET_ORDER_DELIVERY,
   payload: delivery,
 });
+
+/**
+ * Set the order shipping rate
+ * @param {Object} rate     The shipping rate object selected
+ * @return {Object}         The action object
+ */
+export const setOrderShipping = shipping => ({
+  type: SET_ORDER_DELIVERY,
+  payload: shipping,
+});

@@ -98,7 +98,6 @@ class Delivery extends React.Component {
         <Field
           component={AccordionPicker}
           name="countryCode"
-          defaultValue="fr"
           options={this.props.countries}
         />
         <Disclaimer />
@@ -127,7 +126,12 @@ class Delivery extends React.Component {
 // Composes the component with reduxForm
 const DeliveryForm = reduxForm({
   form: 'delivery',
+  initialValues: {
+    countryCode: 'FR',
+  },
   onSubmit: (values, dispatch, props) => {
+    // TODO: Need to check the values here!
+    console.log('order delivery ->', values);
     // Set the order delivery then go to the next screen
     dispatch(setOrderDelivery(values));
     props.pushNextScene();

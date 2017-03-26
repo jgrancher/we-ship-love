@@ -29,11 +29,6 @@ class AccordionPicker extends React.Component {
   static propTypes = {
     input: inputShape.isRequired,
     options: PropTypes.arrayOf(optionShape).isRequired,
-    selectedValue: PropTypes.string,
-  };
-
-  static defaultProps = {
-    selectedValue: null,
   };
 
   state = {
@@ -68,7 +63,6 @@ class AccordionPicker extends React.Component {
           <Picker
             {...pickerProps}
             onValueChange={input.onChange}
-            options={this.props.options}
             selectedValue={input.value}
           />
         </Collapsible>
