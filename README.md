@@ -16,7 +16,13 @@
 ## Get started
 
 * You will need your Shopify administration access to get it running!
-* Create a `.env` file where you define `SHOPIFY_KEY` and `SHOPIFY_PASSWORD` that you get from your Shopify administration.
+* Create a `.env` file where you define private credentials from your Shopify administration:
+```
+SHOPIFY_API_KEY=XXX
+SHOPIFY_SDK_KEY=XXX
+SHOPIFY_PASSWORD=XXX
+SHOPIFY_DOMAIN=myshopname.myshopify.com
+```
 * Run the project: `react-native run-ios`.
 
 ## Links
