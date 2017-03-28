@@ -11,7 +11,10 @@ import Product from '../../components/Product';
 import Slider from '../../components/Slider';
 
 // Actions
-import { setOrderVariant } from '../App/actions';
+import {
+  setOrderVariant,
+  setRemoteCheckout,
+} from '../App/actions';
 
 // Utils
 import { variantShape } from '../../utils/shapes';
@@ -21,6 +24,7 @@ class Variants extends React.Component {
   static propTypes = {
     pushNextScene: PropTypes.func.isRequired,
     setOrderVariant: PropTypes.func.isRequired,
+    setRemoteCheckout: PropTypes.func.isRequired,
     variants: PropTypes.arrayOf(variantShape),
   };
 
@@ -39,8 +43,9 @@ class Variants extends React.Component {
   onNextStep = () => {
     const variant = this.props.variants[this.state.index];
 
-    // Set the order's variant and go to the next screen
-    this.props.setOrderVariant(variant)
+    // Set the order's variant, create a checkout on the API and go to the next screen
+    this.props.setOrderVariant(variant);
+    this.props.setRemoteCheckout(variant)
       .then(this.props.pushNextScene)
       .catch(e => console.warn(e)); // eslint-disable-line no-console
   }
@@ -83,5 +88,6 @@ export default connect(
   }),
   dispatch => bindActionCreators({
     setOrderVariant,
+    setRemoteCheckout,
   }, dispatch),
 )(Variants);

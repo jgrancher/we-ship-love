@@ -1,4 +1,28 @@
 /**
+ * Helper to test if a string is an email
+ * @param  {String} string      The string to test
+ * @return {Boolean}
+ */
+export const isEmail = string => /^[A-Z0-9._%+-]+@[A-Z0-9.-]{2,}\.[A-Z]{2,4}$/i.test(string);
+
+/**
+ * Helper function to validate a required field
+ * @param  {Mixed} value        The value to check
+ * @return {String|undefined}   A message string if invalid, otherwise undefined
+ */
+export const validateRequired = value => (!value ? 'Ce champ est requis' : undefined);
+
+/**
+ * Helper function to validate an email field
+ * @param  {Mixed} value        The value to check
+ * @return {String|undefined}   A message string if invalid, otherwise undefined
+ */
+export const validateEmail = value => (value && !isEmail(value)
+  ? 'Adresse email invalide'
+  : undefined
+);
+
+/**
  * Helper to handle a fetch response
  * @param  {Response} response  The Response object from the Fetch API
  * @return {Promise}            A Promise

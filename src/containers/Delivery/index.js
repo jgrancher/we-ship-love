@@ -1,5 +1,6 @@
 // Externals
 import React, { PropTypes } from 'react';
+import { Alert } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -18,10 +19,17 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 
 // Actions
 import fetchCountries from './actions';
-import { setOrderDelivery } from '../App/actions';
+import {
+  setOrderDelivery,
+  setRemoteCustomer,
+} from '../App/actions';
 
 // Utils
 import { optionShape } from '../../utils/shapes';
+import {
+  validateEmail,
+  validateRequired,
+} from '../../utils/helpers';
 
 class Delivery extends React.Component {
 
@@ -31,6 +39,7 @@ class Delivery extends React.Component {
     handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    valid: PropTypes.bool.isRequired,
   };
 
   componentWillMount() {
@@ -106,14 +115,11 @@ class Delivery extends React.Component {
   }
 
   render() {
-    // Enable CTA only if there are countries
-    const hasCountries = this.props.countries.length > 0;
-
     return (
       <FlexView>
         {this.renderContent()}
         <CallToAction
-          enabled={hasCountries}
+          enabled={!this.props.isFetching && this.props.valid}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={3}
           text="C'est pour qui?"
@@ -130,17 +136,24 @@ const DeliveryForm = reduxForm({
     countryCode: 'FR',
   },
   onSubmit: (values, dispatch, props) => {
-    // TODO: Need to check the values here!
-    console.log('order delivery ->', values);
     // Set the order delivery then go to the next screen
     dispatch(setOrderDelivery(values));
-    props.pushNextScene();
+    dispatch(setRemoteCustomer(values.email, values))
+      .then(props.pushNextScene)
+      .catch(e => Alert.alert('Oops !', e.trim()));
   },
+  validate: values => ({
+    lastName: validateRequired(values.lastName),
+    address1: validateRequired(values.address1),
+    zip: validateRequired(values.zip),
+    city: validateRequired(values.city),
+    email: validateRequired(values.email) || validateEmail(values.email),
+  }),
 })(Delivery);
 
 export default connect(
   state => ({
-    isFetching: state.countries.isFetching,
+    isFetching: state.countries.isFetching || state.order.isFetching,
     countries: state.countries.data.map(c => ({
       label: c.name,
       value: c.code,
@@ -148,5 +161,6 @@ export default connect(
   }),
   dispatch => bindActionCreators({
     fetchCountries,
+    setRemoteCustomer,
   }, dispatch),
 )(DeliveryForm);

@@ -4,6 +4,12 @@ import {
   SET_ORDER_VARIANT,
   SET_ORDER_MESSAGE,
   SET_ORDER_DELIVERY,
+  SET_REMOTE_CHECKOUT,
+  SET_REMOTE_CHECKOUT_FAIL,
+  SET_REMOTE_CHECKOUT_SUCCESS,
+  SET_REMOTE_CUSTOMER,
+  SET_REMOTE_CUSTOMER_FAIL,
+  SET_REMOTE_CUSTOMER_SUCCESS,
 } from './constants';
 
 // Default state
@@ -12,6 +18,7 @@ const defaultState = {
   variant: null,
   message: null,
   delivery: {},
+  isFetching: false,
 };
 
 export default (state = defaultState, action) => {
@@ -39,6 +46,22 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         delivery: action.payload,
+      };
+
+    case SET_REMOTE_CHECKOUT:
+    case SET_REMOTE_CUSTOMER:
+      return {
+        ...state,
+        isFetching: true,
+      };
+
+    case SET_REMOTE_CHECKOUT_FAIL:
+    case SET_REMOTE_CHECKOUT_SUCCESS:
+    case SET_REMOTE_CUSTOMER_FAIL:
+    case SET_REMOTE_CUSTOMER_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
       };
 
     default:
