@@ -23,12 +23,16 @@ const defaultProps = {
 const Input = (props) => {
   const { input, ...inputProps } = props;
 
+  // Show an error if the input is changed and invalid
+  const showError = inputProps.meta.touched && inputProps.meta.error;
+
   return (
     <StyledTextInput
       {...inputProps}
       onBlur={input.onBlur}
       onChangeText={input.onChange}
       onFocus={input.onFocus}
+      showError={showError}
       value={input.value}
     />
   );

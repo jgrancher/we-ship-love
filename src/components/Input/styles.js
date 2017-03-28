@@ -6,12 +6,13 @@ import { spaceSmall } from '../../config/sizes';
 import {
   grey,
   lightest,
+  red,
 } from '../../config/colors';
 
 export default styled.TextInput`
   background-color: ${lightest};
   border-width: 1;
-  border-color: ${lightest};
+  border-color: ${props => (props.showError ? red : lightest)};
   color: ${grey};
   height: 48;
   margin-bottom: ${spaceSmall};
