@@ -27,7 +27,6 @@ export default (state = defaultState, action) => {
       };
 
     case FETCH_RATES_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         isFetching: false,

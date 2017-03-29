@@ -13,12 +13,16 @@ import {
   SET_ORDER_PRODUCT,
   SET_ORDER_VARIANT,
   SET_ORDER_DELIVERY,
+  SET_ORDER_SHIPPING,
   SET_REMOTE_CHECKOUT,
   SET_REMOTE_CHECKOUT_FAIL,
   SET_REMOTE_CHECKOUT_SUCCESS,
   SET_REMOTE_CUSTOMER,
   SET_REMOTE_CUSTOMER_FAIL,
   SET_REMOTE_CUSTOMER_SUCCESS,
+  SET_REMOTE_SHIPPING,
+  SET_REMOTE_SHIPPING_FAIL,
+  SET_REMOTE_SHIPPING_SUCCESS,
 } from './constants';
 
 /**
@@ -63,11 +67,11 @@ export const setOrderDelivery = delivery => ({
 
 /**
  * Set the order shipping rate
- * @param {Object} rate     The shipping rate object selected
+ * @param {Object} shipping The shipping rate object selected
  * @return {Object}         The action object
  */
 export const setOrderShipping = shipping => ({
-  type: SET_ORDER_DELIVERY,
+  type: SET_ORDER_SHIPPING,
   payload: shipping,
 });
 
@@ -112,5 +116,23 @@ export const setRemoteCustomer = (email, address) =>
     return API.setCustomerInformation(email, address)
       .then(data => fetchSuccess(dispatch, SET_REMOTE_CUSTOMER_SUCCESS, data))
       .catch(error => fetchFail(dispatch, SET_REMOTE_CUSTOMER_FAIL, error));
+  }
+;
+
+/**
+ * Set the remote checkout's shipping method
+ * @param {Number} index    The shipping method's index
+ * @return {Promise}        The action promise
+ */
+export const setRemoteShipping = index =>
+  (dispatch) => {
+    dispatch({
+      type: SET_REMOTE_SHIPPING,
+      payload: index,
+    });
+
+    return API.selectShippingRate(index)
+      .then(data => fetchSuccess(dispatch, SET_REMOTE_SHIPPING_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, SET_REMOTE_SHIPPING_FAIL, error));
   }
 ;

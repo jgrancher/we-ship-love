@@ -2,6 +2,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Alert } from 'react-native';
 import {
   Field,
   reduxForm,
@@ -16,26 +17,32 @@ import ShippingButton from '../../components/ShippingButton';
 
 // Actions
 import fetchRates from './actions';
-import { setOrderShipping } from '../App/actions';
+import {
+  setOrderShipping,
+  setRemoteShipping,
+} from '../App/actions';
+
+// Utils
+import { rateShape } from '../../utils/shapes';
 
 class Shipping extends React.Component {
 
   static propTypes = {
     fetchRates: PropTypes.func.isRequired,
-    isFetching: PropTypes.bool,
-    // pushNextScene: PropTypes.func.isRequired,
-    rates: PropTypes.array.isRequired,
-    // setShipping: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    isFetching: PropTypes.bool.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    rates: PropTypes.arrayOf(rateShape).isRequired,
   };
 
-  static defaultProps = {
-    isFetching: false,
+  state = {
+    index: 0,
   };
 
   componentWillMount() {
     this.props.fetchRates()
       .then(data => console.log('fdp =>', data))
-      .catch(e => console.warn(e));
+      .catch(e => console.warn(e)); // eslint-disable-line no-console
   }
 
   renderContent() {
@@ -60,7 +67,7 @@ class Shipping extends React.Component {
         {this.renderContent()}
         <CallToAction
           enabled={this.props.rates.length > 0}
-          onPress={this.onNextStep}
+          onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={4}
           text="Frais de port"
         />
@@ -75,10 +82,14 @@ const ShippingForm = reduxForm({
   initialValues: {
   },
   onSubmit: (values, dispatch, props) => {
-    // TODO: Need to check the values here!
-    console.log('order shipping ->', values);
-    // Set the order delivery then go to the next screen
-    // dispatch(setOrderDelivery(values));
+    // TODO: Need to get values from Fields to be created, and
+    console.log('Order shipping ->', values);
+
+    // Set the order shipping rate then go to the next screen
+    dispatch(setOrderShipping(props.rates[0]));
+    dispatch(setRemoteShipping(0))
+      .then(props.pushNextScene)
+      .catch(e => Alert.alert('Oops !', e.trim()));
     // props.pushNextScene();
   },
 })(Shipping);

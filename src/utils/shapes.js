@@ -28,6 +28,13 @@ export const inputShape = PropTypes.shape({
   value: PropTypes.any,
 });
 
+// API - Fetching rate shape
+export const rateShape = PropTypes.shape({
+  id: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.string,
+});
+
 // API - Country province shape
 export const countryProvinceShape = PropTypes.shape({
   id: PropTypes.number,
