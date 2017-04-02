@@ -10,7 +10,7 @@ import Picker from '../Picker';
 import {
   StyledImage,
   StyledText,
-  StyledTouchableHighlight,
+  StyledButton,
   StyledView,
   underlayColor,
 } from './styles';
@@ -45,7 +45,7 @@ class AccordionPicker extends React.Component {
 
     return (
       <View>
-        <StyledTouchableHighlight
+        <StyledButton
           onPress={this.toggleOpen}
           underlayColor={underlayColor}
         >
@@ -58,7 +58,7 @@ class AccordionPicker extends React.Component {
               source={iconChevron}
             />
           </StyledView>
-        </StyledTouchableHighlight>
+        </StyledButton>
         <Collapsible collapsed={!this.state.open}>
           <Picker
             {...pickerProps}

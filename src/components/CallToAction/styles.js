@@ -9,7 +9,7 @@ import {
   widthWindow,
 } from '../../config/sizes';
 
-export const StyledTouchableHighlight = styled.TouchableHighlight`
+export const StyledButton = styled.TouchableHighlight`
   bottom: 0;
   height: ${heightCTA};
   left: 0;

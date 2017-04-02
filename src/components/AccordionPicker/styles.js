@@ -9,7 +9,7 @@ import {
   lightest,
 } from '../../config/colors';
 
-export const StyledTouchableHighlight = styled.TouchableHighlight`
+export const StyledButton = styled.TouchableHighlight`
   background-color: ${lightest};
   border-width: 1;
   border-color: ${lightest};

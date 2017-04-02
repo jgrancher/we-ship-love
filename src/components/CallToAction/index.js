@@ -17,7 +17,7 @@ import {
   StyledTextStep,
   StyledTextSubtitle,
   StyledTextTitle,
-  StyledTouchableHighlight,
+  StyledButton,
   StyledView,
 } from './styles';
 
@@ -37,7 +37,7 @@ const defaultProps = {
 };
 
 const CallToAction = props => (
-  <StyledTouchableHighlight
+  <StyledButton
     onPress={props.enabled ? props.onPress : null}
     underlayColor="transparent"
   >
@@ -63,7 +63,7 @@ const CallToAction = props => (
         <StyledImageArrow source={props.enabled ? ctaBtnEnabled : ctaBtnDisabled} />
       </StyledView>
     </FlexView>
-  </StyledTouchableHighlight>
+  </StyledButton>
 );
 
 CallToAction.propTypes = propTypes;
