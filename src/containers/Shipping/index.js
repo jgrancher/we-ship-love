@@ -3,15 +3,11 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Alert } from 'react-native';
-import {
-  Field,
-  reduxForm,
-} from 'redux-form';
 
-// Containers & components
+// Components
 import CallToAction from '../../components/CallToAction';
+import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
-import Form from '../../components/Form';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import ShippingButton from '../../components/ShippingButton';
 
@@ -29,20 +25,32 @@ class Shipping extends React.Component {
 
   static propTypes = {
     fetchRates: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
-    onSubmit: PropTypes.func.isRequired,
+    pushNextScene: PropTypes.func.isRequired,
     rates: PropTypes.arrayOf(rateShape).isRequired,
+    setOrderShipping: PropTypes.func.isRequired,
+    setRemoteShipping: PropTypes.func.isRequired,
   };
 
   state = {
-    index: 0,
+    index: -1,
   };
 
   componentWillMount() {
     this.props.fetchRates()
-      .then(data => console.log('fdp =>', data))
       .catch(e => console.warn(e)); // eslint-disable-line no-console
+  }
+
+  onIndexChange = (index) => {
+    this.setState({ index });
+  }
+
+  onNextStep = () => {
+    // Set the order shipping rate then go to the next screen
+    this.props.setOrderShipping(this.state.index);
+    this.props.setRemoteShipping(this.state.index)
+      .then(this.props.pushNextScene)
+      .catch(e => Alert.alert('Oops !', e.trim()));
   }
 
   renderContent() {
@@ -50,24 +58,31 @@ class Shipping extends React.Component {
       return <LoadingIndicator />;
     }
 
-    // TODO: Loop through the options to render buttons
-    return (
-      <Form>
+    return this.props.rates.map((rate, index) => {
+      const onPress = () => this.onIndexChange(index);
+
+      return (
         <ShippingButton
-          active
-          description="Colissimo 2 à 3 jours"
+          active={index === this.state.index}
+          key={rate.id}
+          onPress={onPress}
+          {...rate}
         />
-      </Form>
-    );
+      );
+    });
   }
 
   render() {
+    const enabled = this.props.rates.length > 0 && this.state.index >= 0;
+
     return (
       <FlexView>
-        {this.renderContent()}
+        <ContentView>
+          {this.renderContent()}
+        </ContentView>
         <CallToAction
-          enabled={this.props.rates.length > 0}
-          onPress={this.props.handleSubmit(this.props.onSubmit)}
+          enabled={enabled}
+          onPress={this.onNextStep}
           step={4}
           text="Frais de port"
         />
@@ -76,31 +91,14 @@ class Shipping extends React.Component {
   }
 }
 
-// Composes the component with reduxForm
-const ShippingForm = reduxForm({
-  form: 'shipping',
-  initialValues: {
-  },
-  onSubmit: (values, dispatch, props) => {
-    // TODO: Need to get values from Fields to be created, and
-    console.log('Order shipping ->', values);
-
-    // Set the order shipping rate then go to the next screen
-    dispatch(setOrderShipping(props.rates[0]));
-    dispatch(setRemoteShipping(0))
-      .then(props.pushNextScene)
-      .catch(e => Alert.alert('Oops !', e.trim()));
-    // props.pushNextScene();
-  },
-})(Shipping);
-
 export default connect(
-    state => ({
-      isFetching: state.rates.isFetching,
-      rates: state.rates.data,
-    }),
-    dispatch => bindActionCreators({
-      fetchRates,
-      setOrderShipping,
-    }, dispatch),
-)(ShippingForm);
+  state => ({
+    isFetching: state.rates.isFetching,
+    rates: state.rates.data,
+  }),
+  dispatch => bindActionCreators({
+    fetchRates,
+    setOrderShipping,
+    setRemoteShipping,
+  }, dispatch),
+)(Shipping);

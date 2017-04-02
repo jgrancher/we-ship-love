@@ -1,57 +1,47 @@
 // Externals
 import React, { PropTypes } from 'react';
-import {
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { View } from 'react-native';
+
+// Components
+import PriceLozenge from '../PriceLozenge';
 
 // Styles
-import styles from '../../styles/components/shippingButton';
+import {
+  StyledButton,
+  StyledText,
+} from './styles';
+
+// Config
+import { lightest } from '../../config/colors';
 
 const propTypes = {
   active: PropTypes.bool,
-  description: PropTypes.string,
   onPress: PropTypes.func,
-  price: PropTypes.number,
+  price: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
   active: false,
-  description: '',
   onPress: () => {},
-  price: 12,
 };
 
-const ShippingButton = (props) => {
-  const stylesLozenge = [styles.lozenge, props.active && styles.lozengeActive];
-  const stylesDescription = [styles.description, props.active && styles.descriptionActive];
-
-  return (
-    <TouchableHighlight
-      onPress={props.onPress}
-      style={styles.container}
-      underlayColor="transparent"
-    >
-      <View>
-        <View style={styles.content}>
-          <Text style={stylesDescription}>
-            {props.description}
-          </Text>
-        </View>
-        <View style={stylesLozenge} />
-        <View style={styles.priceContainer}>
-          <Text style={styles.price}>
-            {props.price}
-          </Text>
-          <Text style={[styles.price, styles.priceCurrency]}>
-            €
-          </Text>
-        </View>
-      </View>
-    </TouchableHighlight>
-  );
-};
+const ShippingButton = props => (
+  <StyledButton
+    onPress={props.onPress}
+    underlayColor={lightest}
+  >
+    <View>
+      <StyledText active={props.active}>
+        {props.title}
+      </StyledText>
+      <PriceLozenge
+        active={props.active}
+        price={props.price}
+      />
+    </View>
+  </StyledButton>
+);
 
 ShippingButton.propTypes = propTypes;
 ShippingButton.defaultProps = defaultProps;
