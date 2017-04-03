@@ -23,7 +23,7 @@ export default () =>
     const countries = getState().countries.data;
 
     // If data is already existing, return it.
-    if (countries && countries.length) {
+    if (countries.length) {
       return Promise.resolve(countries);
     }
 

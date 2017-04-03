@@ -28,7 +28,7 @@ export default () =>
     const products = getState().products.data;
 
     // If data is already existing, return it.
-    if (products && products.length) {
+    if (products.length) {
       return Promise.resolve(products);
     }
 

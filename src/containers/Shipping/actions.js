@@ -23,7 +23,7 @@ export default () =>
     const rates = getState().rates.data;
 
     // If data is already existing, return it.
-    if (rates && rates.length) {
+    if (rates.length) {
       return Promise.resolve(rates);
     }
 
