@@ -134,6 +134,12 @@ class Delivery extends React.Component {
 const DeliveryForm = reduxForm({
   form: 'delivery',
   initialValues: {
+    lastName: 'Grancher',
+    firstName: 'Jeremy',
+    address1: '6 rue Saint-Vincent de Paul',
+    zip: '75010',
+    city: 'Paris',
+    email: 'jgrancher@outlook.com',
     countryCode: 'FR',
   },
   onSubmit: (values, dispatch, props) => {
@@ -141,7 +147,7 @@ const DeliveryForm = reduxForm({
     dispatch(setOrderDelivery(values));
     dispatch(setRemoteCustomer(values.email, values))
       .then(props.pushNextScene)
-      .catch(e => Alert.alert('Oops !', e.trim()));
+      .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
   },
   validate: values => ({
     lastName: validateRequired(values.lastName),

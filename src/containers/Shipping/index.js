@@ -50,7 +50,7 @@ class Shipping extends React.Component {
     this.props.setOrderShipping(this.state.index);
     this.props.setRemoteShipping(this.state.index)
       .then(this.props.pushNextScene)
-      .catch(e => Alert.alert('Oops !', e.trim()));
+      .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
   }
 
   renderContent() {
