@@ -17,19 +17,19 @@ import {
 } from '../App/actions';
 
 // Utils
-import { variantShape } from '../../utils/shapes';
+import {
+  productImageShape,
+  variantShape,
+} from '../../utils/shapes';
 
 class Variants extends React.Component {
 
   static propTypes = {
+    images: PropTypes.arrayOf(productImageShape).isRequired,
     pushNextScene: PropTypes.func.isRequired,
     setOrderVariant: PropTypes.func.isRequired,
     setRemoteCheckout: PropTypes.func.isRequired,
-    variants: PropTypes.arrayOf(variantShape),
-  };
-
-  static defaultProps = {
-    variants: [],
+    variants: PropTypes.arrayOf(variantShape).isRequired,
   };
 
   state = {
@@ -53,11 +53,16 @@ class Variants extends React.Component {
   renderContent() {
     return (
       <Slider onIndexChange={this.onIndexChange}>
-        {this.props.variants.map(item => (
-          <Product
-            key={item.id}
-          />
-        ))}
+        {this.props.variants.map((item) => {
+          const image = this.props.images.find(i => i.variant_ids[0] === item.id);
+
+          return (
+            <Product
+              key={item.id}
+              image={image && image.src}
+            />
+          );
+        })}
       </Slider>
     );
   }
@@ -83,9 +88,16 @@ class Variants extends React.Component {
 }
 
 export default connect(
-  state => ({
-    variants: state.products.data.find(p => p.product_id === state.order.product).variants,
-  }),
+  (state) => {
+    // Find the selected product in order amongst the products
+    const product = state.products.data.find(p => p.product_id === state.order.product);
+
+    // Find the needed images and variants
+    const images = product.images.filter(image => image.variant_ids.length);
+    const variants = product.variants;
+
+    return { images, variants };
+  },
   dispatch => bindActionCreators({
     setOrderVariant,
     setRemoteCheckout,
