@@ -73,15 +73,13 @@ class Shipping extends React.Component {
   }
 
   render() {
-    const enabled = this.props.rates.length > 0 && this.state.index >= 0;
-
     return (
       <FlexView>
         <ContentView>
           {this.renderContent()}
         </ContentView>
         <CallToAction
-          enabled={enabled}
+          enabled={!this.props.isFetching && this.state.index >= 0}
           onPress={this.onNextStep}
           step={4}
           text="Frais de port"
@@ -94,7 +92,7 @@ class Shipping extends React.Component {
 
 export default connect(
   state => ({
-    isFetching: state.rates.isFetching,
+    isFetching: state.rates.isFetching || state.order.isFetching,
     rates: state.rates.data,
   }),
   dispatch => bindActionCreators({
