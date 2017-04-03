@@ -84,6 +84,7 @@ class Page extends React.Component {
       </View>
     );
   }
+
 }
 
 export default connect(

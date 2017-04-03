@@ -114,6 +114,7 @@ class Application extends React.Component {
       </View>
     );
   }
+
 }
 
 export default Application;

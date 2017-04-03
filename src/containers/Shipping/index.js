@@ -89,6 +89,7 @@ class Shipping extends React.Component {
       </FlexView>
     );
   }
+
 }
 
 export default connect(

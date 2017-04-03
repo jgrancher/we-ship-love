@@ -127,6 +127,7 @@ class Delivery extends React.Component {
       </FlexView>
     );
   }
+
 }
 
 // Composes the component with reduxForm
