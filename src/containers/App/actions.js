@@ -23,6 +23,9 @@ import {
   SET_REMOTE_SHIPPING,
   SET_REMOTE_SHIPPING_FAIL,
   SET_REMOTE_SHIPPING_SUCCESS,
+  COMPLETE_REMOTE_CHECKOUT,
+  COMPLETE_REMOTE_CHECKOUT_FAIL,
+  COMPLETE_REMOTE_CHECKOUT_SUCCESS,
 } from './constants';
 
 /**
@@ -134,5 +137,23 @@ export const setRemoteShipping = index =>
     return API.selectShippingRate(index)
       .then(data => fetchSuccess(dispatch, SET_REMOTE_SHIPPING_SUCCESS, data))
       .catch(error => fetchFail(dispatch, SET_REMOTE_SHIPPING_FAIL, error));
+  }
+;
+
+/**
+ * Complete the remote checkout with a credit card object
+ * @param {Object} card     The credit cart object
+ * @return {Promise}        The action promise
+ */
+export const completeRemoteCheckout = card =>
+  (dispatch) => {
+    dispatch({
+      type: COMPLETE_REMOTE_CHECKOUT,
+      payload: card,
+    });
+
+    return API.completeCheckout(card)
+      .then(data => fetchSuccess(dispatch, COMPLETE_REMOTE_CHECKOUT_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, COMPLETE_REMOTE_CHECKOUT_FAIL, error));
   }
 ;

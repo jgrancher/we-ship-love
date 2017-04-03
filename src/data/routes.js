@@ -1,5 +1,6 @@
 import Delivery from '../containers/Delivery';
 import Message from '../containers/Message';
+import Payment from '../containers/Payment';
 import Products from '../containers/Products';
 import Shipping from '../containers/Shipping';
 import Variants from '../containers/Variants';
@@ -24,5 +25,9 @@ export const orderRoutes = [
   {
     component: Shipping,
     index: 4,
+  },
+  {
+    component: Payment,
+    index: 5,
   },
 ];

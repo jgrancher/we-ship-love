@@ -14,6 +14,9 @@ import {
   SET_REMOTE_SHIPPING,
   SET_REMOTE_SHIPPING_FAIL,
   SET_REMOTE_SHIPPING_SUCCESS,
+  COMPLETE_REMOTE_CHECKOUT,
+  COMPLETE_REMOTE_CHECKOUT_FAIL,
+  COMPLETE_REMOTE_CHECKOUT_SUCCESS,
 } from './constants';
 
 // Default state
@@ -61,6 +64,7 @@ export default (state = defaultState, action) => {
     case SET_REMOTE_CHECKOUT:
     case SET_REMOTE_CUSTOMER:
     case SET_REMOTE_SHIPPING:
+    case COMPLETE_REMOTE_CHECKOUT:
       return {
         ...state,
         isFetching: true,
@@ -72,6 +76,8 @@ export default (state = defaultState, action) => {
     case SET_REMOTE_CUSTOMER_SUCCESS:
     case SET_REMOTE_SHIPPING_FAIL:
     case SET_REMOTE_SHIPPING_SUCCESS:
+    case COMPLETE_REMOTE_CHECKOUT_FAIL:
+    case COMPLETE_REMOTE_CHECKOUT_SUCCESS:
       return {
         ...state,
         isFetching: false,
