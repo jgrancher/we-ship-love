@@ -18,7 +18,7 @@ import {
  * Fetch all the pages
  * @return {Promise}    The promise containing the request
  */
-export const fetchPages = () =>
+export default () =>
   (dispatch, getState) => {
     const pages = getState().pages.data;
 
@@ -29,7 +29,7 @@ export const fetchPages = () =>
 
     dispatch({ type: FETCH_PAGES });
 
-    return API.get('pages.json')
+    return API.getPages()
       .then(data => fetchSuccess(dispatch, FETCH_PAGES_SUCCESS, data))
       .catch(error => fetchFail(dispatch, FETCH_PAGES_FAIL, error));
   }

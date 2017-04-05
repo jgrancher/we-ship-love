@@ -22,6 +22,7 @@ const URL = `https://${SHOPIFY_API_KEY}:${SHOPIFY_PASSWORD}@${SHOPIFY_DOMAIN}/ad
 // API methods
 const API = {
   getCountries: () => fetch(`${URL}/countries.json`).then(handleFetchResponse),
+  getPages: () => fetch(`${URL}/pages.json`).then(handleFetchResponse),
 };
 
 // Our internal API is the combination of the BUY SDK and some fetch methods
