@@ -1,12 +1,11 @@
 // Externals
 import React, { PropTypes } from 'react';
-import {
-  Text,
-  TouchableHighlight,
-} from 'react-native';
 
 // Styles
-import styles from '../../styles/components/refreshButton';
+import {
+  StyledButton,
+  StyledText,
+} from './styles';
 
 const propTypes = {
   numberOfLines: PropTypes.number,
@@ -20,18 +19,14 @@ const defaultProps = {
 };
 
 const RefreshButton = props => (
-  <TouchableHighlight
+  <StyledButton
     onPress={props.onPress}
-    style={styles.container}
     underlayColor="transparent"
   >
-    <Text
-      numberOfLines={props.numberOfLines}
-      style={styles.text}
-    >
+    <StyledText numberOfLines={props.numberOfLines}>
       {props.text}
-    </Text>
-  </TouchableHighlight>
+    </StyledText>
+  </StyledButton>
 );
 
 RefreshButton.propTypes = propTypes;
