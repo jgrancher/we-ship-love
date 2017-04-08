@@ -10,17 +10,13 @@ import {
   View,
 } from 'react-native';
 
-// Data
-import {
-  items,
-  socials,
-  website,
-} from '../../data/menu';
+// Menu items
+import items from './items';
 
 // Images
-import iconFacebook from '../../images/icon-social-fb.png';
-import iconTwitter from '../../images/icon-social-twitter.png';
-import iconInstagram from '../../images/icon-social-insta.png';
+import iconFacebook from './icon-facebook.png';
+import iconInstagram from './icon-instagram.png';
+import iconTwitter from './icon-twitter.png';
 
 // Styles
 import styles from '../../styles/components/menu';
@@ -35,15 +31,19 @@ class Menu extends React.Component {
   };
 
   openFacebook = () => {
-    this.openURL(socials.facebook);
+    this.openURL('https://www.facebook.com/mieuxquedesfleurs/');
   }
 
   openInstagram = () => {
-    this.openURL(socials.instagram);
+    this.openURL('https://www.instagram.com/mieuxquedesfleurs');
   }
 
   openTwitter = () => {
-    this.openURL(socials.twitter);
+    this.openURL('https://twitter.com/faitesmieux');
+  }
+
+  openWebsite = () => {
+    this.openURL('http://mieuxquedesfleurs.com/');
   }
 
   openURL = (url) => {
@@ -83,8 +83,6 @@ class Menu extends React.Component {
   }
 
   render() {
-    const openWebsite = () => this.openURL(website);
-
     return (
       <View style={styles.container}>
         <View style={styles.menu}>
@@ -103,7 +101,7 @@ class Menu extends React.Component {
             </TouchableOpacity>
           </View>
           <TouchableOpacity
-            onPress={openWebsite}
+            onPress={this.openWebsite}
             style={styles.linkWebsite}
           >
             <Text style={styles.menuItemText}>

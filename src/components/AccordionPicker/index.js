@@ -16,7 +16,7 @@ import {
 } from './styles';
 
 // Images
-import iconChevron from '../../images/icon-chevron.png';
+import chevron from './chevron.png';
 
 // Utils
 import {
@@ -55,7 +55,7 @@ class AccordionPicker extends React.Component {
             </StyledText>
             <StyledImage
               open={this.state.open}
-              source={iconChevron}
+              source={chevron}
             />
           </StyledView>
         </StyledButton>

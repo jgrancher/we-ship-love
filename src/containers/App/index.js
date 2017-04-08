@@ -13,7 +13,7 @@ import Menu from '../../components/Menu';
 import NavbarButton from '../../components/NavbarButton';
 
 // Data
-import { orderRoutes } from '../../data/routes';
+import routes from '../../data/routes';
 
 // Images
 import logo from '../../images/logo.png';
@@ -73,7 +73,7 @@ class Application extends React.Component {
 
     // Action to push to next scene
     const pushNextScene = () => {
-      navigator.push(orderRoutes[route.index + 1]);
+      navigator.push(routes.order[route.index + 1]);
     };
 
     return (
@@ -105,7 +105,7 @@ class Application extends React.Component {
         >
           <View style={appStyles.appContainer}>
             <Navigator
-              initialRoute={orderRoutes[0]}
+              initialRoute={routes.order[0]}
               ref={(c) => { this.navigator = c; }}
               renderScene={this.renderScene}
             />

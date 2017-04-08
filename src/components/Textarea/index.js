@@ -5,7 +5,7 @@ import React, { PropTypes } from 'react';
 import { inputShape } from '../../utils/shapes';
 
 // Images
-import bgMessage from '../../images/bg-message.png';
+import background from './background.png';
 
 // Styles
 import {
@@ -32,7 +32,7 @@ const Textarea = (props) => {
   return (
     <StyledKeyboardAvoidingView behavior="padding">
       <StyledView>
-        <StyledImage source={bgMessage} />
+        <StyledImage source={background} />
         <StyledTextInput
           {...inputProps}
           multiline

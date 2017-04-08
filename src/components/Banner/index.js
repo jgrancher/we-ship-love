@@ -6,9 +6,9 @@ import { View } from 'react-native';
 import FlexView from '../FlexView';
 
 // Images
-import ctaBackground from '../../images/cta-bg.png';
-import ctaBtnEnabled from '../../images/cta-btn.png';
-import ctaBtnDisabled from '../../images/cta-btn-disabled.png';
+import arrow from './arrow.png';
+import arrowDisabled from './arrow-disabled.png';
+import bannerBackground from './banner-background.png';
 
 // Styles
 import {
@@ -45,7 +45,7 @@ const Banner = props => (
     <FlexView>
       <StyledImageBackground
         resizeMode="stretch"
-        source={ctaBackground}
+        source={bannerBackground}
       />
       <StyledView>
         <StyledTextStep>
@@ -63,7 +63,7 @@ const Banner = props => (
         </View>
         {props.text && (
           <StyledImageArrow
-            source={props.enabled ? ctaBtnEnabled : ctaBtnDisabled}
+            source={props.enabled ? arrow : arrowDisabled}
           />
         )}
       </StyledView>

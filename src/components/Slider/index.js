@@ -4,8 +4,8 @@ import Swiper from 'react-native-swiper';
 import { Image } from 'react-native';
 
 // Images
-import btnSliderNext from '../../images/btn-slider-next.png';
-import btnSliderPrev from '../../images/btn-slider-previous.png';
+import arrowLeft from './arrow-left.png';
+import arrowRight from './arrow-right.png';
 
 // Utils
 import {
@@ -35,8 +35,8 @@ class Slider extends React.Component {
     index: 0,
     loadMinimal: false,
     onIndexChange: () => {},
-    nextButton: <Image source={btnSliderNext} />,
-    prevButton: <Image source={btnSliderPrev} />,
+    nextButton: <Image source={arrowRight} />,
+    prevButton: <Image source={arrowLeft} />,
     showsButtons: true,
     showsPagination: false,
   };
