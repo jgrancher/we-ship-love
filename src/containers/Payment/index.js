@@ -11,12 +11,12 @@ import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
 // Actions
-import { completeRemoteCheckout } from '../App/actions';
+import { asyncCompleteCheckout } from '../App/actions';
 
 class Payment extends React.Component {
 
   static propTypes = {
-    completeRemoteCheckout: PropTypes.func.isRequired,
+    asyncCompleteCheckout: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
   };
 
@@ -31,7 +31,7 @@ class Payment extends React.Component {
   }
 
   onNextStep = () => {
-    this.props.completeRemoteCheckout({
+    this.props.asyncCompleteCheckout({
       number: this.state.values.number,
       expiryMonth: '03',
       expiryYear: '20',
@@ -76,6 +76,6 @@ export default connect(
     isFetching: state.order.isFetching,
   }),
   dispatch => bindActionCreators({
-    completeRemoteCheckout,
+    asyncCompleteCheckout,
   }, dispatch),
 )(Payment);

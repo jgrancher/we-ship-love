@@ -14,8 +14,8 @@ import ShippingButton from '../../components/ShippingButton';
 // Actions
 import fetchRates from './actions';
 import {
+  asyncSelectShipping,
   setOrderShipping,
-  setRemoteShipping,
 } from '../App/actions';
 
 // Utils
@@ -24,12 +24,12 @@ import { rateShape } from '../../utils/shapes';
 class Shipping extends React.Component {
 
   static propTypes = {
+    asyncSelectShipping: PropTypes.func.isRequired,
     fetchRates: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
     pushNextScene: PropTypes.func.isRequired,
     rates: PropTypes.arrayOf(rateShape).isRequired,
     setOrderShipping: PropTypes.func.isRequired,
-    setRemoteShipping: PropTypes.func.isRequired,
   };
 
   state = {
@@ -48,7 +48,7 @@ class Shipping extends React.Component {
   onNextStep = () => {
     // Set the order shipping rate then go to the next screen
     this.props.setOrderShipping(this.state.index);
-    this.props.setRemoteShipping(this.state.index)
+    this.props.asyncSelectShipping(this.state.index)
       .then(this.props.pushNextScene)
       .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
   }
@@ -96,8 +96,8 @@ export default connect(
     rates: state.rates.data,
   }),
   dispatch => bindActionCreators({
+    asyncSelectShipping,
     fetchRates,
     setOrderShipping,
-    setRemoteShipping,
   }, dispatch),
 )(Shipping);

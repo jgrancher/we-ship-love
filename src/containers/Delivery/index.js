@@ -20,8 +20,8 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 // Actions
 import fetchCountries from './actions';
 import {
+  asyncSetCustomer,
   setOrderDelivery,
-  setRemoteCustomer,
 } from '../App/actions';
 
 // Utils
@@ -145,7 +145,7 @@ const DeliveryForm = reduxForm({
   onSubmit: (values, dispatch, props) => {
     // Set the order delivery then go to the next screen
     dispatch(setOrderDelivery(values));
-    dispatch(setRemoteCustomer(values.email, values))
+    dispatch(asyncSetCustomer(values.email, values))
       .then(props.pushNextScene)
       .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
   },
@@ -167,7 +167,7 @@ export default connect(
     })),
   }),
   dispatch => bindActionCreators({
+    asyncSetCustomer,
     fetchCountries,
-    setRemoteCustomer,
   }, dispatch),
 )(DeliveryForm);

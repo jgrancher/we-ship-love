@@ -14,18 +14,18 @@ import {
   SET_ORDER_VARIANT,
   SET_ORDER_DELIVERY,
   SET_ORDER_SHIPPING,
-  SET_REMOTE_CHECKOUT,
-  SET_REMOTE_CHECKOUT_FAIL,
-  SET_REMOTE_CHECKOUT_SUCCESS,
-  SET_REMOTE_CUSTOMER,
-  SET_REMOTE_CUSTOMER_FAIL,
-  SET_REMOTE_CUSTOMER_SUCCESS,
-  SET_REMOTE_SHIPPING,
-  SET_REMOTE_SHIPPING_FAIL,
-  SET_REMOTE_SHIPPING_SUCCESS,
-  COMPLETE_REMOTE_CHECKOUT,
-  COMPLETE_REMOTE_CHECKOUT_FAIL,
-  COMPLETE_REMOTE_CHECKOUT_SUCCESS,
+  ASYNC_CREATE_CHECKOUT,
+  ASYNC_CREATE_CHECKOUT_FAIL,
+  ASYNC_CREATE_CHECKOUT_SUCCESS,
+  ASYNC_SET_CUSTOMER,
+  ASYNC_SET_CUSTOMER_FAIL,
+  ASYNC_SET_CUSTOMER_SUCCESS,
+  ASYNC_SELECT_SHIPPING,
+  ASYNC_SELECT_SHIPPING_FAIL,
+  ASYNC_SELECT_SHIPPING_SUCCESS,
+  ASYNC_COMPLETE_CHECKOUT,
+  ASYNC_COMPLETE_CHECKOUT_FAIL,
+  ASYNC_COMPLETE_CHECKOUT_SUCCESS,
 } from './constants';
 
 /**
@@ -79,12 +79,16 @@ export const setOrderShipping = shipping => ({
 });
 
 /**
- * Set (create) a checkout object on the Shopify's API
+ * ASYNC ACTIONS THAT RETURN PROMISES
+*/
+
+/**
+ * Async - Create a checkout object on the Shopify's API
  * @param {Object} variant  The product variant selected
  * @param {Number} quantity The variant's quantity selected
  * @return {Promise}        The action promise
  */
-export const setRemoteCheckout = (variant, quantity = 1) =>
+export const asyncCreateCheckout = (variant, quantity = 1) =>
   (dispatch) => {
     // Creating a cart object containing the product variant and its quantity
     const cart = [{
@@ -93,67 +97,67 @@ export const setRemoteCheckout = (variant, quantity = 1) =>
     }];
 
     dispatch({
-      type: SET_REMOTE_CHECKOUT,
+      type: ASYNC_CREATE_CHECKOUT,
       payload: cart,
     });
 
     return API.checkout(cart)
-      .then(data => fetchSuccess(dispatch, SET_REMOTE_CHECKOUT_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, SET_REMOTE_CHECKOUT_FAIL, error));
+      .then(data => fetchSuccess(dispatch, ASYNC_CREATE_CHECKOUT_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, ASYNC_CREATE_CHECKOUT_FAIL, error));
   }
 ;
 
 /**
- * Set the remote checkout's customer information (addresses)
+ * Async - Set the remote checkout's customer information (addresses)
  * @param {String} email    The customer's email
  * @param {Object} address  The customer's address object
  * @return {Promise}        The action promise
  */
-export const setRemoteCustomer = (email, address) =>
+export const asyncSetCustomer = (email, address) =>
   (dispatch) => {
     dispatch({
-      type: SET_REMOTE_CUSTOMER,
+      type: ASYNC_SET_CUSTOMER,
       payload: { email, address },
     });
 
     return API.setCustomerInformation(email, address)
-      .then(data => fetchSuccess(dispatch, SET_REMOTE_CUSTOMER_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, SET_REMOTE_CUSTOMER_FAIL, error));
+      .then(data => fetchSuccess(dispatch, ASYNC_SET_CUSTOMER_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, ASYNC_SET_CUSTOMER_FAIL, error));
   }
 ;
 
 /**
- * Set the remote checkout's shipping method
+ * Async - Select the remote checkout's shipping method
  * @param {Number} index    The shipping method's index
  * @return {Promise}        The action promise
  */
-export const setRemoteShipping = index =>
+export const asyncSelectShipping = index =>
   (dispatch) => {
     dispatch({
-      type: SET_REMOTE_SHIPPING,
+      type: ASYNC_SELECT_SHIPPING,
       payload: index,
     });
 
     return API.selectShippingRate(index)
-      .then(data => fetchSuccess(dispatch, SET_REMOTE_SHIPPING_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, SET_REMOTE_SHIPPING_FAIL, error));
+      .then(data => fetchSuccess(dispatch, ASYNC_SELECT_SHIPPING_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, ASYNC_SELECT_SHIPPING_FAIL, error));
   }
 ;
 
 /**
- * Complete the remote checkout with a credit card object
+ * Async - Complete the remote checkout with a credit card object
  * @param {Object} card     The credit cart object
  * @return {Promise}        The action promise
  */
-export const completeRemoteCheckout = card =>
+export const asyncCompleteCheckout = card =>
   (dispatch) => {
     dispatch({
-      type: COMPLETE_REMOTE_CHECKOUT,
+      type: ASYNC_COMPLETE_CHECKOUT,
       payload: card,
     });
 
     return API.completeCheckout(card)
-      .then(data => fetchSuccess(dispatch, COMPLETE_REMOTE_CHECKOUT_SUCCESS, data))
-      .catch(error => fetchFail(dispatch, COMPLETE_REMOTE_CHECKOUT_FAIL, error));
+      .then(data => fetchSuccess(dispatch, ASYNC_COMPLETE_CHECKOUT_SUCCESS, data))
+      .catch(error => fetchFail(dispatch, ASYNC_COMPLETE_CHECKOUT_FAIL, error));
   }
 ;

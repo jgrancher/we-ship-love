@@ -12,8 +12,8 @@ import Slider from '../../components/Slider';
 
 // Actions
 import {
+  asyncCreateCheckout,
   setOrderVariant,
-  setRemoteCheckout,
 } from '../App/actions';
 
 // Utils
@@ -25,10 +25,10 @@ import {
 class Variants extends React.Component {
 
   static propTypes = {
+    asyncCreateCheckout: PropTypes.func.isRequired,
     images: PropTypes.arrayOf(productImageShape).isRequired,
     pushNextScene: PropTypes.func.isRequired,
     setOrderVariant: PropTypes.func.isRequired,
-    setRemoteCheckout: PropTypes.func.isRequired,
     variants: PropTypes.arrayOf(variantShape).isRequired,
   };
 
@@ -45,7 +45,7 @@ class Variants extends React.Component {
 
     // Set the order's variant, create a checkout on the API and go to the next screen
     this.props.setOrderVariant(variant);
-    this.props.setRemoteCheckout(variant)
+    this.props.asyncCreateCheckout(variant)
       .then(this.props.pushNextScene)
       .catch(e => console.warn(e)); // eslint-disable-line no-console
   }
@@ -99,7 +99,7 @@ export default connect(
     return { images, variants };
   },
   dispatch => bindActionCreators({
+    asyncCreateCheckout,
     setOrderVariant,
-    setRemoteCheckout,
   }, dispatch),
 )(Variants);
