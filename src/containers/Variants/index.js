@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Containers & components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import Product from '../../components/Product';
@@ -76,8 +76,9 @@ class Variants extends React.Component {
         <ContentView>
           {this.renderContent()}
         </ContentView>
-        <CallToAction
+        <Banner
           onPress={this.onNextStep}
+          step={2}
           text="Choisissez un supplément"
           textComplement={variantTitle}
         />

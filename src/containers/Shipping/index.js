@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Alert } from 'react-native';
 
 // Components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
@@ -78,10 +78,10 @@ class Shipping extends React.Component {
         <ContentView>
           {this.renderContent()}
         </ContentView>
-        <CallToAction
+        <Banner
           enabled={!this.props.isFetching && this.state.index >= 0}
           onPress={this.onNextStep}
-          step={4}
+          step={5}
           text="Frais de port"
         />
       </FlexView>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import WebView from '../../components/WebView';
@@ -51,7 +51,7 @@ class Page extends React.Component {
     return (
       <FlexView>
         {this.renderContent()}
-        <CallToAction />
+        <Banner />
       </FlexView>
     );
   }

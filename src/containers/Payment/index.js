@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import CreditCard from '../../components/CreditCard';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
@@ -54,15 +54,13 @@ class Payment extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.state);
     return (
       <FlexView>
         {this.renderContent()}
-        <CallToAction
+        <Banner
           enabled={!this.props.isFetching && this.state.valid}
           onPress={this.onNextStep}
-          step={5}
+          step={6}
           text="Paiement"
         />
       </FlexView>

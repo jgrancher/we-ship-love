@@ -6,7 +6,7 @@ import {
 } from 'redux-form';
 
 // Components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import FlexView from '../../components/FlexView';
 import Textarea from '../../components/Textarea';
 
@@ -27,9 +27,9 @@ class Message extends React.Component { // eslint-disable-line react/prefer-stat
           component={Textarea}
           name="message"
         />
-        <CallToAction
+        <Banner
           onPress={this.props.handleSubmit(this.props.onSubmit)}
-          step={2}
+          step={3}
           text="Rédigez votre message"
           textComplement="(anonyme si vous ne signez pas)"
         />

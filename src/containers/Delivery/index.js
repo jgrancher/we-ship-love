@@ -10,7 +10,7 @@ import {
 
 // Components
 import AccordionPicker from '../../components/AccordionPicker';
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import Disclaimer from '../../components/Disclaimer';
 import FlexView from '../../components/FlexView';
 import Form from '../../components/Form';
@@ -118,10 +118,10 @@ class Delivery extends React.Component {
     return (
       <FlexView>
         {this.renderContent()}
-        <CallToAction
+        <Banner
           enabled={!this.props.isFetching && this.props.valid}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
-          step={3}
+          step={4}
           text="C'est pour qui?"
         />
       </FlexView>

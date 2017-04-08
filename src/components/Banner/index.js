@@ -25,18 +25,19 @@ const propTypes = {
   enabled: PropTypes.bool,
   onPress: PropTypes.func,
   step: PropTypes.number,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   textComplement: PropTypes.string,
 };
 
 const defaultProps = {
   enabled: true,
-  onPress: () => {},
-  step: 1,
+  onPress: null,
+  step: null,
+  text: null,
   textComplement: null,
 };
 
-const CallToAction = props => (
+const Banner = props => (
   <StyledButton
     onPress={props.enabled ? props.onPress : null}
     underlayColor="transparent"
@@ -60,13 +61,17 @@ const CallToAction = props => (
             </StyledTextSubtitle>
           )}
         </View>
-        <StyledImageArrow source={props.enabled ? ctaBtnEnabled : ctaBtnDisabled} />
+        {props.text && (
+          <StyledImageArrow
+            source={props.enabled ? ctaBtnEnabled : ctaBtnDisabled}
+          />
+        )}
       </StyledView>
     </FlexView>
   </StyledButton>
 );
 
-CallToAction.propTypes = propTypes;
-CallToAction.defaultProps = defaultProps;
+Banner.propTypes = propTypes;
+Banner.defaultProps = defaultProps;
 
-export default CallToAction;
+export default Banner;

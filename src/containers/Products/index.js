@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Containers & components
-import CallToAction from '../../components/CallToAction';
+import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
@@ -87,9 +87,10 @@ class Products extends React.Component {
         <ContentView>
           {this.renderContent()}
         </ContentView>
-        <CallToAction
+        <Banner
           enabled={hasProducts}
           onPress={this.onNextStep}
+          step={1}
           text="Choisissez votre ballon !"
           textComplement={productTitle}
         />
