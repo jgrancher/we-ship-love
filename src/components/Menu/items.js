@@ -2,13 +2,15 @@
 import routes from '../../data/routes';
 
 // Images
+import iconFacebook from './icon-facebook.png';
 import iconHeart from './icon-heart.png';
+import iconInstagram from './icon-instagram.png';
 import iconQuestionMark from './icon-questionmark.png';
 import iconSettings from './icon-settings.png';
 import iconSmiley from './icon-smiley.png';
+import iconTwitter from './icon-twitter.png';
 
-// Menu items
-export default [
+export const sections = [
   {
     id: 'NewOrder',
     icon: iconHeart,
@@ -32,5 +34,23 @@ export default [
     icon: iconSettings,
     title: 'Mes commandes',
     ...routes.orders[0],
+  },
+];
+
+export const socials = [
+  {
+    id: 'twitter',
+    icon: iconTwitter,
+    url: 'https://twitter.com/faitesmieux',
+  },
+  {
+    id: 'facebook',
+    icon: iconFacebook,
+    url: 'https://www.facebook.com/mieuxquedesfleurs/',
+  },
+  {
+    id: 'instagram',
+    icon: iconInstagram,
+    url: 'https://www.instagram.com/mieuxquedesfleurs',
   },
 ];

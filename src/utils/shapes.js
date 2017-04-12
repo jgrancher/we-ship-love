@@ -11,6 +11,15 @@ export const stylesShape = PropTypes.shape({
   height: PropTypes.number,
 });
 
+// Menu item shape
+export const menuItemShape = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  icon: PropTypes.number.isRequired, // Webpack
+  title: PropTypes.string,
+  url: PropTypes.string,
+  component: PropTypes.function,
+});
+
 // Options shape
 export const optionShape = PropTypes.shape({
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
