@@ -38,8 +38,7 @@ class Products extends React.Component {
   };
 
   componentWillMount() {
-    this.props.fetchProducts()
-      .catch(e => console.warn(e)); // eslint-disable-line no-console
+    this.props.fetchProducts();
   }
 
   onIndexChange = (index) => {

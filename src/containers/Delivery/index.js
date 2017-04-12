@@ -43,8 +43,7 @@ class Delivery extends React.Component {
   };
 
   componentWillMount() {
-    this.props.fetchCountries()
-      .catch(e => console.warn(e)); // eslint-disable-line no-console
+    this.props.fetchCountries();
   }
 
   renderContent() {

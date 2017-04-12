@@ -37,8 +37,7 @@ class Shipping extends React.Component {
   };
 
   componentWillMount() {
-    this.props.fetchRates()
-      .catch(e => console.warn(e)); // eslint-disable-line no-console
+    this.props.fetchRates();
   }
 
   onIndexChange = (index) => {

@@ -45,9 +45,7 @@ class Variants extends React.Component {
 
     // Set the order's variant, create a checkout on the API and go to the next screen
     this.props.setOrderVariant(variant);
-    this.props.asyncCreateCheckout(variant)
-      .then(this.props.pushNextScene)
-      .catch(e => console.warn(e)); // eslint-disable-line no-console
+    this.props.asyncCreateCheckout(variant).then(this.props.pushNextScene);
   }
 
   renderContent() {
