@@ -8,6 +8,7 @@ import { heightCTA } from '../../config/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
   align-items: center;
+  flex: 1;
   justify-content: center;
   margin-bottom: ${heightCTA};
 `;
