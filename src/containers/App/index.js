@@ -10,8 +10,8 @@ import Navbar from '../../components/Navbar';
 import NavbarBackButton from '../../components/NavbarBackButton';
 import NavbarMenuButton from '../../components/NavbarMenuButton';
 
-// Data
-import routes from '../../data/routes';
+// Utils
+import routes from '../../utils/routes';
 
 // Styles
 import { widthMenu } from '../../config/sizes';

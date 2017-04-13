@@ -17,7 +17,7 @@ import {
 import {
   API_COLLECTION_FANTASIES,
   API_COLLECTION_HEARTS,
-} from '../../data/constants';
+} from '../../utils/constants';
 
 /**
  * Fetch all the products (by collections)

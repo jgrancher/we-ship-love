@@ -1,5 +1,5 @@
-// Routes
-import routes from '../../data/routes';
+// Utils
+import routes from '../../utils/routes';
 
 // Images
 import iconFacebook from './icon-facebook.png';
