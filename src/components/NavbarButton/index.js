@@ -1,12 +1,9 @@
 // Externals
 import React, { PropTypes } from 'react';
-import {
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import { Image } from 'react-native';
 
 // Styles
-import styles from '../../styles/components/navbar';
+import StyledButton from './styles';
 
 const propTypes = {
   image: PropTypes.node.isRequired,
@@ -14,13 +11,12 @@ const propTypes = {
 };
 
 const NavbarButton = props => (
-  <TouchableOpacity
+  <StyledButton
     activeOpacity={0.6}
     onPress={props.onPress}
-    style={styles.navbarButton}
   >
     <Image source={props.image} />
-  </TouchableOpacity>
+  </StyledButton>
 );
 
 NavbarButton.propTypes = propTypes;
