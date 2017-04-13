@@ -11,8 +11,8 @@ import {
   StyledText,
 } from './styles';
 
-// Config
-import { lightest } from '../../config/colors';
+// Shared
+import { lightest } from '../../shared/colors';
 
 const propTypes = {
   active: PropTypes.bool,

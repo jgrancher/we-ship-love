@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
-import { source } from '../../config/fonts';
+// Shared
+import { source } from '../../shared/fonts';
 import {
   black,
   greyDark,
   lightest,
-} from '../../config/colors';
+} from '../../shared/colors';
 
 export const StyledButton = styled.TouchableHighlight`
   background-color: ${lightest};

@@ -9,11 +9,11 @@ import {
   StyledView,
 } from './styles';
 
-// Config
+// Shared
 import {
   grey,
   red,
-} from '../../config/colors';
+} from '../../shared/colors';
 
 const propTypes = {
   onChange: PropTypes.func.isRequired,

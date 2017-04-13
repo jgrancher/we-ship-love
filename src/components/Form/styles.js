@@ -1,8 +1,8 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
-import { spaceNormal } from '../../config/sizes';
+// Shared
+import { spaceNormal } from '../../shared/sizes';
 
 export default styled.ScrollView`
   flex: 1;

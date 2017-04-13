@@ -14,7 +14,7 @@ import {
 } from '../../utils/shapes';
 
 // Styles
-import { heightContent } from '../../config/sizes';
+import { heightContent } from '../../shared/sizes';
 
 class Slider extends React.Component {
 

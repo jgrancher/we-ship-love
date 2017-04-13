@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
-import { greyDark } from '../../config/colors';
-import { source } from '../../config/fonts';
+// Shared
+import { greyDark } from '../../shared/colors';
+import { source } from '../../shared/fonts';
 import {
   heightCTA,
   spaceNormal,
-} from '../../config/sizes';
+} from '../../shared/sizes';
 
 export default styled.Text`
   color: ${greyDark};

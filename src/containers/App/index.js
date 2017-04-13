@@ -14,11 +14,11 @@ import NavbarMenuButton from '../../components/NavbarMenuButton';
 import routes from '../../utils/routes';
 
 // Styles
-import { widthMenu } from '../../config/sizes';
+import { widthMenu } from '../../shared/sizes';
 import {
   brownDark,
   white,
-} from '../../config/colors';
+} from '../../shared/colors';
 
 class Application extends React.Component {
 

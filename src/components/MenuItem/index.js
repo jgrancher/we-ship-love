@@ -9,8 +9,8 @@ import {
   StyledView,
 } from './styles';
 
-// Config
-import { brownDark } from '../../config/colors';
+// Shared
+import { brownDark } from '../../shared/colors';
 
 // Utils
 import { menuItemShape } from '../../utils/shapes';

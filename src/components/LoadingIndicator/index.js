@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 
 // Styles
 import StyledActivityIndicator from './styles';
-import { turquoise } from '../../config/colors';
+import { turquoise } from '../../shared/colors';
 
 const propTypes = {
   color: PropTypes.string,

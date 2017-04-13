@@ -4,8 +4,8 @@ import React from 'react';
 // Components
 import FlexView from '../FlexView';
 
-// Config
-import { heightContent } from '../../config/sizes';
+// Shared
+import { heightContent } from '../../shared/sizes';
 
 // Utils
 import { childrenShape } from '../../utils/shapes';

@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
-import { raleway } from '../../config/fonts';
-import { spaceNormal } from '../../config/sizes';
+// Shared
+import { raleway } from '../../shared/fonts';
+import { spaceNormal } from '../../shared/sizes';
 import {
   brownDark,
   white,
-} from '../../config/colors';
+} from '../../shared/colors';
 
 export const StyledView = styled.View`
   border-bottom-color: ${brownDark};

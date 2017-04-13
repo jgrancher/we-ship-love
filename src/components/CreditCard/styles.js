@@ -1,15 +1,15 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
+// Shared
 import {
   grey,
   lightest,
-} from '../../config/colors';
+} from '../../shared/colors';
 import {
   spaceBig,
   spaceSmall,
-} from '../../config/sizes';
+} from '../../shared/sizes';
 
 export const StyledView = styled.View`
   margin-top: ${spaceBig};

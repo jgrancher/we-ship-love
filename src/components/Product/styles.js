@@ -1,11 +1,11 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Config
+// Shared
 import {
   heightContent,
   widthWindow,
-} from '../../config/sizes';
+} from '../../shared/sizes';
 
 export default styled.Image`
   align-self: center;
