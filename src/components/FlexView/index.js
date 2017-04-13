@@ -10,11 +10,13 @@ import { childrenShape } from '../../utils/shapes';
 class FlexView extends React.Component {
 
   static propTypes = {
+    background: PropTypes.string,
     children: childrenShape.isRequired,
     height: PropTypes.number,
   }
 
   static defaultProps = {
+    background: 'transparent',
     height: 0,
   };
 
@@ -26,6 +28,7 @@ class FlexView extends React.Component {
     return (
       <StyledView
         {...this.props}
+        background={this.props.background}
         height={this.props.height}
         ref={(c) => { this.view = c; }}
       >
