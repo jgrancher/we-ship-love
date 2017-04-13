@@ -5,20 +5,22 @@ import { Image } from 'react-native';
 // Styles
 import StyledButton from './styles';
 
+// Images
+import iconBack from './icon-back.png';
+
 const propTypes = {
-  image: PropTypes.node.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-const NavbarButton = props => (
+const NavbarBackButton = props => (
   <StyledButton
     activeOpacity={0.6}
     onPress={props.onPress}
   >
-    <Image source={props.image} />
+    <Image source={iconBack} />
   </StyledButton>
 );
 
-NavbarButton.propTypes = propTypes;
+NavbarBackButton.propTypes = propTypes;
 
-export default NavbarButton;
+export default NavbarBackButton;
