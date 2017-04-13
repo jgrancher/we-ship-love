@@ -3,10 +3,11 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Containers & components
+// Components
 import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
+import LoadingIndicator from '../../components/LoadingIndicator';
 import Product from '../../components/Product';
 import Slider from '../../components/Slider';
 
@@ -27,6 +28,7 @@ class Variants extends React.Component {
   static propTypes = {
     asyncCreateCheckout: PropTypes.func.isRequired,
     images: PropTypes.arrayOf(productImageShape).isRequired,
+    isFetching: PropTypes.bool.isRequired,
     pushNextScene: PropTypes.func.isRequired,
     setOrderVariant: PropTypes.func.isRequired,
     variants: PropTypes.arrayOf(variantShape).isRequired,
@@ -49,6 +51,10 @@ class Variants extends React.Component {
   }
 
   renderContent() {
+    if (this.props.isFetching) {
+      return <LoadingIndicator />;
+    }
+
     return (
       <Slider onIndexChange={this.onIndexChange}>
         {this.props.variants.map((item) => {
@@ -75,6 +81,7 @@ class Variants extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
+          enabled={!this.props.isFetching}
           onPress={this.onNextStep}
           step={2}
           text="Choisissez un supplément"
@@ -88,6 +95,8 @@ class Variants extends React.Component {
 
 export default connect(
   (state) => {
+    const isFetching = state.order.isFetching;
+
     // Find the selected product in order amongst the products
     const product = state.products.data.find(p => p.product_id === state.order.product);
 
@@ -95,7 +104,11 @@ export default connect(
     const images = product.images.filter(image => image.variant_ids.length);
     const variants = product.variants;
 
-    return { images, variants };
+    return {
+      images,
+      isFetching,
+      variants,
+    };
   },
   dispatch => bindActionCreators({
     asyncCreateCheckout,
