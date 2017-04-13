@@ -11,7 +11,7 @@ export const statusBar = {
   tintColor: brownDark,
 };
 
-export const style = {
+export const navbarStyle = {
   borderColor: turquoise,
   borderTopWidth: 5,
   height: heightNavigationBar,

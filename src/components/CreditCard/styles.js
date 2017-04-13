@@ -15,10 +15,6 @@ export const StyledView = styled.View`
   margin-top: ${spaceBig};
 `;
 
-export const labelStyle = {
-
-};
-
 export const inputStyle = {
   backgroundColor: lightest,
   borderColor: lightest,

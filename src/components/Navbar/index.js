@@ -5,8 +5,8 @@ import NavigationBar from 'react-native-navbar';
 
 // Styles
 import {
+  navbarStyle,
   statusBar,
-  style,
   tintColor,
 } from './styles';
 
@@ -22,7 +22,7 @@ const Navbar = props => (
     leftButton={props.leftButton}
     rightButton={<Image source={logo} />}
     statusBar={statusBar}
-    style={style}
+    style={navbarStyle}
     tintColor={tintColor}
   />
 );
