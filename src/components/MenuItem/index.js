@@ -13,17 +13,17 @@ import {
 import { brownDark } from '../../shared/colors';
 
 // Utils
-import { menuItemShape } from '../../utils/shapes';
+import { routeShape } from '../../utils/shapes';
 
 class MenuItem extends React.Component {
 
   static propTypes = {
-    item: menuItemShape.isRequired,
+    route: routeShape.isRequired,
     onPress: PropTypes.func.isRequired,
   };
 
   onPress = () => {
-    this.props.onPress(this.props.item);
+    this.props.onPress(this.props.route);
   }
 
   render() {
@@ -33,9 +33,9 @@ class MenuItem extends React.Component {
         underlayColor={brownDark}
       >
         <StyledView>
-          <StyledImage source={this.props.item.icon} />
+          <StyledImage source={this.props.route.icon} />
           <StyledText>
-            {this.props.item.title}
+            {this.props.route.title}
           </StyledText>
         </StyledView>
       </TouchableHighlight>

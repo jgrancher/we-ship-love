@@ -9,12 +9,6 @@ import {
 import MenuItem from '../MenuItem';
 import SocialIcon from '../SocialIcon';
 
-// Menu items
-import {
-  sections,
-  socials,
-} from './items';
-
 // Styles
 import { StyledText } from '../MenuItem/styles';
 import {
@@ -25,6 +19,20 @@ import {
   StyledViewSocials,
 } from './styles';
 
+// Images
+import iconFacebook from './icon-facebook.png';
+import iconInstagram from './icon-instagram.png';
+import iconTwitter from './icon-twitter.png';
+
+// Utils
+import routes from '../../utils/routes';
+import {
+  URL_TWITTER,
+  URL_FACEBOOK,
+  URL_INSTAGRAM,
+  URL_WEBSITE,
+} from '../../utils/constants';
+
 const message = 'Impossible d\'ouvrir ce lien. Pardon. 🎈';
 
 class Menu extends React.Component {
@@ -33,7 +41,7 @@ class Menu extends React.Component {
     navigate: PropTypes.func.isRequired,
   };
 
-  openURL = (url) => {
+  open = (url) => {
     Linking.canOpenURL(url).then((supported) => {
       if (!supported) {
         return Alert.alert('Une erreur est survenue.', message);
@@ -43,6 +51,14 @@ class Menu extends React.Component {
     });
   }
 
+  openFacebook = () => this.open(URL_FACEBOOK)
+
+  openInstagram = () => this.open(URL_INSTAGRAM)
+
+  openTwitter = () => this.open(URL_TWITTER)
+
+  openWebsite = () => this.open(URL_WEBSITE)
+
   showScreen = (route) => {
     this.props.navigate(route);
   }
@@ -51,23 +67,31 @@ class Menu extends React.Component {
     return (
       <StyledViewContainer>
         <StyledViewItems>
-          {sections.map(item => (
+          {Object.keys(routes).map(section => (
             <MenuItem
-              item={item}
-              key={item.id}
+              key={section}
+              route={routes[section]}
               onPress={this.showScreen}
             />
           ))}
         </StyledViewItems>
         <StyledViewLinks>
           <StyledViewSocials>
-            {socials.map(link => (
-              <SocialIcon
-                {...link}
-                key={link.id}
-                onPress={this.openURL}
-              />
-            ))}
+            <SocialIcon
+              icon={iconTwitter}
+              onPress={this.openTwitter}
+              url={URL_TWITTER}
+            />
+            <SocialIcon
+              icon={iconFacebook}
+              onPress={this.openFacebook}
+              url={URL_FACEBOOK}
+            />
+            <SocialIcon
+              icon={iconInstagram}
+              onPress={this.openInstagram}
+              url={URL_INSTAGRAM}
+            />
           </StyledViewSocials>
           <StyledLink onPress={this.openWebsite}>
             <StyledText>

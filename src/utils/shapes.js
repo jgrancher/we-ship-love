@@ -1,12 +1,5 @@
 import { PropTypes } from 'react';
 
-// Step shape
-export const stepShape = PropTypes.shape({
-  number: PropTypes.number,
-  title: PropTypes.string,
-  text: PropTypes.string,
-});
-
 // Children shape
 export const childrenShape = PropTypes.oneOfType([
   PropTypes.element,
@@ -18,13 +11,24 @@ export const stylesShape = PropTypes.shape({
   height: PropTypes.number,
 });
 
-// Menu item shape
-export const menuItemShape = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  icon: PropTypes.number.isRequired, // Webpack
+// Scene shape
+export const sceneShape = PropTypes.shape({
+  component: PropTypes.func.isRequired,
+  props: PropTypes.object,
+});
+
+// Scene - Step props shape
+export const stepShape = PropTypes.shape({
+  number: PropTypes.number,
   title: PropTypes.string,
-  url: PropTypes.string,
-  component: PropTypes.function,
+  text: PropTypes.string,
+});
+
+// Route shape
+export const routeShape = PropTypes.shape({
+  icon: PropTypes.number.isRequired, // Webpack
+  title: PropTypes.string.isRequired,
+  scenes: PropTypes.arrayOf(sceneShape).isRequired,
 });
 
 // Options shape

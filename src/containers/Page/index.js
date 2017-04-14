@@ -60,7 +60,7 @@ class Page extends React.Component {
 
 export default connect(
   (state, props) => {
-    const page = state.pages.data.find(p => p.id === props.route.id) || {};
+    const page = state.pages.data.find(p => p.id === props.id) || {};
 
     return {
       content: page.body_html,

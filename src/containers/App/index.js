@@ -22,6 +22,14 @@ import {
 
 class Application extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    // Initial route
+    const sections = Object.keys(routes);
+    this.initialRoute = routes[sections[0]].scenes[0];
+  }
+
   state = {
     isMenuOpen: false,
   };
@@ -34,10 +42,9 @@ class Application extends React.Component {
 
     // Navigate to Screen
     this.navigator.replace({
-      component: route.component,
+      component: route.scenes[0].component,
       navigator: this.navigator,
-      title: route.title,
-      ...route.props,
+      props: route.scenes[0].props,
     });
   }
 
@@ -47,15 +54,15 @@ class Application extends React.Component {
 
   renderScene = (route, navigator) => {
     // Determine which button component to get - hamburger or back?
-    const leftButton = route.props.scene.number > 1
+    const leftButton = route.props && route.props.step && route.props.step.number > 1
       ? <NavbarBackButton onPress={navigator.pop} />
       : <NavbarMenuButton onPress={this.openMenu} />;
 
     // Action to push to next scene
-    // TODO: This is working only for 'order' routes that have a scene.number within its props...
+    // TODO: This is working only for 'order' routes that have a step.number within its props...
     // We have to find a more generic way!
     const pushNextScene = () => {
-      navigator.push(routes.order[route.props.scene.number]);
+      navigator.push(routes.order.scenes[route.props.step.number]);
     };
 
     return (
@@ -65,7 +72,6 @@ class Application extends React.Component {
           {...route.props}
           navigator={navigator}
           pushNextScene={pushNextScene}
-          route={route}
         />
       </FlexView>
     );
@@ -81,7 +87,7 @@ class Application extends React.Component {
         >
           <FlexView background={brownDark}>
             <Navigator
-              initialRoute={routes.order[0]}
+              initialRoute={this.initialRoute}
               ref={(c) => { this.navigator = c; }}
               renderScene={this.renderScene}
             />
