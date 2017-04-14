@@ -1,9 +1,10 @@
 import { PropTypes } from 'react';
 
-// Scene shape
-export const sceneShape = PropTypes.shape({
+// Step shape
+export const stepShape = PropTypes.shape({
   number: PropTypes.number,
   title: PropTypes.string,
+  text: PropTypes.string,
 });
 
 // Children shape

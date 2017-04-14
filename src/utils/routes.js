@@ -20,7 +20,7 @@ export default {
     {
       component: Products,
       props: {
-        scene: {
+        step: {
           number: 1,
           title: 'Choisissez votre ballon !',
         },
@@ -29,7 +29,7 @@ export default {
     {
       component: Variants,
       props: {
-        scene: {
+        step: {
           number: 2,
           title: 'Choisissez un supplément',
         },
@@ -38,7 +38,7 @@ export default {
     {
       component: Message,
       props: {
-        scene: {
+        step: {
           number: 3,
           title: 'Rédigez votre message',
           text: '(anonyme si vous ne signez pas)',
@@ -48,7 +48,7 @@ export default {
     {
       component: Delivery,
       props: {
-        scene: {
+        step: {
           number: 4,
           title: 'C\'est pour qui?',
         },
@@ -57,7 +57,7 @@ export default {
     {
       component: Shipping,
       props: {
-        scene: {
+        step: {
           number: 5,
           title: 'Frais de port',
         },
@@ -65,15 +65,17 @@ export default {
     },
     {
       component: PaymentMethod,
-      scene: {
-        number: 6,
-        title: 'Mode de paiement',
+      props: {
+        step: {
+          number: 6,
+          title: 'Mode de paiement',
+        },
       },
     },
     {
       component: Payment,
       props: {
-        scene: {
+        step: {
           number: 7,
         },
       },

@@ -14,14 +14,14 @@ import Textarea from '../../components/Textarea';
 import { setOrderMessage } from '../App/actions';
 
 // Utils
-import { sceneShape } from '../../utils/shapes';
+import { stepShape } from '../../utils/shapes';
 
 class Message extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
-    scene: sceneShape.isRequired,
+    step: stepShape.isRequired,
   };
 
   render() {
@@ -32,7 +32,7 @@ class Message extends React.Component { // eslint-disable-line react/prefer-stat
           name="message"
         />
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
         />
       </FlexView>

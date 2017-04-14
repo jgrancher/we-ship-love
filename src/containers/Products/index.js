@@ -19,7 +19,7 @@ import { setOrderProduct } from '../App/actions';
 // Utils
 import {
   productShape,
-  sceneShape,
+  stepShape,
 } from '../../utils/shapes';
 
 class Products extends React.Component {
@@ -29,8 +29,8 @@ class Products extends React.Component {
     isFetching: PropTypes.bool.isRequired,
     products: PropTypes.arrayOf(productShape),
     pushNextScene: PropTypes.func.isRequired,
-    scene: sceneShape.isRequired,
     setOrderProduct: PropTypes.func.isRequired,
+    step: stepShape.isRequired,
   };
 
   static defaultProps = {
@@ -91,7 +91,7 @@ class Products extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           enabled={hasProducts}
           onPress={this.onNextStep}
           text={productTitle}

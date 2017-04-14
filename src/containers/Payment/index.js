@@ -14,14 +14,14 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 import { asyncCompleteCheckout } from '../App/actions';
 
 // Utils
-import { sceneShape } from '../../utils/shapes';
+import { stepShape } from '../../utils/shapes';
 
 class Payment extends React.Component {
 
   static propTypes = {
     asyncCompleteCheckout: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
-    scene: sceneShape.isRequired,
+    step: stepShape.isRequired,
   };
 
   state = {
@@ -62,7 +62,7 @@ class Payment extends React.Component {
       <FlexView>
         {this.renderContent()}
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           enabled={!this.props.isFetching && this.state.valid}
           onPress={this.onNextStep}
         />

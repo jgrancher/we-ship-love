@@ -27,7 +27,7 @@ import {
 // Utils
 import {
   optionShape,
-  sceneShape,
+  stepShape,
 } from '../../utils/shapes';
 import {
   validateEmail,
@@ -42,7 +42,7 @@ class Delivery extends React.Component {
     handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
     onSubmit: PropTypes.func.isRequired,
-    scene: sceneShape.isRequired,
+    step: stepShape.isRequired,
     valid: PropTypes.bool.isRequired,
   };
 
@@ -122,7 +122,7 @@ class Delivery extends React.Component {
       <FlexView>
         {this.renderContent()}
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           enabled={!this.props.isFetching && this.props.valid}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={4}

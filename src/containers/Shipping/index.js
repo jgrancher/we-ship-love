@@ -21,7 +21,7 @@ import {
 // Utils
 import {
   rateShape,
-  sceneShape,
+  stepShape,
 } from '../../utils/shapes';
 
 class Shipping extends React.Component {
@@ -32,8 +32,8 @@ class Shipping extends React.Component {
     isFetching: PropTypes.bool.isRequired,
     pushNextScene: PropTypes.func.isRequired,
     rates: PropTypes.arrayOf(rateShape).isRequired,
-    scene: sceneShape.isRequired,
     setOrderShipping: PropTypes.func.isRequired,
+    step: stepShape.isRequired,
   };
 
   state = {
@@ -82,7 +82,7 @@ class Shipping extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           enabled={!this.props.isFetching && this.state.index >= 0}
           onPress={this.onNextStep}
         />

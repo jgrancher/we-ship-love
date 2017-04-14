@@ -9,10 +9,14 @@ import ContentView from '../../components/ContentView';
 import CreditCardButton from '../../components/CreditCardButton';
 import FlexView from '../../components/FlexView';
 
+// Utils
+import { stepShape } from '../../utils/shapes';
+
 class PaymentMethod extends React.Component {
 
   static propTypes = {
     methods: PropTypes.arrayOf(PropTypes.string),
+    step: stepShape.isRequired,
   };
 
   static defaultProps = {
@@ -51,10 +55,9 @@ class PaymentMethod extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
+          {...this.props.step}
           enabled={this.state.index >= 0}
           onPress={this.onNextStep}
-          step={this.props.step.number}
-          text={this.props.step.title}
           text={this.props.methods[this.state.index]}
         />
       </FlexView>

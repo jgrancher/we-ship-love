@@ -20,7 +20,7 @@ import {
 // Utils
 import {
   productImageShape,
-  sceneShape,
+  stepShape,
   variantShape,
 } from '../../utils/shapes';
 
@@ -31,8 +31,8 @@ class Variants extends React.Component {
     images: PropTypes.arrayOf(productImageShape).isRequired,
     isFetching: PropTypes.bool.isRequired,
     pushNextScene: PropTypes.func.isRequired,
-    scene: sceneShape.isRequired,
     setOrderVariant: PropTypes.func.isRequired,
+    step: stepShape.isRequired,
     variants: PropTypes.arrayOf(variantShape).isRequired,
   };
 
@@ -83,7 +83,7 @@ class Variants extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
-          {...this.props.scene}
+          {...this.props.step}
           enabled={!this.props.isFetching}
           onPress={this.onNextStep}
           text={variantTitle}
