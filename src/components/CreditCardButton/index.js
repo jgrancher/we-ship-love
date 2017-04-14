@@ -9,27 +9,33 @@ import StyledButton from './styles';
 import iconCard from './icon-card.png';
 import iconCardActive from './icon-card-active.png';
 
-const propTypes = {
-  active: PropTypes.bool,
-  onPress: PropTypes.func,
-};
+class CreditCardButton extends React.Component {
 
-const defaultProps = {
-  active: false,
-  onPress: null,
-};
+  static propTypes = {
+    active: PropTypes.bool,
+    index: PropTypes.number.isRequired,
+    onPress: PropTypes.func,
+  };
 
-const CreditCardButton = props => (
-  <StyledButton
-    active={props.active}
-    activeOpacity={0.6}
-    onPress={props.onPress}
-  >
-    <Image source={props.active ? iconCardActive : iconCard} />
-  </StyledButton>
-);
+  static defaultProps = {
+    active: false,
+    onPress: null,
+  };
 
-CreditCardButton.propTypes = propTypes;
-CreditCardButton.defaultProps = defaultProps;
+  onPress = () => (this.props.onPress ? this.props.onPress(this.props.index) : null)
+
+  render() {
+    return (
+      <StyledButton
+        active={this.props.active}
+        activeOpacity={0.6}
+        onPress={this.onPress}
+      >
+        <Image source={this.props.active ? iconCardActive : iconCard} />
+      </StyledButton>
+    );
+  }
+
+}
 
 export default CreditCardButton;

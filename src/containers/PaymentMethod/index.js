@@ -1,6 +1,6 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 
 // Components
 import ApplePayButton from '../../components/ApplePayButton';
@@ -8,6 +8,7 @@ import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import CreditCardButton from '../../components/CreditCardButton';
 import FlexView from '../../components/FlexView';
+import Text from '../../components/Text';
 
 // Utils
 import { stepShape } from '../../utils/shapes';
@@ -24,34 +25,43 @@ class PaymentMethod extends React.Component {
   };
 
   state = {
-    index: 0,
+    index: -1,
   };
 
   onNextStep = () => {
 
   }
 
-  onIndexChange = (index = 1) => {
+  onIndexChange = (index) => {
     this.setState({ index });
   }
 
   renderContent() {
     return (
-      <FlexView>
-        <ApplePayButton />
-        <Text>ou</Text>
+      <View>
+        <ApplePayButton
+          active={this.state.index === 0}
+          index={0}
+        />
+        <Text
+          align="center"
+          spaced
+        >
+          OU
+        </Text>
         <CreditCardButton
           active={this.state.index === 1}
+          index={1}
           onPress={this.onIndexChange}
         />
-      </FlexView>
+      </View>
     );
   }
 
   render() {
     return (
       <FlexView>
-        <ContentView>
+        <ContentView centered>
           {this.renderContent()}
         </ContentView>
         <Banner
