@@ -125,8 +125,6 @@ class Delivery extends React.Component {
           {...this.props.step}
           enabled={!this.props.isFetching && this.props.valid}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
-          step={4}
-          title="C'est pour qui?"
         />
       </FlexView>
     );
