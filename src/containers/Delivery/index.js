@@ -11,6 +11,7 @@ import {
 // Components
 import AccordionPicker from '../../components/AccordionPicker';
 import Banner from '../../components/Banner';
+import ContentView from '../../components/ContentView';
 import Disclaimer from '../../components/Disclaimer';
 import FlexView from '../../components/FlexView';
 import Input from '../../components/Input';
@@ -51,8 +52,14 @@ class Delivery extends React.Component {
   }
 
   renderContent() {
+    // Adding ContentView around to make sure the indicator is vertically aligned
+    // It is not around the content so that we can see the fields underneath the banner.
     if (this.props.isFetching) {
-      return <LoadingIndicator />;
+      return (
+        <ContentView>
+          <LoadingIndicator />
+        </ContentView>
+      );
     }
 
     return (

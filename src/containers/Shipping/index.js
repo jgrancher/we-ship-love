@@ -78,7 +78,7 @@ class Shipping extends React.Component {
   render() {
     return (
       <FlexView>
-        <ContentView>
+        <ContentView centered>
           {this.renderContent()}
         </ContentView>
         <Banner

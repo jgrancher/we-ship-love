@@ -11,12 +11,14 @@ class FlexView extends React.Component {
 
   static propTypes = {
     background: PropTypes.string,
+    centered: PropTypes.bool,
     children: childrenShape.isRequired,
     height: PropTypes.number,
   }
 
   static defaultProps = {
     background: 'transparent',
+    centered: false,
     height: 0,
   };
 
@@ -29,6 +31,7 @@ class FlexView extends React.Component {
       <StyledView
         {...this.props}
         background={this.props.background}
+        centered={this.props.centered}
         height={this.props.height}
         ref={(c) => { this.view = c; }}
       >

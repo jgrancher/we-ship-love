@@ -8,11 +8,19 @@ import {
   greyDark,
   lightest,
 } from '../../shared/colors';
+import {
+  spaceSmall,
+  spaceNormal,
+  spaceBig,
+  widthWindow,
+} from '../../shared/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
   background-color: ${lightest};
-  margin: 40 20 0 45;
-  padding: 10 20 10 60;
+  margin-left: 25;
+  margin-bottom: ${spaceBig};
+  padding: ${spaceSmall} ${spaceNormal} ${spaceSmall} 60;
+  width: ${widthWindow - spaceBig - spaceBig};
 `;
 
 export const StyledText = styled.Text`
