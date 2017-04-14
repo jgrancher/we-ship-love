@@ -13,9 +13,9 @@ import AccordionPicker from '../../components/AccordionPicker';
 import Banner from '../../components/Banner';
 import Disclaimer from '../../components/Disclaimer';
 import FlexView from '../../components/FlexView';
-import Form from '../../components/Form';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
+import ScrollView from '../../components/ScrollView';
 
 // Actions
 import fetchCountries from './actions';
@@ -56,7 +56,7 @@ class Delivery extends React.Component {
     }
 
     return (
-      <Form>
+      <ScrollView>
         <Field
           component={Input}
           name="lastName"
@@ -113,7 +113,7 @@ class Delivery extends React.Component {
           options={this.props.countries}
         />
         <Disclaimer />
-      </Form>
+      </ScrollView>
     );
   }
 

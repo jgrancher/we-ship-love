@@ -11,12 +11,12 @@ const propTypes = {
   children: childrenShape.isRequired,
 };
 
-const Form = props => (
+const ScrollView = props => (
   <StyledScrollView keyboardDismissMode="interactive">
     {props.children}
   </StyledScrollView>
 );
 
-Form.propTypes = propTypes;
+ScrollView.propTypes = propTypes;
 
-export default Form;
+export default ScrollView;

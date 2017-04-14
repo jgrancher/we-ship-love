@@ -6,7 +6,5 @@ import { spaceNormal } from '../../shared/sizes';
 
 export default styled.ScrollView`
   flex: 1;
-  padding-left: 60;
-  padding-right: 60;
-  padding-top: ${spaceNormal};
+  padding: ${spaceNormal} 60;
 `;
