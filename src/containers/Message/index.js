@@ -13,11 +13,15 @@ import Textarea from '../../components/Textarea';
 // Actions
 import { setOrderMessage } from '../App/actions';
 
+// Utils
+import { sceneShape } from '../../utils/shapes';
+
 class Message extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    scene: sceneShape.isRequired,
   };
 
   render() {
@@ -28,10 +32,8 @@ class Message extends React.Component { // eslint-disable-line react/prefer-stat
           name="message"
         />
         <Banner
+          {...this.props.scene}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
-          step={3}
-          text="Rédigez votre message"
-          textComplement="(anonyme si vous ne signez pas)"
         />
       </FlexView>
     );

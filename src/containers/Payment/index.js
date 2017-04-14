@@ -13,11 +13,15 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 // Actions
 import { asyncCompleteCheckout } from '../App/actions';
 
+// Utils
+import { sceneShape } from '../../utils/shapes';
+
 class Payment extends React.Component {
 
   static propTypes = {
     asyncCompleteCheckout: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
+    scene: sceneShape.isRequired,
   };
 
   state = {
@@ -58,10 +62,9 @@ class Payment extends React.Component {
       <FlexView>
         {this.renderContent()}
         <Banner
+          {...this.props.scene}
           enabled={!this.props.isFetching && this.state.valid}
           onPress={this.onNextStep}
-          step={6}
-          text="Paiement"
         />
       </FlexView>
     );

@@ -1,5 +1,11 @@
 import { PropTypes } from 'react';
 
+// Scene shape
+export const sceneShape = PropTypes.shape({
+  number: PropTypes.number,
+  title: PropTypes.string,
+});
+
 // Children shape
 export const childrenShape = PropTypes.oneOfType([
   PropTypes.element,

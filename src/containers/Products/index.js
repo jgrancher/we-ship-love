@@ -17,7 +17,10 @@ import fetchProducts from './actions';
 import { setOrderProduct } from '../App/actions';
 
 // Utils
-import { productShape } from '../../utils/shapes';
+import {
+  productShape,
+  sceneShape,
+} from '../../utils/shapes';
 
 class Products extends React.Component {
 
@@ -26,6 +29,7 @@ class Products extends React.Component {
     isFetching: PropTypes.bool.isRequired,
     products: PropTypes.arrayOf(productShape),
     pushNextScene: PropTypes.func.isRequired,
+    scene: sceneShape.isRequired,
     setOrderProduct: PropTypes.func.isRequired,
   };
 
@@ -87,11 +91,10 @@ class Products extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
+          {...this.props.scene}
           enabled={hasProducts}
           onPress={this.onNextStep}
-          step={1}
-          text="Choisissez votre ballon !"
-          textComplement={productTitle}
+          text={productTitle}
         />
       </FlexView>
     );

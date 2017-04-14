@@ -23,18 +23,18 @@ import {
 
 const propTypes = {
   enabled: PropTypes.bool,
+  number: PropTypes.number,
   onPress: PropTypes.func,
-  step: PropTypes.number,
   text: PropTypes.string,
-  textComplement: PropTypes.string,
+  title: PropTypes.string,
 };
 
 const defaultProps = {
   enabled: true,
+  number: null,
   onPress: null,
-  step: null,
   text: null,
-  textComplement: null,
+  title: null,
 };
 
 const Banner = props => (
@@ -49,19 +49,19 @@ const Banner = props => (
       />
       <StyledView>
         <StyledTextStep>
-          {props.step}
+          {props.number}
         </StyledTextStep>
         <View>
           <StyledTextTitle>
-            {props.text}
+            {props.title}
           </StyledTextTitle>
-          {props.textComplement && (
+          {props.text && (
             <StyledTextSubtitle>
-              {props.textComplement}
+              {props.text}
             </StyledTextSubtitle>
           )}
         </View>
-        {props.text && (
+        {props.title && (
           <StyledImageArrow
             source={props.enabled ? arrow : arrowDisabled}
           />

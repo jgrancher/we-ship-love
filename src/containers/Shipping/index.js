@@ -19,7 +19,10 @@ import {
 } from '../App/actions';
 
 // Utils
-import { rateShape } from '../../utils/shapes';
+import {
+  rateShape,
+  sceneShape,
+} from '../../utils/shapes';
 
 class Shipping extends React.Component {
 
@@ -29,6 +32,7 @@ class Shipping extends React.Component {
     isFetching: PropTypes.bool.isRequired,
     pushNextScene: PropTypes.func.isRequired,
     rates: PropTypes.arrayOf(rateShape).isRequired,
+    scene: sceneShape.isRequired,
     setOrderShipping: PropTypes.func.isRequired,
   };
 
@@ -78,10 +82,9 @@ class Shipping extends React.Component {
           {this.renderContent()}
         </ContentView>
         <Banner
+          {...this.props.scene}
           enabled={!this.props.isFetching && this.state.index >= 0}
           onPress={this.onNextStep}
-          step={5}
-          text="Frais de port"
         />
       </FlexView>
     );

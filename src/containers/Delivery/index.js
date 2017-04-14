@@ -25,7 +25,10 @@ import {
 } from '../App/actions';
 
 // Utils
-import { optionShape } from '../../utils/shapes';
+import {
+  optionShape,
+  sceneShape,
+} from '../../utils/shapes';
 import {
   validateEmail,
   validateRequired,
@@ -39,6 +42,7 @@ class Delivery extends React.Component {
     handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    scene: sceneShape.isRequired,
     valid: PropTypes.bool.isRequired,
   };
 
@@ -118,10 +122,11 @@ class Delivery extends React.Component {
       <FlexView>
         {this.renderContent()}
         <Banner
+          {...this.props.scene}
           enabled={!this.props.isFetching && this.props.valid}
           onPress={this.props.handleSubmit(this.props.onSubmit)}
           step={4}
-          text="C'est pour qui?"
+          title="C'est pour qui?"
         />
       </FlexView>
     );

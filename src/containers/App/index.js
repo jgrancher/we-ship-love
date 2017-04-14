@@ -46,14 +46,16 @@ class Application extends React.Component {
   }
 
   renderScene = (route, navigator) => {
-    // Determine which Icon component - hamburger or back?
-    const leftButton = route.index > 0
+    // Determine which button component to get - hamburger or back?
+    const leftButton = route.props.scene.number > 1
       ? <NavbarBackButton onPress={navigator.pop} />
       : <NavbarMenuButton onPress={this.openMenu} />;
 
     // Action to push to next scene
+    // TODO: This is working only for 'order' routes that have a scene.number within its props...
+    // We have to find a more generic way!
     const pushNextScene = () => {
-      navigator.push(routes.order[route.index + 1]);
+      navigator.push(routes.order[route.props.scene.number]);
     };
 
     return (

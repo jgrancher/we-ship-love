@@ -4,6 +4,7 @@ import Message from '../containers/Message';
 import Orders from '../containers/Orders';
 import Page from '../containers/Page';
 import Payment from '../containers/Payment';
+import PaymentMethod from '../containers/PaymentMethod';
 import Products from '../containers/Products';
 import Shipping from '../containers/Shipping';
 import Variants from '../containers/Variants';
@@ -18,27 +19,64 @@ export default {
   order: [
     {
       component: Products,
-      index: 0,
+      props: {
+        scene: {
+          number: 1,
+          title: 'Choisissez votre ballon !',
+        },
+      },
     },
     {
       component: Variants,
-      index: 1,
+      props: {
+        scene: {
+          number: 2,
+          title: 'Choisissez un supplément',
+        },
+      },
     },
     {
       component: Message,
-      index: 2,
+      props: {
+        scene: {
+          number: 3,
+          title: 'Rédigez votre message',
+          text: '(anonyme si vous ne signez pas)',
+        },
+      },
     },
     {
       component: Delivery,
-      index: 3,
+      props: {
+        scene: {
+          number: 4,
+          title: 'C\'est pour qui?',
+        },
+      },
     },
     {
       component: Shipping,
-      index: 4,
+      props: {
+        scene: {
+          number: 5,
+          title: 'Frais de port',
+        },
+      },
+    },
+    {
+      component: PaymentMethod,
+      scene: {
+        number: 6,
+        title: 'Mode de paiement',
+      },
     },
     {
       component: Payment,
-      index: 5,
+      props: {
+        scene: {
+          number: 7,
+        },
+      },
     },
   ],
   faq: [
