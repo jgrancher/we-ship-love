@@ -17,6 +17,7 @@ class PaymentMethod extends React.Component {
 
   static propTypes = {
     methods: PropTypes.arrayOf(PropTypes.string),
+    pushNextScene: PropTypes.func.isRequired,
     step: stepShape.isRequired,
   };
 
@@ -29,7 +30,7 @@ class PaymentMethod extends React.Component {
   };
 
   onNextStep = () => {
-
+    this.props.pushNextScene();
   }
 
   onIndexChange = (index) => {

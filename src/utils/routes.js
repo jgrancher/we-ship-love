@@ -86,6 +86,7 @@ export default {
         props: {
           step: {
             number: 7,
+            title: 'Valider et payer',
           },
         },
       },
