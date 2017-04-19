@@ -25,5 +25,15 @@ SHOPIFY_DOMAIN=myshopname.myshopify.com
 ```
 * Run the project: `react-native run-ios`.
 
+## Xcode
+
+To open and run the project with Xcode:
+
+```bash
+cd ios
+pod install
+open mqdf.xcworkspace
+```
+
 ## Links
 * This cool [React Native Starter](https://github.com/mcnamee/react-native-starter-app) has been used to start the development.
