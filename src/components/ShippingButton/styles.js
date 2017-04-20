@@ -19,7 +19,7 @@ export const StyledButton = styled.TouchableHighlight`
   background-color: ${lightest};
   margin-left: 25;
   margin-bottom: ${spaceBig};
-  padding: ${spaceSmall} ${spaceNormal} ${spaceSmall} 60;
+  padding: ${spaceSmall} ${spaceNormal} ${spaceSmall} ${spaceBig};
   width: ${widthWindow - spaceBig - spaceBig};
 `;
 

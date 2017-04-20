@@ -1,22 +1,55 @@
 // Externals
 import React from 'react';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // Styles
-import StyledScrollView from './styles';
+import contentContainerStyle from './styles';
+
+// Shared
+import {
+  heightCTA,
+  spaceNormal,
+} from '../../shared/sizes';
 
 // Shapes
 import { childrenShape } from '../../utils/shapes';
 
-const propTypes = {
-  children: childrenShape.isRequired,
-};
+class ScrollView extends React.Component {
 
-const ScrollView = props => (
-  <StyledScrollView keyboardDismissMode="interactive">
-    {props.children}
-  </StyledScrollView>
-);
+  static propTypes = {
+    children: childrenShape.isRequired,
+  };
 
-ScrollView.propTypes = propTypes;
+  state = {
+    isOpen: false,
+  };
+
+  onKeyboardWillHide = () => {
+    this.setState({ isOpen: false });
+  }
+
+  onKeyboardWillShow = () => {
+    this.setState({ isOpen: true });
+  }
+
+  render() {
+    const dynamicStyle = {
+      paddingBottom: this.state.isOpen ? 0 : heightCTA,
+      paddingTop: this.state.isOpen ? 0 : spaceNormal,
+    };
+
+    return (
+      <KeyboardAwareScrollView
+        centerContent={!this.state.isOpen}
+        contentContainerStyle={{ ...contentContainerStyle, ...dynamicStyle }}
+        keyboardDismissMode="interactive"
+        onKeyboardWillHide={this.onKeyboardWillHide}
+        onKeyboardWillShow={this.onKeyboardWillShow}
+      >
+        {this.props.children}
+      </KeyboardAwareScrollView>
+    );
+  }
+}
 
 export default ScrollView;
