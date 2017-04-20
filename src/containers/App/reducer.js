@@ -1,5 +1,6 @@
 // Constants
 import {
+  RESET_ORDER,
   SET_ORDER_PRODUCT,
   SET_ORDER_VARIANT,
   SET_ORDER_MESSAGE,
@@ -35,6 +36,9 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+
+    case RESET_ORDER:
+      return state;
 
     case SET_ORDER_PRODUCT:
       return {

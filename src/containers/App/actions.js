@@ -9,6 +9,7 @@ import {
 
 // Constants
 import {
+  RESET_ORDER,
   SET_ORDER_MESSAGE,
   SET_ORDER_PRODUCT,
   SET_ORDER_VARIANT,
@@ -27,6 +28,14 @@ import {
   ASYNC_COMPLETE_CHECKOUT_FAIL,
   ASYNC_COMPLETE_CHECKOUT_SUCCESS,
 } from './constants';
+
+/**
+ * Reset the order object
+ * @return {Object}         The action object
+ */
+export const resetOrder = () => ({
+  type: RESET_ORDER,
+});
 
 /**
  * Set the order product
