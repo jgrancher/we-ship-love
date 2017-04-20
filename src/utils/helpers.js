@@ -6,6 +6,21 @@
 export const isEmail = string => /^[A-Z0-9._%+-]+@[A-Z0-9.-]{2,}\.[A-Z]{2,4}$/i.test(string);
 
 /**
+ * Helper to format a string: strip non numeric characters
+ * @param  {String} [string=''] The string to format
+ * @return {String}             The formatted string with only numbers
+ */
+export const formatNumeric = (string = '') => string.replace(/[^\d]/g, '');
+
+/**
+ * Helper to format a string: transform it to display spaces as for a credit cart input
+ * @param  {String} [string=''] The string to format
+ * @return {String}             The formatted string
+ */
+export const formatCreditCard = (string = '') =>
+  string.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ').trim();
+
+/**
  * Helper function to validate a required field
  * @param  {Mixed} value        The value to check
  * @return {String|undefined}   A message string if invalid, otherwise undefined
