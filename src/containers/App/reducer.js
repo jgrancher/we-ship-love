@@ -26,6 +26,10 @@ const defaultState = {
   message: null,
   delivery: {},
   shipping: null,
+  prices: {
+    items: 0,
+    shipping: 0,
+  },
   isFetching: false,
 };
 
@@ -42,6 +46,10 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         variant: action.payload.id,
+        prices: {
+          ...state.prices,
+          items: Number(action.payload.price),
+        },
       };
 
     case SET_ORDER_MESSAGE:
@@ -60,6 +68,10 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         shipping: action.payload.id,
+        prices: {
+          ...state.prices,
+          shipping: Number(action.payload.price),
+        },
       };
 
     case ASYNC_CREATE_CHECKOUT:
