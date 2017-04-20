@@ -156,7 +156,7 @@ const DeliveryForm = reduxForm({
     dispatch(setOrderDelivery(values));
     dispatch(asyncSetCustomer(values.email, values))
       .then(props.pushNextScene)
-      .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
+      .catch(e => Alert.alert('Oh, non !', (typeof e === 'string') ? e.trim() : e));
   },
   validate: values => ({
     lastName: validateRequired(values.lastName),

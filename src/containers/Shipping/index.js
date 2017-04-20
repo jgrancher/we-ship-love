@@ -53,7 +53,7 @@ class Shipping extends React.Component {
     this.props.setOrderShipping(this.props.rates[this.state.index]);
     this.props.asyncSelectShipping(this.state.index)
       .then(this.props.pushNextScene)
-      .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
+      .catch(e => Alert.alert('Oh, non !', (typeof e === 'string') ? e.trim() : e));
   }
 
   renderContent() {
