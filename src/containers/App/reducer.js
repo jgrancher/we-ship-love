@@ -25,6 +25,7 @@ const defaultState = {
   variant: null,
   message: null,
   delivery: {},
+  shipping: null,
   isFetching: false,
 };
 
