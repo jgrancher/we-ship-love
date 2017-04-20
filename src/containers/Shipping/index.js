@@ -50,7 +50,7 @@ class Shipping extends React.Component {
 
   onNextStep = () => {
     // Set the order shipping rate then go to the next screen
-    this.props.setOrderShipping(this.state.index);
+    this.props.setOrderShipping(this.props.rates[this.state.index]);
     this.props.asyncSelectShipping(this.state.index)
       .then(this.props.pushNextScene)
       .catch(e => Alert.alert('Oops !', (typeof e === 'string') ? e.trim() : e));
