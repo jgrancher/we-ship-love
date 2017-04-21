@@ -52,11 +52,21 @@ class Application extends React.Component {
     this.setState({ isMenuOpen: true });
   }
 
+  renderLeftButton = (route, navigator) => {
+    if (!route.props || !route.props.step || route.props.step.number === 1) {
+      return <NavbarMenuButton onPress={this.openMenu} />;
+    }
+
+    if (routes.order.scenes.length > 1 && route.props.step.number) {
+      return <NavbarBackButton onPress={navigator.pop} />;
+    }
+
+    return null;
+  }
+
   renderScene = (route, navigator) => {
-    // Determine which button component to get - hamburger or back?
-    const leftButton = route.props && route.props.step && route.props.step.number > 1
-      ? <NavbarBackButton onPress={navigator.pop} />
-      : <NavbarMenuButton onPress={this.openMenu} />;
+    // Action to pop to the first scene
+    const popFirstScene = () => navigator.popToTop();
 
     // Action to push to next scene
     // TODO: This is working only for 'order' routes that have a step.number within its props...
@@ -67,10 +77,10 @@ class Application extends React.Component {
 
     return (
       <FlexView background={white}>
-        <Navbar leftButton={leftButton} />
+        <Navbar leftButton={this.renderLeftButton(route, navigator)} />
         <route.component
           {...route.props}
-          navigator={navigator}
+          popFirstScene={popFirstScene}
           pushNextScene={pushNextScene}
         />
       </FlexView>

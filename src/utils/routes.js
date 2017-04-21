@@ -2,6 +2,7 @@
 import Delivery from '../containers/Delivery';
 import Message from '../containers/Message';
 import Orders from '../containers/Orders';
+import OrderConfirmation from '../containers/OrderConfirmation';
 import Page from '../containers/Page';
 import Payment from '../containers/Payment';
 import PaymentMethod from '../containers/PaymentMethod';
@@ -87,6 +88,14 @@ export default {
           step: {
             number: 7,
             title: 'Valider et payer',
+          },
+        },
+      },
+      {
+        component: OrderConfirmation,
+        props: {
+          step: {
+            title: 'Retour à l\'écran principal',
           },
         },
       },
