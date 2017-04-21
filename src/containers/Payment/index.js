@@ -10,6 +10,7 @@ import {
 
 // Components
 import Banner from '../../components/Banner';
+import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
@@ -42,7 +43,11 @@ class Payment extends React.Component {
 
   renderContent() {
     if (this.props.isFetching) {
-      return <LoadingIndicator />;
+      return (
+        <ContentView>
+          <LoadingIndicator />
+        </ContentView>
+      );
     }
 
     return (
