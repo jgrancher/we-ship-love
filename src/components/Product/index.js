@@ -4,14 +4,24 @@ import React, { PropTypes } from 'react';
 // Styles
 import StyledImage from './styles';
 
+// Shared
+import {
+  heightContent,
+  widthWindow,
+} from '../../shared/sizes';
+
 class Product extends React.Component {
 
   static propTypes = {
+    height: PropTypes.number,
     image: PropTypes.string,
+    width: PropTypes.number,
   };
 
   static defaultProps = {
+    height: heightContent,
     image: null,
+    width: widthWindow,
   };
 
   render() {
@@ -19,8 +29,10 @@ class Product extends React.Component {
 
     return (
       <StyledImage
-        source={{ uri: this.props.image }}
+        height={this.props.height}
         resizeMode="contain"
+        source={{ uri: this.props.image }}
+        width={this.props.width}
       />
     );
   }

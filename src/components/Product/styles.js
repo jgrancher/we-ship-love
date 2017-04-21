@@ -1,14 +1,9 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import {
-  heightContent,
-  widthWindow,
-} from '../../shared/sizes';
-
 export default styled.Image`
   align-self: center;
-  height: ${heightContent};
-  width: ${widthWindow};
+  flex-grow: ${props => (props.height === 0 ? 1 : 0)};
+  height: ${props => props.height};
+  width: ${props => props.width};
 `;
