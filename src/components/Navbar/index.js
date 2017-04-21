@@ -14,7 +14,11 @@ import {
 import logo from './logo.png';
 
 const propTypes = {
-  leftButton: PropTypes.element.isRequired,
+  leftButton: PropTypes.element,
+};
+
+const defaultProps = {
+  leftButton: null,
 };
 
 const Navbar = props => (
@@ -28,5 +32,6 @@ const Navbar = props => (
 );
 
 Navbar.propTypes = propTypes;
+Navbar.defaultProps = defaultProps;
 
 export default Navbar;
