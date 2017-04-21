@@ -1,8 +1,7 @@
 TODO
 =======
 
-* Get the total in the banner for PaymentMethod / Payment!
-* Switch react-native-card-input for classic form inputs: need firstName & lastName separated.
+* Make the payment working through Stripe! (French testing card: 4000002500000003)
 * Get a RefreshButton in every renderContent method, in case the network breaks!
 
 ### Optimizations
