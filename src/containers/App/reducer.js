@@ -38,7 +38,7 @@ export default (state = defaultState, action) => {
   switch (action.type) {
 
     case RESET_ORDER:
-      return state;
+      return defaultState;
 
     case SET_ORDER_PRODUCT:
       return {
