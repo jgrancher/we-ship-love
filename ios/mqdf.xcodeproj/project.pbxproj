@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -33,6 +34,7 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* mqdfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mqdfTests.m */; };
+		50FDE72A2307400A80BEB533 /* libRNShopify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD7212B20A94159B5463136 /* libRNShopify.a */; };
 		597C991AB9AC40B0A4F57ACE /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABB3090CFD94B63AF53EB2E /* libReactNativeConfig.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -43,7 +45,6 @@
 		D08145491CCE192A0004BFA7 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145431CCE192A0004BFA7 /* SourceSansPro-Bold.ttf */; };
 		D081454A1CCE192A0004BFA7 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145441CCE192A0004BFA7 /* SourceSansPro-Italic.ttf */; };
 		D081454B1CCE192A0004BFA7 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145451CCE192A0004BFA7 /* SourceSansPro-Regular.ttf */; };
-		50FDE72A2307400A80BEB533 /* libRNShopify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD7212B20A94159B5463136 /* libRNShopify.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +237,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		D018C1A71E9D150200E5D79C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNShopify;
+		};
 		D03AF5681E600F5B00DCE60C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B7B83838BC864533958506AB /* ReactNativeConfig.xcodeproj */;
@@ -268,12 +276,14 @@
 		2D02E47B1E0B4A5D006451C7 /* mqdf-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mqdf-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* mqdf-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mqdf-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABB3090CFD94B63AF53EB2E /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
+		5AD7212B20A94159B5463136 /* libRNShopify.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShopify.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A069DF3054C14512D5747DDE /* Pods-mqdf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mqdf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mqdf/Pods-mqdf.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B83838BC864533958506AB /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		BFAA0475C2716B1909911A36 /* Pods-mqdf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mqdf.release.xcconfig"; path = "Pods/Target Support Files/Pods-mqdf/Pods-mqdf.release.xcconfig"; sourceTree = "<group>"; };
+		C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShopify.xcodeproj; path = "../node_modules/react-native-shopify/ios/RNShopify.xcodeproj"; sourceTree = "<group>"; };
 		D08145401CCE192A0004BFA7 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D08145411CCE192A0004BFA7 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D08145421CCE192A0004BFA7 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
@@ -281,8 +291,6 @@
 		D08145441CCE192A0004BFA7 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Italic.ttf"; path = "fonts/SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		D08145451CCE192A0004BFA7 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Regular.ttf"; path = "fonts/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		FA3A4579DA249AD6DE40922C /* libPods-mqdf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mqdf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */ = {isa = PBXFileReference; name = "RNShopify.xcodeproj"; path = "../node_modules/react-native-shopify/ios/RNShopify.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		5AD7212B20A94159B5463136 /* libRNShopify.a */ = {isa = PBXFileReference; name = "libRNShopify.a"; path = "libRNShopify.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +543,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D018C1A41E9D150200E5D79C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D018C1A81E9D150200E5D79C /* libRNShopify.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D03AF5651E600F5A00DCE60C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +650,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = W6DW4FSSH6;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -704,6 +723,10 @@
 				{
 					ProductGroup = D03AF5651E600F5A00DCE60C /* Products */;
 					ProjectRef = B7B83838BC864533958506AB /* ReactNativeConfig.xcodeproj */;
+				},
+				{
+					ProductGroup = D018C1A41E9D150200E5D79C /* Products */;
+					ProjectRef = C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -890,6 +913,13 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D018C1A81E9D150200E5D79C /* libRNShopify.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNShopify.a;
+			remoteRef = D018C1A71E9D150200E5D79C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D03AF5691E600F5B00DCE60C /* libReactNativeConfig.a */ = {
@@ -1132,6 +1162,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = W6DW4FSSH6;
 				INFOPLIST_FILE = mqdf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1150,6 +1181,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6DW4FSSH6;
 				INFOPLIST_FILE = mqdf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
