@@ -1,12 +1,12 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Image } from 'react-native';
+import {
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 
 // Styles
-import {
-  StyledButton,
-  StyledText,
-} from './styles';
+import StyledText from './styles';
 
 // Images
 import iconApplePay from './icon-apple-pay.png';
@@ -29,14 +29,14 @@ class ApplePayButton extends React.Component {
 
   render() {
     return (
-      <StyledButton
+      <TouchableOpacity
         active={this.props.active}
         activeOpacity={0.6}
         onPress={this.onPress}
       >
         <Image source={this.props.active ? iconApplePayActive : iconApplePay} />
         <StyledText>Bientôt disponible !</StyledText>
-      </StyledButton>
+      </TouchableOpacity>
     );
   }
 

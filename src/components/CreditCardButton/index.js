@@ -1,9 +1,9 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Image } from 'react-native';
-
-// Styles
-import StyledButton from './styles';
+import {
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 
 // Images
 import iconCard from './icon-card.png';
@@ -26,13 +26,13 @@ class CreditCardButton extends React.Component {
 
   render() {
     return (
-      <StyledButton
+      <TouchableOpacity
         active={this.props.active}
         activeOpacity={0.6}
         onPress={this.onPress}
       >
         <Image source={this.props.active ? iconCardActive : iconCard} />
-      </StyledButton>
+      </TouchableOpacity>
     );
   }
 

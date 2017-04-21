@@ -3,13 +3,8 @@ import styled from 'styled-components/native';
 
 // Shared
 import { grey } from '../../shared/colors';
-import { spaceBig } from '../../shared/sizes';
 
-export const StyledButton = styled.TouchableOpacity`
-  margin-bottom: ${spaceBig};
-`;
-
-export const StyledText = styled.Text`
+export default styled.Text`
   color: ${grey};
   font-size: 10;
   position: absolute;
