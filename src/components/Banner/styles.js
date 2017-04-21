@@ -28,7 +28,7 @@ export const StyledView = styled.View`
   align-items: center;
   flex-direction: row;
   flex: 1;
-  justify-content: space-between;
+  justify-content: ${props => (props.centered ? 'center' : 'space-between')};
   padding-left: 15;
   padding-top: 30;
 `;

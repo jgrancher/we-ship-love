@@ -47,10 +47,12 @@ const Banner = props => (
         resizeMode="stretch"
         source={bannerBackground}
       />
-      <StyledView>
-        <StyledTextStep>
-          {props.number}
-        </StyledTextStep>
+      <StyledView centered={!props.number}>
+        {props.number && (
+          <StyledTextStep>
+            {props.number}
+          </StyledTextStep>
+        )}
         <View>
           <StyledTextTitle>
             {props.title}
@@ -61,10 +63,8 @@ const Banner = props => (
             </StyledTextSubtitle>
           )}
         </View>
-        {props.title && (
-          <StyledImageArrow
-            source={props.enabled ? arrow : arrowDisabled}
-          />
+        {props.number && (
+          <StyledImageArrow source={props.enabled ? arrow : arrowDisabled} />
         )}
       </StyledView>
     </FlexView>
