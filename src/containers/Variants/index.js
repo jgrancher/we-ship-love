@@ -75,7 +75,8 @@ class Variants extends React.Component {
 
   render() {
     const variant = this.props.variants[this.state.index];
-    const variantTitle = `${variant.title} = ${variant.price}€`;
+    const text = variant ? variant.title : null;
+    const price = variant ? `${variant.price}€` : null;
 
     return (
       <FlexView>
@@ -86,7 +87,8 @@ class Variants extends React.Component {
           {...this.props.step}
           enabled={!this.props.isFetching}
           onPress={this.onNextStep}
-          text={variantTitle}
+          price={price}
+          text={text}
         />
       </FlexView>
     );
@@ -102,8 +104,8 @@ export default connect(
     const product = state.products.data.find(p => p.product_id === state.order.product);
 
     // Find the needed images and variants
-    const images = product.images.filter(image => image.variant_ids.length);
-    const variants = product.variants;
+    const images = product ? product.images.filter(image => image.variant_ids.length) : [];
+    const variants = product ? product.variants : [];
 
     return {
       images,

@@ -19,10 +19,14 @@ import { stepShape } from '../../utils/shapes';
 class OrderConfirmation extends React.Component {
 
   static propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     popFirstScene: PropTypes.func.isRequired,
     resetOrder: PropTypes.func.isRequired,
     step: stepShape.isRequired,
+  };
+
+  static defaultProps = {
+    image: null,
   };
 
   onNextStep = () => {
@@ -57,11 +61,12 @@ class OrderConfirmation extends React.Component {
 
 export default connect(
   (state) => {
+    // Get the image of the selected variant, before the order reset (order.product would be null)
     const product = state.products.data.find(p => p.product_id === state.order.product);
-    const image = product.images.find(i => i.variant_ids[0] === state.order.variant);
+    const img = product ? product.images.find(i => i.variant_ids[0] === state.order.variant) : null;
 
     return {
-      image: image.src,
+      image: img ? img.src : null,
     };
   },
   dispatch => bindActionCreators({
