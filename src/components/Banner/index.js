@@ -12,12 +12,13 @@ import bannerBackground from './banner-background.png';
 
 // Styles
 import {
+  StyledButton,
   StyledImageArrow,
   StyledImageBackground,
+  StyledTextPrice,
   StyledTextStep,
   StyledTextSubtitle,
   StyledTextTitle,
-  StyledButton,
   StyledView,
 } from './styles';
 
@@ -65,9 +66,9 @@ const Banner = props => (
             </StyledTextSubtitle>
           )}
           {props.price && (
-            <StyledTextTitle>
+            <StyledTextPrice>
               {props.price}
-            </StyledTextTitle>
+            </StyledTextPrice>
           )}
         </View>
         {props.number && (

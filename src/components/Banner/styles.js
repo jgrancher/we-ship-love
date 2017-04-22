@@ -53,6 +53,10 @@ export const StyledTextSubtitle = styled(StyledTextTitle)`
   padding-top: 0;
 `;
 
+export const StyledTextPrice = styled(StyledTextSubtitle)`
+  font-size: 26;
+`;
+
 export const StyledImageArrow = styled.Image`
   margin-right: 5;
   margin-top: 15;
