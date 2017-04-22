@@ -1,7 +1,7 @@
 TODO
 =======
 
-* Make the payment working through Stripe! (French testing card: 4000002500000003)
+* Put the message property through the order!
 * Get a RefreshButton in every renderContent method, in case the network breaks!
 
 ### Optimizations
