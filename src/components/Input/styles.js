@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { spaceSmall } from '../../shared/sizes';
+// Styles
+import { spaceSmall } from '../../styles/sizes';
 import {
   grey,
   lightest,
   red,
-} from '../../shared/colors';
+} from '../../styles/colors';
 
 export default styled.TextInput`
   background-color: ${lightest};

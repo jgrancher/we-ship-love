@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { raleway } from '../../shared/fonts';
-import { spaceNormal } from '../../shared/sizes';
+// Styles
+import { raleway } from '../../styles/fonts';
+import { spaceNormal } from '../../styles/sizes';
 import {
   brownDark,
   white,
-} from '../../shared/colors';
+} from '../../styles/colors';
 
 export const StyledView = styled.View`
   border-bottom-color: ${brownDark};
@@ -27,3 +27,5 @@ export const StyledText = styled.Text`
   font-size: 17;
   font-weight: 600;
 `;
+
+export const underlayColor = brownDark;

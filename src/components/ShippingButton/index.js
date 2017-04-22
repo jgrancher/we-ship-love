@@ -9,10 +9,8 @@ import PriceLozenge from '../PriceLozenge';
 import {
   StyledButton,
   StyledText,
+  underlayColor,
 } from './styles';
-
-// Shared
-import { lightest } from '../../shared/colors';
 
 const propTypes = {
   active: PropTypes.bool,
@@ -29,7 +27,7 @@ const defaultProps = {
 const ShippingButton = props => (
   <StyledButton
     onPress={props.onPress}
-    underlayColor={lightest}
+    underlayColor={underlayColor}
   >
     <View>
       <StyledText active={props.active}>

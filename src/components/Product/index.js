@@ -2,13 +2,13 @@
 import React, { PropTypes } from 'react';
 
 // Styles
-import StyledImage from './styles';
-
-// Shared
 import {
-  heightContent,
-  widthWindow,
-} from '../../shared/sizes';
+  StyledImage,
+  height,
+  width,
+} from './styles';
+
+// Styles
 
 class Product extends React.Component {
 
@@ -19,9 +19,9 @@ class Product extends React.Component {
   };
 
   static defaultProps = {
-    height: heightContent,
+    height,
     image: null,
-    width: widthWindow,
+    width,
   };
 
   render() {

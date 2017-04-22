@@ -1,12 +1,12 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
+// Styles
 import {
   brown,
   turquoise,
   white,
-} from '../../shared/colors';
+} from '../../styles/colors';
 import {
   heightStatusBar,
   heightWindow,
@@ -15,7 +15,7 @@ import {
   spaceBig,
   widthMenu,
   widthWindow,
-} from '../../shared/sizes';
+} from '../../styles/sizes';
 
 export const StyledViewContainer = styled.View`
   background-color: ${brown};

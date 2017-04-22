@@ -7,10 +7,8 @@ import {
   StyledImage,
   StyledText,
   StyledView,
+  underlayColor,
 } from './styles';
-
-// Shared
-import { brownDark } from '../../shared/colors';
 
 // Utils
 import { routeShape } from '../../utils/shapes';
@@ -30,7 +28,7 @@ class MenuItem extends React.Component {
     return (
       <TouchableHighlight
         onPress={this.onPress}
-        underlayColor={brownDark}
+        underlayColor={underlayColor}
       >
         <StyledView>
           <StyledImage source={this.props.route.icon} />

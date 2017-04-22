@@ -1,8 +1,8 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { turquoise } from '../../shared/colors';
+// Styles
+import { turquoise } from '../../styles/colors';
 
 export default styled.TouchableOpacity`
   border-bottom-width: 5;

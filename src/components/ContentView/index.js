@@ -4,8 +4,8 @@ import React, { PropTypes } from 'react';
 // Components
 import FlexView from '../FlexView';
 
-// Shared
-import { heightContent } from '../../shared/sizes';
+// Styles
+import height from './styles';
 
 // Utils
 import { childrenShape } from '../../utils/shapes';
@@ -22,7 +22,7 @@ const defaultProps = {
 const ContentView = props => (
   <FlexView
     centered={props.centered}
-    height={heightContent}
+    height={height}
   >
     {props.children}
   </FlexView>

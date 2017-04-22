@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { raleway } from '../../shared/fonts';
+// Styles
+import { raleway } from '../../styles/fonts';
 import {
   green,
   grey,
   white,
-} from '../../shared/colors';
+} from '../../styles/colors';
 
 export const StyledViewContainer = styled.View`
   align-items: center;

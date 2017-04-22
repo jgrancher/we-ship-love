@@ -1,10 +1,10 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { brown } from '../../shared/colors';
-import { raleway } from '../../shared/fonts';
-import { heightContent } from '../../shared/sizes';
+// Styles
+import { brown } from '../../styles/colors';
+import { raleway } from '../../styles/fonts';
+import { heightContent } from '../../styles/sizes';
 
 export const StyledKeyboardAvoidingView = styled.KeyboardAvoidingView`
   align-items: center;

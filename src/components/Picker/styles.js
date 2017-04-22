@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { source } from '../../shared/fonts';
+// Styles
+import { source } from '../../styles/fonts';
 import {
   greyDark,
   greyLight,
   lightest,
-} from '../../shared/colors';
+} from '../../styles/colors';
 
 export const StyledPicker = styled.Picker`
   background-color: ${lightest};

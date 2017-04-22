@@ -1,10 +1,10 @@
-// Shared
-import { heightNavigationBar } from '../../shared/sizes';
+// Styles
+import { heightNavigationBar } from '../../styles/sizes';
 import {
   brownDark,
   turquoise,
   white,
-} from '../../shared/colors';
+} from '../../styles/colors';
 
 export const statusBar = {
   style: 'light-content',

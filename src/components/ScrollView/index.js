@@ -3,13 +3,11 @@ import React from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // Styles
-import contentContainerStyle from './styles';
-
-// Shared
 import {
-  heightCTA,
-  spaceNormal,
-} from '../../shared/sizes';
+  contentContainerStyle,
+  paddingBottom,
+  paddingTop,
+} from './styles';
 
 // Shapes
 import { childrenShape } from '../../utils/shapes';
@@ -34,8 +32,8 @@ class ScrollView extends React.Component {
 
   render() {
     const dynamicStyle = {
-      paddingBottom: this.state.isOpen ? 0 : heightCTA,
-      paddingTop: this.state.isOpen ? 0 : spaceNormal,
+      paddingBottom: this.state.isOpen ? 0 : paddingBottom,
+      paddingTop: this.state.isOpen ? 0 : paddingTop,
     };
 
     return (

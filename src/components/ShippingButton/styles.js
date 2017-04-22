@@ -1,19 +1,19 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { source } from '../../shared/fonts';
+// Styles
+import { source } from '../../styles/fonts';
 import {
   black,
   greyDark,
   lightest,
-} from '../../shared/colors';
+} from '../../styles/colors';
 import {
   spaceSmall,
   spaceNormal,
   spaceBig,
   widthWindow,
-} from '../../shared/sizes';
+} from '../../styles/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
   background-color: ${lightest};
@@ -28,3 +28,5 @@ export const StyledText = styled.Text`
   font-family: ${source};
   font-size: 16;
 `;
+
+export const underlayColor = lightest;

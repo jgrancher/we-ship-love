@@ -1,13 +1,13 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { white } from '../../shared/colors';
-import { raleway } from '../../shared/fonts';
+// Styles
+import { white } from '../../styles/colors';
+import { raleway } from '../../styles/fonts';
 import {
   heightCTA,
   widthWindow,
-} from '../../shared/sizes';
+} from '../../styles/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
   bottom: 0;

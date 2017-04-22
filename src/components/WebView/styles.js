@@ -1,16 +1,16 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { source } from '../../shared/fonts';
+// Styles
+import { source } from '../../styles/fonts';
 import {
   brown,
   turquoise,
-} from '../../shared/colors';
+} from '../../styles/colors';
 import {
   spaceNormal,
   spaceBig,
-} from '../../shared/sizes';
+} from '../../styles/sizes';
 
 export const StyledWebView = styled.WebView`
   margin-bottom: 80;

@@ -1,8 +1,8 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { grey } from '../../shared/colors';
+// Styles
+import { grey } from '../../styles/colors';
 
 export default styled.Text`
   color: ${grey};

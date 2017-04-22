@@ -1,10 +1,10 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { red } from '../../shared/colors';
-import { source } from '../../shared/fonts';
-import { heightCTA } from '../../shared/sizes';
+// Styles
+import { red } from '../../styles/colors';
+import { source } from '../../styles/fonts';
+import { heightCTA } from '../../styles/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
   align-items: center;

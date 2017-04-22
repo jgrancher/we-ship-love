@@ -1,10 +1,10 @@
 // Externals
 import styled from 'styled-components/native';
 
-// Shared
-import { brownDark } from '../../shared/colors';
-import { source } from '../../shared/fonts';
-import { spaceNormal } from '../../shared/sizes';
+// Styles
+import { brownDark } from '../../styles/colors';
+import { source } from '../../styles/fonts';
+import { spaceNormal } from '../../styles/sizes';
 
 export default styled.Text`
   color: ${brownDark};

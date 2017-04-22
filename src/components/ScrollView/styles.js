@@ -1,6 +1,14 @@
-// Shared
-import { spaceBig } from '../../shared/sizes';
+// Styles
+import {
+  heightCTA,
+  spaceNormal,
+  spaceBig,
+} from '../../styles/sizes';
 
-export default {
+export const contentContainerStyle = {
   paddingHorizontal: spaceBig,
 };
+
+export const paddingBottom = heightCTA;
+
+export const paddingTop = spaceNormal;
