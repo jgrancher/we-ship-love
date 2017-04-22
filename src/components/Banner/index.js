@@ -25,6 +25,7 @@ const propTypes = {
   enabled: PropTypes.bool,
   number: PropTypes.number,
   onPress: PropTypes.func,
+  price: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string,
 };
@@ -33,6 +34,7 @@ const defaultProps = {
   enabled: true,
   number: null,
   onPress: null,
+  price: null,
   text: null,
   title: null,
 };
@@ -61,6 +63,11 @@ const Banner = props => (
             <StyledTextSubtitle>
               {props.text}
             </StyledTextSubtitle>
+          )}
+          {props.price && (
+            <StyledTextTitle>
+              {props.price}
+            </StyledTextTitle>
           )}
         </View>
         {props.number && (
