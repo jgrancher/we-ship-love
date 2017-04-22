@@ -14,7 +14,7 @@ import {
 } from '../../utils/shapes';
 
 // Styles
-import { heightContent } from '../../styles/sizes';
+import { height } from './styles';
 
 class Slider extends React.Component {
 
@@ -31,7 +31,7 @@ class Slider extends React.Component {
   };
 
   static defaultProps = {
-    buttonWrapperStyle: { height: heightContent },
+    buttonWrapperStyle: { height },
     index: 0,
     loadMinimal: false,
     onIndexChange: () => {},
