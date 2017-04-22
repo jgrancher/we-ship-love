@@ -1,11 +1,11 @@
 // Externals
 import React, { PropTypes } from 'react';
 
-// Utils
-import { inputShape } from '../../utils/shapes';
-
 // Styles
 import StyledTextInput from './styles';
+
+// Utils
+import { inputShape } from '../../utils/shapes';
 
 const propTypes = {
   input: inputShape.isRequired,

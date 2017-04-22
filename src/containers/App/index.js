@@ -10,15 +10,15 @@ import Navbar from '../../components/Navbar';
 import NavbarBackButton from '../../components/NavbarBackButton';
 import NavbarMenuButton from '../../components/NavbarMenuButton';
 
-// Utils
-import routes from '../../utils/routes';
-
 // Styles
-import { widthMenu } from '../../styles/sizes';
 import {
   brownDark,
   white,
 } from '../../styles/colors';
+import { widthMenu } from '../../styles/sizes';
+
+// Utils
+import routes from '../../utils/routes';
 
 class Application extends React.Component {
 

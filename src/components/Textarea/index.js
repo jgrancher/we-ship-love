@@ -1,12 +1,6 @@
 // Externals
 import React, { PropTypes } from 'react';
 
-// Utils
-import { inputShape } from '../../utils/shapes';
-
-// Images
-import background from './background.png';
-
 // Styles
 import {
   StyledImage,
@@ -14,6 +8,12 @@ import {
   StyledTextInput,
   StyledView,
 } from './styles';
+
+// Utils
+import { inputShape } from '../../utils/shapes';
+
+// Images
+import background from './background.png';
 
 const propTypes = {
   blurOnSubmit: PropTypes.bool,

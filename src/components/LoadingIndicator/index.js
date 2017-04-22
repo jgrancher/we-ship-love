@@ -2,15 +2,17 @@
 import React, { PropTypes } from 'react';
 
 // Styles
-import StyledActivityIndicator from './styles';
-import { turquoise } from '../../styles/colors';
+import {
+  StyledActivityIndicator,
+  color,
+} from './styles';
 
 const propTypes = {
   color: PropTypes.string,
 };
 
 const defaultProps = {
-  color: turquoise,
+  color,
 };
 
 const LoadingIndicator = props => (

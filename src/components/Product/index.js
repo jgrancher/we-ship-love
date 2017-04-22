@@ -8,8 +8,6 @@ import {
   width,
 } from './styles';
 
-// Styles
-
 class Product extends React.Component {
 
   static propTypes = {
