@@ -159,13 +159,28 @@ export const asyncSelectShipping = index =>
  * @return {Promise}        The action promise
  */
 export const asyncCompleteCheckout = card =>
-  (dispatch) => {
+  (dispatch, getState) => {
     dispatch({
       type: ASYNC_COMPLETE_CHECKOUT,
       payload: card,
     });
 
+    // Add the message to the order once the checkout is completed.
+    // This is because it's impossible to set a line_items property
+    // when adding a variant to the cart from the Shopify Buy SDK!
+    const message = getState().order.message;
+    const orderWithNotes = id => ({
+      order: {
+        id,
+        note_attributes: [{
+          name: 'Message',
+          value: message,
+        }],
+      },
+    });
+
     return API.completeCheckout(card)
+      .then(id => API.setOrder(id, orderWithNotes(id)))
       .then(data => fetchSuccess(dispatch, ASYNC_COMPLETE_CHECKOUT_SUCCESS, data))
       .catch(error => fetchFail(dispatch, ASYNC_COMPLETE_CHECKOUT_FAIL, error));
   }
