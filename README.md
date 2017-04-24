@@ -14,8 +14,9 @@
 * Install 'watchman' with brew: `brew install watchman`.
 * Intall 'react-native-cli' globally: `npm install -g react-native-cli`.
 * Install all the node modules required: `npm install`.
+* Link external dependencies: `react-native link`.
 
-## Get started
+## Configuration
 
 * You will need your Shopify administration access to get it running!
 * Create a `.env` file where you define private credentials from your Shopify administration:
@@ -25,11 +26,10 @@ SHOPIFY_SDK_KEY=XXX
 SHOPIFY_PASSWORD=XXX
 SHOPIFY_DOMAIN=myshopname.myshopify.com
 ```
-* Run the project: `react-native run-ios`.
 
-## Xcode
+## Get started
 
-To open and run the project with Xcode:
+* To open and run the project (with Xcode, as we install Pod dependencies):
 
 ```bash
 cd ios
