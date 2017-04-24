@@ -1,7 +1,7 @@
 // Components
 import Delivery from '../containers/Delivery';
 import Message from '../containers/Message';
-import Orders from '../containers/Orders';
+// import Orders from '../containers/Orders';
 import OrderConfirmation from '../containers/OrderConfirmation';
 import Page from '../containers/Page';
 import Payment from '../containers/Payment';
@@ -11,7 +11,7 @@ import Shipping from '../containers/Shipping';
 import Variants from '../containers/Variants';
 
 // Images
-import iconGear from '../components/Menu/icon-gear.png';
+// import iconGear from '../components/Menu/icon-gear.png';
 import iconHeart from '../components/Menu/icon-heart.png';
 import iconQuestionMark from '../components/Menu/icon-questionmark.png';
 import iconSmiley from '../components/Menu/icon-smiley.png';
@@ -125,13 +125,13 @@ export default {
       },
     ],
   },
-  orders: {
-    icon: iconGear,
-    title: 'Mes commandes',
-    scenes: [
-      {
-        component: Orders,
-      },
-    ],
-  },
+  // orders: {
+  //   icon: iconGear,
+  //   title: 'Mes commandes',
+  //   scenes: [
+  //     {
+  //       component: Orders,
+  //     },
+  //   ],
+  // },
 };
