@@ -14,7 +14,6 @@
 * Install 'watchman' with brew: `brew install watchman`.
 * Intall 'react-native-cli' globally: `npm install -g react-native-cli`.
 * Install all the node modules required: `npm install`.
-* Link external dependencies: `react-native link`.
 
 ## Configuration
 
