@@ -180,7 +180,7 @@ export const asyncCompleteCheckout = card =>
     });
 
     return API.completeCheckout(card)
-      .then(id => API.setOrder(id, orderWithNotes(id)))
+      .then(order => API.setOrder(order.id, orderWithNotes(order.id)))
       .then(data => fetchSuccess(dispatch, ASYNC_COMPLETE_CHECKOUT_SUCCESS, data))
       .catch(error => fetchFail(dispatch, ASYNC_COMPLETE_CHECKOUT_FAIL, error));
   }
