@@ -36,25 +36,25 @@ export const StyledView = styled.View`
 export const StyledTextStep = styled.Text`
   color: ${white};
   font-family: ${raleway};
-  font-size: 57;
+  font-size: 46;
   font-weight: bold;
 `;
 
 export const StyledTextTitle = styled.Text`
   color: ${white};
   font-family: ${raleway};
-  font-size: 21;
+  font-size: 17;
   padding-top: 15;
   text-align: center;
 `;
 
 export const StyledTextSubtitle = styled(StyledTextTitle)`
-  font-size: 15;
+  font-size: 13;
   padding-top: 0;
 `;
 
 export const StyledTextPrice = styled(StyledTextSubtitle)`
-  font-size: 26;
+  font-size: 24;
 `;
 
 export const StyledImageArrow = styled.Image`
