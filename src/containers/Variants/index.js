@@ -66,6 +66,7 @@ class Variants extends React.Component {
             <Product
               key={item.id}
               image={image && image.src}
+              widthRatio={1.15}
             />
           );
         })}

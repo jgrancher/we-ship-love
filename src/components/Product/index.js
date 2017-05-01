@@ -4,8 +4,8 @@ import React, { PropTypes } from 'react';
 // Styles
 import {
   StyledImage,
-  height,
-  width,
+  height as heightDefault,
+  width as widthDefault,
 } from './styles';
 
 class Product extends React.Component {
@@ -18,9 +18,9 @@ class Product extends React.Component {
   };
 
   static defaultProps = {
-    height,
+    height: heightDefault,
     image: null,
-    width,
+    width: widthDefault,
     widthRatio: 1,
   };
 
@@ -28,14 +28,15 @@ class Product extends React.Component {
     if (!this.props.image) return null;
 
     // Hack: We "enlarge" the image to hide the white part on each product image from the screen.
-    const enlargedWidth = this.props.width / this.props.widthRatio;
+    const { width, widthRatio } = this.props;
+    const w = (widthRatio < 1) ? width / widthRatio : width;
 
     return (
       <StyledImage
         height={this.props.height}
         resizeMode="cover"
         source={{ uri: this.props.image }}
-        width={enlargedWidth}
+        width={w}
       />
     );
   }
