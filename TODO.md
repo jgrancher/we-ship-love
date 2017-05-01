@@ -1,7 +1,7 @@
 TODO
 =======
 
-* Put the message property through the order!
+* If the shipping method is "On a specific day", create a text field for setting that value.
 * Get a RefreshButton in every renderContent method, in case the network breaks!
 
 ### Optimizations
