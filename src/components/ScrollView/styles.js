@@ -1,14 +1,7 @@
 // Styles
-import {
-  heightCTA,
-  spaceNormal,
-  spaceBig,
-} from '../../styles/sizes';
+import { spaceBig } from '../../styles/sizes';
 
 export const contentContainerStyle = {
   paddingHorizontal: spaceBig,
+  paddingVertical: spaceBig,
 };
-
-export const paddingBottom = heightCTA;
-
-export const paddingTop = spaceNormal;

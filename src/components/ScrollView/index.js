@@ -3,11 +3,7 @@ import React from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // Styles
-import {
-  contentContainerStyle,
-  paddingBottom,
-  paddingTop,
-} from './styles';
+import { contentContainerStyle } from './styles';
 
 // Shapes
 import { childrenShape } from '../../utils/shapes';
@@ -31,15 +27,16 @@ class ScrollView extends React.Component {
   }
 
   render() {
-    const dynamicStyle = {
-      paddingBottom: this.state.isOpen ? 0 : paddingBottom,
-      paddingTop: this.state.isOpen ? 0 : paddingTop,
+    const styles = {
+      ...contentContainerStyle,
+      flexGrow: this.state.isOpen ? 0 : 1,
+      paddingVertical: this.state.isOpen ? 0 : contentContainerStyle.paddingVertical,
     };
 
     return (
       <KeyboardAwareScrollView
         centerContent={!this.state.isOpen}
-        contentContainerStyle={{ ...contentContainerStyle, ...dynamicStyle }}
+        contentContainerStyle={styles}
         keyboardDismissMode="interactive"
         onKeyboardWillHide={this.onKeyboardWillHide}
         onKeyboardWillShow={this.onKeyboardWillShow}

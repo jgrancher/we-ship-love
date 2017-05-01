@@ -52,14 +52,8 @@ class Delivery extends React.Component {
   }
 
   renderContent() {
-    // Adding ContentView around to make sure the indicator is vertically aligned
-    // It is not around the content so that we can see the fields underneath the banner.
     if (this.props.isFetching) {
-      return (
-        <ContentView>
-          <LoadingIndicator />
-        </ContentView>
-      );
+      return <LoadingIndicator />;
     }
 
     return (
@@ -127,7 +121,9 @@ class Delivery extends React.Component {
   render() {
     return (
       <FlexView>
-        {this.renderContent()}
+        <ContentView>
+          {this.renderContent()}
+        </ContentView>
         <Banner
           {...this.props.step}
           enabled={!this.props.isFetching && this.props.valid}
