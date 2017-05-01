@@ -72,6 +72,7 @@ class Products extends React.Component {
           <Product
             key={item.product_id}
             image={item.images[0].src}
+            widthRatio={0.85}
           />
         ))}
       </Slider>

@@ -14,19 +14,21 @@ class Product extends React.Component {
     height: PropTypes.number,
     image: PropTypes.string,
     width: PropTypes.number,
+    widthRatio: PropTypes.number,
   };
 
   static defaultProps = {
     height,
     image: null,
     width,
+    widthRatio: 1,
   };
 
   render() {
     if (!this.props.image) return null;
 
     // Hack: We "enlarge" the image to hide the white part on each product image from the screen.
-    const enlargedWidth = this.props.width / 0.85;
+    const enlargedWidth = this.props.width / this.props.widthRatio;
 
     return (
       <StyledImage
