@@ -5,7 +5,7 @@ import { Dimensions } from 'react-native';
 export const heightWindow = Dimensions.get('window').height;
 export const heightStatusBar = 20;
 export const heightNavigationBar = 73;
-export const heightCTA = 143;
+export const heightCTA = 81;
 export const heightScene = heightWindow - heightStatusBar - heightNavigationBar;
 export const heightContent = heightScene - heightCTA;
 

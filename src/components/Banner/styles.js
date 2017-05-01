@@ -30,7 +30,6 @@ export const StyledView = styled.View`
   flex: 1;
   justify-content: ${props => (props.centered ? 'center' : 'space-between')};
   padding-left: 15;
-  padding-top: 30;
 `;
 
 export const StyledTextStep = styled.Text`
@@ -44,7 +43,6 @@ export const StyledTextTitle = styled.Text`
   color: ${white};
   font-family: ${raleway};
   font-size: 17;
-  padding-top: 15;
   text-align: center;
 `;
 
@@ -59,5 +57,4 @@ export const StyledTextPrice = styled(StyledTextSubtitle)`
 
 export const StyledImageArrow = styled.Image`
   margin-right: 5;
-  margin-top: 15;
 `;
