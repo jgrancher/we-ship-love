@@ -8,7 +8,7 @@ import {
 } from '../../styles/sizes';
 
 export const StyledImage = styled.Image`
-  align-self: center;
+  align-self: flex-start;
   flex-grow: ${props => (props.height === 0 ? 1 : 0)};
   height: ${props => props.height};
   width: ${props => props.width};

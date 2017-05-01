@@ -25,12 +25,15 @@ class Product extends React.Component {
   render() {
     if (!this.props.image) return null;
 
+    // Hack: We "enlarge" the image to hide the white part on each product image from the screen.
+    const enlargedWidth = this.props.width / 0.85;
+
     return (
       <StyledImage
         height={this.props.height}
-        resizeMode="contain"
+        resizeMode="cover"
         source={{ uri: this.props.image }}
-        width={this.props.width}
+        width={enlargedWidth}
       />
     );
   }
