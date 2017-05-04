@@ -2,24 +2,29 @@
 import styled from 'styled-components/native';
 
 // Styles
-import { spaceBig } from '../../styles/sizes';
 import {
+  black,
+  greyLight,
+  red,
   turquoise,
   white,
 } from '../../styles/colors';
 
-export const StyledButton = styled.TouchableOpacity`
+export const StyledButton = styled.TouchableHighlight`
   align-items: center;
-  background-color: ${props => (props.primary ? turquoise : white)};
-  border-color: ${turquoise};
-  border-style: solid;
-  border-width: 2;
+  background-color: ${(props) => {
+    if (props.type === 'danger') return red;
+    if (props.type === 'success') return turquoise;
+    return greyLight;
+  }};
+  flex-grow: 1;
   height: 50;
   justify-content: center;
-  padding-left: ${spaceBig};
-  padding-right: ${spaceBig};
+  opacity: ${props => (props.disabled ? 0.5 : 1)};
 `;
 
 export const StyledText = styled.Text`
-  color: ${props => (props.primary ? white : turquoise)};
+  color: ${props => (props.type === 'default' ? black : white)};
 `;
+
+export const underlayColor = white;

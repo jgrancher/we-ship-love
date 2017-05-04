@@ -5,24 +5,25 @@ import React, { PropTypes } from 'react';
 import {
   StyledButton,
   StyledText,
+  underlayColor,
 } from './styles';
 
 const propTypes = {
-  primary: PropTypes.bool,
   title: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['default', 'danger', 'success']),
 };
 
 const defaultProps = {
-  primary: true,
+  type: 'default',
 };
 
 const Button = props => (
   <StyledButton
     {...props}
-    activeOpacity={0.6}
-    primary={props.primary}
+    underlayColor={underlayColor}
+    type={props.type}
   >
-    <StyledText primary={props.primary}>
+    <StyledText>
       {props.title}
     </StyledText>
   </StyledButton>
