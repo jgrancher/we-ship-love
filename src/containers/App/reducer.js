@@ -6,6 +6,7 @@ import {
   SET_ORDER_MESSAGE,
   SET_ORDER_DELIVERY,
   SET_ORDER_SHIPPING,
+  SET_ORDER_NOTE,
   ASYNC_CREATE_CHECKOUT,
   ASYNC_CREATE_CHECKOUT_FAIL,
   ASYNC_CREATE_CHECKOUT_SUCCESS,
@@ -27,6 +28,7 @@ const defaultState = {
   message: null,
   delivery: {},
   shipping: null,
+  note: null,
   prices: {
     items: 0,
     shipping: 0,
@@ -76,6 +78,12 @@ export default (state = defaultState, action) => {
           ...state.prices,
           shipping: Number(action.payload.price),
         },
+      };
+
+    case SET_ORDER_NOTE:
+      return {
+        ...state,
+        note: action.payload,
       };
 
     case ASYNC_CREATE_CHECKOUT:

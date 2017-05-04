@@ -15,6 +15,7 @@ import {
   SET_ORDER_VARIANT,
   SET_ORDER_DELIVERY,
   SET_ORDER_SHIPPING,
+  SET_ORDER_NOTE,
   ASYNC_CREATE_CHECKOUT,
   ASYNC_CREATE_CHECKOUT_FAIL,
   ASYNC_CREATE_CHECKOUT_SUCCESS,
@@ -85,6 +86,16 @@ export const setOrderDelivery = delivery => ({
 export const setOrderShipping = shipping => ({
   type: SET_ORDER_SHIPPING,
   payload: shipping,
+});
+
+/**
+ * Set the order note (A shipping note for receiving the order on a specific day)
+ * @param {String} note     The note string
+ * @return {Object}         The action object
+ */
+export const setOrderNote = note => ({
+  type: SET_ORDER_NOTE,
+  payload: note,
 });
 
 /**
@@ -165,13 +176,14 @@ export const asyncCompleteCheckout = card =>
       payload: card,
     });
 
-    // Add the message to the order once the checkout is completed.
+    // Add the message and the note to the order once the checkout is completed.
     // This is because it's impossible to set a line_items property
     // when adding a variant to the cart from the Shopify Buy SDK!
-    const message = getState().order.message;
+    const { message, note } = getState().order;
     const orderWithNotes = id => ({
       order: {
         id,
+        note,
         note_attributes: [{
           name: 'Message',
           value: message,
