@@ -1,5 +1,5 @@
 // Externals
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 // Components
 import FlexView from '../FlexView';
@@ -12,16 +12,13 @@ import { childrenShape } from '../../utils/shapes';
 
 const propTypes = {
   children: childrenShape.isRequired,
-  centered: PropTypes.bool,
 };
 
-const defaultProps = {
-  centered: false,
-};
-
+// ContentView is just a FlexView component
+// containing a default height (equal to heightContent in sizes.js)
 const ContentView = props => (
   <FlexView
-    centered={props.centered}
+    {...props}
     height={height}
   >
     {props.children}
@@ -29,6 +26,5 @@ const ContentView = props => (
 );
 
 ContentView.propTypes = propTypes;
-ContentView.defaultProps = defaultProps;
 
 export default ContentView;
