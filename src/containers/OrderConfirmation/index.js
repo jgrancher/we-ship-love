@@ -37,7 +37,10 @@ class OrderConfirmation extends React.Component {
   render() {
     return (
       <FlexView>
-        <ContentView center>
+        <ContentView
+          alignItems="center"
+          justifyContent="center"
+        >
           <Text size={24}>
             Merci pour votre commande !
           </Text>

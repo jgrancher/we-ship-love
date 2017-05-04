@@ -59,7 +59,10 @@ class PaymentMethod extends React.Component {
   render() {
     return (
       <FlexView>
-        <ContentView centered>
+        <ContentView
+          alignItems="center"
+          justifyContent="center"
+        >
           {this.renderContent()}
         </ContentView>
         <Banner
