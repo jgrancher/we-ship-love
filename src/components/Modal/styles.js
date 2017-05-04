@@ -10,7 +10,6 @@ import {
   heightWindow,
   widthWindow,
   spaceNormal,
-  spaceBig,
 } from '../../styles/sizes';
 
 export const StyledViewOverlay = styled.View`
@@ -26,7 +25,9 @@ export const StyledViewOverlay = styled.View`
 
 export const StyledViewContent = styled.View`
   background-color: ${white};
-  height: ${widthWindow - spaceBig - spaceBig};
+  flex-grow: 1;
+  max-height: 260;
+  padding-top: 0;
   padding: ${spaceNormal};
   width: ${widthWindow - spaceNormal - spaceNormal};
 `;
