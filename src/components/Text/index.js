@@ -10,21 +10,21 @@ import { childrenShape } from '../../utils/shapes';
 const propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right']),
   children: childrenShape.isRequired,
-  size: PropTypes.number,
-  spaced: PropTypes.bool,
+  fontSize: PropTypes.number,
+  marginBottom: PropTypes.bool,
 };
 
 const defaultProps = {
   align: 'center',
-  size: 18,
-  spaced: false,
+  fontSize: 18,
+  marginBottom: false,
 };
 
 const Text = props => (
   <StyledText
     align={props.align}
-    size={props.size}
-    spaced={props.spaced}
+    fontSize={props.fontSize}
+    marginBottom={props.marginBottom}
   >
     {props.children}
   </StyledText>

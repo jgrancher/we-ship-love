@@ -41,10 +41,10 @@ class OrderConfirmation extends React.Component {
           alignItems="center"
           justifyContent="center"
         >
-          <Text size={24}>
+          <Text fontSize={24}>
             Merci pour votre commande !
           </Text>
-          <Text spaced>
+          <Text marginBottom>
             Vous recevrez un email de confirmation dès que votre commande sera envoyée.
           </Text>
           <Product

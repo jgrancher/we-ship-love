@@ -44,7 +44,7 @@ class PaymentMethod extends React.Component {
           active={this.state.index === 0}
           index={0}
         />
-        <Text spaced>
+        <Text marginBottom>
           OU
         </Text>
         <CreditCardButton
