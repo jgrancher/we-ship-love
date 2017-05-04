@@ -14,7 +14,8 @@ class FlexView extends React.Component {
   static propTypes = {
     alignItems: PropTypes.oneOf(['center', 'stretch']),
     background: PropTypes.string,
-    children: childrenShape.isRequired,
+    children: childrenShape,
+    flexBasis: PropTypes.number,
     flexDirection: PropTypes.oneOf(['row', 'column']),
     height: PropTypes.number,
     justifyContent: PropTypes.oneOf(['flex-start', 'center', 'space-between']),
@@ -23,7 +24,8 @@ class FlexView extends React.Component {
   static defaultProps = {
     alignItems: 'stretch',
     background: 'transparent',
-    centered: false,
+    children: null,
+    flexBasis: 0,
     flexDirection: 'column',
     height: 0,
     horizontal: false,
@@ -35,12 +37,20 @@ class FlexView extends React.Component {
   }
 
   render() {
+    // If a flexBasis or height is provided, don't make the view stretch.
+    const flexBasis = this.props.flexBasis || this.props.height;
+    const flexGrow = flexBasis ? 0 : 1;
+    const flexShrink = flexBasis ? 0 : 1;
+
     return (
       <StyledView
         {...this.props}
         alignItems={this.props.alignItems}
         background={this.props.background}
+        flexBasis={flexBasis}
         flexDirection={this.props.flexDirection}
+        flexGrow={flexGrow}
+        flexShrink={flexShrink}
         height={this.props.height}
         justifyContent={this.props.justifyContent}
         ref={(c) => { this.view = c; }}
