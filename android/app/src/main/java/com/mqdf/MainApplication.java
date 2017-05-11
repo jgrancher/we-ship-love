@@ -1,4 +1,4 @@
-package com.mqdf;
+package com.WeShipLove;
 
 import android.app.Application;
 import android.util.Log;

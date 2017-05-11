@@ -18,7 +18,7 @@
 		10E38D4CE69A9C9B2E2D3D38438B5DBF /* BUYCustomerToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFAD228DBCF7140ADBACCF48458E363 /* BUYCustomerToken.m */; };
 		141B845E6EA449DBB41783A58ED5697A /* BUYDecimalNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C70605AF77F55199DF8E3DB17FEB922 /* BUYDecimalNumberTransformer.m */; };
 		1694DE82E9FFB836A52D4321F5F4FB53 /* _BUYCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = C98EAC3D81C93B6AAF360EDD1B1DF4DC /* _BUYCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		173E48A92921DAC7C9C17933422C36FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		169DEEFF8DCFD451FC4671ACC97AB1AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		189852E201AE81A36E04F3A0798808AF /* BUYIdentityTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF40DDD500503C8DDE8C1720B3019F88 /* BUYIdentityTransformer.m */; };
 		1AB20913F2E6C9DC5BBF050D728545F6 /* BUYTaxLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693FFB7EA31D61ED1425D468FF66AD4 /* BUYTaxLine.m */; };
 		1C86936B91E001B24135B3430172B046 /* BUYObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C19A6A45C2BF2D3F5D50F3450D52836B /* BUYObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,7 +53,6 @@
 		41D5A21ED3BBAA8326F4B358A8AF6B0E /* NSArray+BUYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67113D4E3D755CBDFD42FB89012D07CA /* NSArray+BUYAdditions.m */; };
 		440B650144C342B75FFC608A42180B20 /* BUYClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1CAA3362C6E0E844A1CC0CDA83136 /* BUYClient.m */; };
 		45F50D8404020D78B0E6A1C587D2BDC5 /* BUYMaskedCreditCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CFA88BDE82A570841852C486FFAA905 /* BUYMaskedCreditCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47AC26AC978CE8DD1182B1D52935CA73 /* Pods-mqdf-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60683065134062FADF12D21C0D863FDD /* Pods-mqdf-dummy.m */; };
 		47B8A6FC309A6D6EDF0C4264477BB501 /* BUYPaymentToken.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EA740E7E8D5B3F44E7A1B52D6A3ECF /* BUYPaymentToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		480CE4198681F6BA1CCD14695B9DA364 /* NSPropertyDescription+BUYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F068502385CCF43278707E6372C29E6 /* NSPropertyDescription+BUYAdditions.m */; };
 		4A03432606A53AF160AB656D774CC5FE /* BUYShippingRate.h in Headers */ = {isa = PBXBuildFile; fileRef = C157ED6AD065240B14C85AF63257047C /* BUYShippingRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -189,6 +188,7 @@
 		F841A833E02AAF19E8B3606A13C8D3C4 /* BUYDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A91F0DD26CDFD67AA164964F9004F906 /* BUYDateTransformer.m */; };
 		F8E567FC29AD9A01111EFD10ECEC07AB /* BUYDecimalNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5751702CE673EF84C8BAC87EF59E176C /* BUYDecimalNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F970DD4905EA6255F9077DB63F91EE80 /* _BUYCartLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C6CA972CD2436CF30262C7DC6C53CF2 /* _BUYCartLineItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA970936881CF12DAAB237057BDEB2B3 /* Pods-WeShipLove-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C47090F8C7A90E66F5A378D73840AE /* Pods-WeShipLove-dummy.m */; };
 		FD15BFBE482869FA6C3479E98CBFA96D /* _BUYOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A5646E80E04434DC0D7C03844F93DED /* _BUYOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF48490CB6B38C10CFC297101758FBEB /* BUYCartLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 911DF2BF23A75750ABE338D57BC63A98 /* BUYCartLineItem.m */; };
 		FF8B102D5117046B3B06C9279B9458DC /* BUYCheckout.h in Headers */ = {isa = PBXBuildFile; fileRef = 876F8CE668C288FF44086BDC5F567988 /* BUYCheckout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -196,19 +196,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2BEFE91BDF4E3D2EEC5E29B8B526B991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6260A1384F4A20539B7BD8471136FB46;
+			remoteInfo = "Mobile-Buy-SDK";
+		};
 		5E55CEEB232D04D49903983BD2EBA869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAB7276915F119321D7CFECF1F1D01AC;
 			remoteInfo = "Mobile-Buy-SDK-Buy";
-		};
-		BF6611141076F4FDA9794777C1CDDD78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6260A1384F4A20539B7BD8471136FB46;
-			remoteInfo = "Mobile-Buy-SDK";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -220,7 +220,6 @@
 		078AAF37D7D70C5F67CAB08E279F5B97 /* BUYImageLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYImageLink.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYImageLink.m"; sourceTree = "<group>"; };
 		09434ABB6E9C0DA5FFE5A7E7D66C5407 /* _BUYOrder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYOrder.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYOrder.h"; sourceTree = "<group>"; };
 		0A15CD7FCFB24B5BF0A3AE6C62449B33 /* _BUYDiscount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYDiscount.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYDiscount.m"; sourceTree = "<group>"; };
-		0AC76FF6F7F0A355E7458E278494DD0C /* Pods-mqdf-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mqdf-frameworks.sh"; sourceTree = "<group>"; };
 		0B180C9549C214F71F155FF26EA6D4FB /* BUYLineItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYLineItem.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYLineItem.m"; sourceTree = "<group>"; };
 		0DFAD228DBCF7140ADBACCF48458E363 /* BUYCustomerToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYCustomerToken.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYCustomerToken.m"; sourceTree = "<group>"; };
 		1121EC276CA20BF60EC8A90119752B53 /* BUYCheckoutAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYCheckoutAttribute.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYCheckoutAttribute.m"; sourceTree = "<group>"; };
@@ -231,10 +230,10 @@
 		15D2FA44BD808CCB650C5C0B0757ADB7 /* NSDate+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSDate+BUYAdditions.h"; sourceTree = "<group>"; };
 		160055BF6A1B3F89F8855B268FBF698B /* BUYError+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BUYError+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Utils/BUYError+BUYAdditions.h"; sourceTree = "<group>"; };
 		164EED4C54276EA67017557FF198AD45 /* BUYClient+Customers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BUYClient+Customers.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient+Customers.m"; sourceTree = "<group>"; };
-		1A85C44A1FDC31FFF915442B7C54155D /* Pods-mqdf-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mqdf-acknowledgements.plist"; sourceTree = "<group>"; };
 		1C1690916BF11FA526D2F7F781CA248A /* BUYObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYObject.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYObject.h"; sourceTree = "<group>"; };
 		1C75B1721D3F1A30FBFA52A3DD0C0FBD /* NSDictionary+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSDictionary+BUYAdditions.h"; sourceTree = "<group>"; };
 		1CC1CAA3362C6E0E844A1CC0CDA83136 /* BUYClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYClient.m; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient.m"; sourceTree = "<group>"; };
+		1D48029201836E7714A25D15CD88A165 /* Pods-WeShipLove-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeShipLove-resources.sh"; sourceTree = "<group>"; };
 		1E155F82592CC2EADF6C610E842E0E2F /* BUYCreditCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYCreditCard.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYCreditCard.h"; sourceTree = "<group>"; };
 		1ED48F438FDB7A8ACD62DB3B2DC0DC7E /* BUYLineItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYLineItem.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYLineItem.h"; sourceTree = "<group>"; };
 		1F3F03AA767470A4D18AE1AAA7E32585 /* BUYAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYAssert.h; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/BUYAssert.h"; sourceTree = "<group>"; };
@@ -255,12 +254,12 @@
 		2E55569A25ECC805245DBB39A6C39BCF /* _BUYCart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYCart.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYCart.m"; sourceTree = "<group>"; };
 		2EE7F03EBA4D1052F35C612646D8C469 /* BUYClient+Checkout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BUYClient+Checkout.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient+Checkout.h"; sourceTree = "<group>"; };
 		2F068502385CCF43278707E6372C29E6 /* NSPropertyDescription+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSPropertyDescription+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSPropertyDescription+BUYAdditions.m"; sourceTree = "<group>"; };
+		32C47090F8C7A90E66F5A378D73840AE /* Pods-WeShipLove-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeShipLove-dummy.m"; sourceTree = "<group>"; };
 		33A256DF6E1C8903895E6907E95A6BE2 /* _BUYOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYOrder.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYOrder.m"; sourceTree = "<group>"; };
+		35E0039A4A68E8F1A096056F5549E431 /* Pods-WeShipLove-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeShipLove-frameworks.sh"; sourceTree = "<group>"; };
 		364C4937A39FB3473C7A26A0444E95F5 /* BUYManagedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYManagedObject.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYManagedObject.m"; sourceTree = "<group>"; };
-		36B609D7A24FA3FA10A61A0CF91BEA0C /* libMobile-Buy-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libMobile-Buy-SDK.a"; path = "libMobile-Buy-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E9F72F21F201961813631E24B22680 /* BUYCustomer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYCustomer.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYCustomer.h"; sourceTree = "<group>"; };
 		37602AB64274376155F200A008AF6629 /* NSException+BUYModelAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSException+BUYModelAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSException+BUYModelAdditions.m"; sourceTree = "<group>"; };
-		38321D0506125088B2B6769FC1B85199 /* Pods-mqdf-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mqdf-acknowledgements.markdown"; sourceTree = "<group>"; };
 		38A3C7175A3CB8EFD6F135EDA10D6B59 /* BUYIdentityTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYIdentityTransformer.h; path = "Mobile Buy SDK/Mobile Buy SDK/Value Transformers/BUYIdentityTransformer.h"; sourceTree = "<group>"; };
 		38C8D0B4C5E0868993B8408882D1528F /* BUYClient+Customers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BUYClient+Customers.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient+Customers.h"; sourceTree = "<group>"; };
 		3C70605AF77F55199DF8E3DB17FEB922 /* BUYDecimalNumberTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYDecimalNumberTransformer.m; path = "Mobile Buy SDK/Mobile Buy SDK/Value Transformers/BUYDecimalNumberTransformer.m"; sourceTree = "<group>"; };
@@ -290,7 +289,6 @@
 		5DF91FDEF69EC6F4EE59542596F7334D /* NSArray+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSArray+BUYAdditions.h"; sourceTree = "<group>"; };
 		5E1D57A6EBBD5B1055B6D403FBB1FA34 /* ResourceBundle-Buy-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Buy-Info.plist"; sourceTree = "<group>"; };
 		5EB72E03D26547A10CE100BFB51888C4 /* _BUYTaxLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYTaxLine.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYTaxLine.h"; sourceTree = "<group>"; };
-		60683065134062FADF12D21C0D863FDD /* Pods-mqdf-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mqdf-dummy.m"; sourceTree = "<group>"; };
 		60C8001F6E4E5A2621CCCFD6AE5B206F /* BUYCheckoutOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYCheckoutOperation.h; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYCheckoutOperation.h"; sourceTree = "<group>"; };
 		62FDA17AB8523E965298F771BF04D2CF /* NSRegularExpression+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSRegularExpression+BUYAdditions.h"; sourceTree = "<group>"; };
 		67113D4E3D755CBDFD42FB89012D07CA /* NSArray+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSArray+BUYAdditions.m"; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 		6D49D8311FEE10C5FF63D0B45CD75E61 /* _BUYMaskedCreditCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYMaskedCreditCard.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYMaskedCreditCard.m"; sourceTree = "<group>"; };
 		7149F2B2DE2FE609F4B1C653692C3436 /* _BUYCheckout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYCheckout.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYCheckout.h"; sourceTree = "<group>"; };
 		73F5819EFFF7B9FC4E8E9E902DB6EB07 /* BUYRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYRequestOperation.h; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYRequestOperation.h"; sourceTree = "<group>"; };
-		7516E18F6E1FA35DDEB68E3A50BEE9F3 /* libPods-mqdf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-mqdf.a"; path = "libPods-mqdf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F95C23162B8EF4483AEC669C81C54C /* NSEntityDescription+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSEntityDescription+BUYAdditions.h"; sourceTree = "<group>"; };
 		7CDBCCAF17D2B38518AD930DFEB60E80 /* _BUYCart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYCart.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYCart.h"; sourceTree = "<group>"; };
 		7CFA88BDE82A570841852C486FFAA905 /* BUYMaskedCreditCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYMaskedCreditCard.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYMaskedCreditCard.h"; sourceTree = "<group>"; };
@@ -312,12 +309,11 @@
 		851E2A09991D88E39367F6E74A8973AD /* BUYCreditCardToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYCreditCardToken.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYCreditCardToken.h"; sourceTree = "<group>"; };
 		85A6FF04F6410122DA82FF55CA66E474 /* _BUYCheckoutAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYCheckoutAttribute.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYCheckoutAttribute.m"; sourceTree = "<group>"; };
 		876F8CE668C288FF44086BDC5F567988 /* BUYCheckout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYCheckout.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYCheckout.h"; sourceTree = "<group>"; };
+		87DCFEB9E42B24BB5E8379A65DDDA03B /* Pods-WeShipLove-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeShipLove-acknowledgements.plist"; sourceTree = "<group>"; };
 		880D6C6810C629A9396BB1CB270DEED3 /* BUYAccountCredentials.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYAccountCredentials.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYAccountCredentials.h"; sourceTree = "<group>"; };
 		8A5646E80E04434DC0D7C03844F93DED /* _BUYOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYOption.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYOption.h"; sourceTree = "<group>"; };
-		8A9C8561E50E0CA1487D566C85DE759E /* Pods-mqdf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mqdf.debug.xcconfig"; sourceTree = "<group>"; };
 		8AAEC4B0335FD56FBE0CBF9255D6E3B3 /* _BUYCustomer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYCustomer.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYCustomer.m"; sourceTree = "<group>"; };
 		8AE8C2F40A1AD3BAE9B503F89A33A6EC /* NSDate+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSDate+BUYAdditions.m"; sourceTree = "<group>"; };
-		8BB33C2039D5D8F2AED3888492120D83 /* Pods-mqdf-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mqdf-resources.sh"; sourceTree = "<group>"; };
 		8BBA082C87D518CED6A436F887816BAB /* BUYCreditCardToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYCreditCardToken.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYCreditCardToken.m"; sourceTree = "<group>"; };
 		8BDBD756BFAF88F8AFF60F26DDBD14A0 /* _BUYProduct.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYProduct.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYProduct.m"; sourceTree = "<group>"; };
 		8D9C2CDBF431583A23E303531145CD02 /* BUYClient+Routing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BUYClient+Routing.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient+Routing.m"; sourceTree = "<group>"; };
@@ -343,13 +339,15 @@
 		9FDA05F660C712507EF9827B84A3C8E9 /* BUYCheckoutOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYCheckoutOperation.m; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYCheckoutOperation.m"; sourceTree = "<group>"; };
 		A2EA740E7E8D5B3F44E7A1B52D6A3ECF /* BUYPaymentToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYPaymentToken.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYPaymentToken.h"; sourceTree = "<group>"; };
 		A34A913AF8C1540B3DEA3381A406EA6F /* BUYClient+Routing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BUYClient+Routing.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Data/BUYClient+Routing.h"; sourceTree = "<group>"; };
-		A37321AB5B3EA9DA5CEF1F9032915600 /* Pods-mqdf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mqdf.release.xcconfig"; sourceTree = "<group>"; };
 		A67BFBBFD70C669187CCEB2CB95B9990 /* BUYShop.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYShop.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYShop.m"; sourceTree = "<group>"; };
+		A6A34C8EBF9A21DDC072989FAE0C516A /* Buy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Buy.bundle; path = Buy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8894396C943F01DA535A474BEDACD68 /* BUYOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYOperation.h; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYOperation.h"; sourceTree = "<group>"; };
 		A91F0DD26CDFD67AA164964F9004F906 /* BUYDateTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYDateTransformer.m; path = "Mobile Buy SDK/Mobile Buy SDK/Value Transformers/BUYDateTransformer.m"; sourceTree = "<group>"; };
 		AAC8BB0917138748B414DBB19DE658F3 /* BUYError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYError.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYError.h"; sourceTree = "<group>"; };
+		AB057D6CFD2B1682C2AEA562AFF75626 /* Pods-WeShipLove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeShipLove.release.xcconfig"; sourceTree = "<group>"; };
 		AB19E6420935B8FD068242C62C3036DA /* NSException+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSException+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSException+BUYAdditions.h"; sourceTree = "<group>"; };
 		AD4FE9D0DF0685BAE453FDAB8F287BB1 /* BUYApplePayAuthorizationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYApplePayAuthorizationDelegate.h; path = "Mobile Buy SDK/Mobile Buy SDK/Utils/BUYApplePayAuthorizationDelegate.h"; sourceTree = "<group>"; };
+		B2F4A6BBF6829804A08E682B39817838 /* libMobile-Buy-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libMobile-Buy-SDK.a"; path = "libMobile-Buy-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D5C658F56BCF0EB0DF3E0770A1ABC6 /* NSEntityDescription+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSEntityDescription+BUYAdditions.m"; sourceTree = "<group>"; };
 		B642D8178032F666FD5711656814D05E /* NSPropertyDescription+BUYAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSPropertyDescription+BUYAdditions.h"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSPropertyDescription+BUYAdditions.h"; sourceTree = "<group>"; };
 		B71274CC88CB3923DD9EF78128FD9619 /* BUYPaymentController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYPaymentController.h; path = "Mobile Buy SDK/Mobile Buy SDK/Payment Providers/BUYPaymentController.h"; sourceTree = "<group>"; };
@@ -359,6 +357,7 @@
 		BBC9D1E21EE65F1BD8BB8694F12F7C5A /* BUYMaskedCreditCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYMaskedCreditCard.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYMaskedCreditCard.m"; sourceTree = "<group>"; };
 		BD572BD0E8C83CC78AB2455FBEF99823 /* BUYRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYRequestOperation.m; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYRequestOperation.m"; sourceTree = "<group>"; };
 		BF5D9CAD216B5D91AE180081D609EBC7 /* Buy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Buy.h; path = "Mobile Buy SDK/Mobile Buy SDK/Buy.h"; sourceTree = "<group>"; };
+		BF87B882765AD6CACD4D9FE780D2329C /* Pods-WeShipLove-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeShipLove-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BFE1CB6E22752403F74263AA8FD77F5A /* NSURL+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSURL+BUYAdditions.m"; sourceTree = "<group>"; };
 		C0DA0BE2DF22769E20AE4E898F8F8B19 /* _BUYTaxLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYTaxLine.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYTaxLine.m"; sourceTree = "<group>"; };
 		C157ED6AD065240B14C85AF63257047C /* BUYShippingRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYShippingRate.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYShippingRate.h"; sourceTree = "<group>"; };
@@ -367,6 +366,7 @@
 		C1F8D3D8D50F52CA1F0FC43861F1ED75 /* BUYPaymentController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYPaymentController.m; path = "Mobile Buy SDK/Mobile Buy SDK/Payment Providers/BUYPaymentController.m"; sourceTree = "<group>"; };
 		C2C4EC2537D50E4AAC02E414CC276572 /* _BUYShop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYShop.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYShop.h"; sourceTree = "<group>"; };
 		C34F995600D829F1A39BE5DA1B40325B /* BUYOrder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYOrder.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYOrder.m"; sourceTree = "<group>"; };
+		C4F0A10C013E257D9250A6995DB99884 /* Pods-WeShipLove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeShipLove.debug.xcconfig"; sourceTree = "<group>"; };
 		C9265A4926CBBB37F2550EC5C0BB517B /* BUYShop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYShop.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYShop.h"; sourceTree = "<group>"; };
 		C98EAC3D81C93B6AAF360EDD1B1DF4DC /* _BUYCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYCollection.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYCollection.h"; sourceTree = "<group>"; };
 		C9B01032B9A6D52F74D3CF9175568661 /* _BUYLineItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYLineItem.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYLineItem.m"; sourceTree = "<group>"; };
@@ -375,7 +375,6 @@
 		CB71A871814427641A9F7A73C0C93F1F /* BUYOptionValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYOptionValue.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYOptionValue.h"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CC6EC367BE6B08CD543C7C6C413EFB47 /* _BUYOptionValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYOptionValue.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/_BUYOptionValue.h"; sourceTree = "<group>"; };
-		CCA4F41734E14D1E7AF5FBC86407C350 /* Buy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Buy.bundle; path = Buy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF40C3F98A95C10CBD7C9DEE17AE0204 /* BUYProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BUYProduct.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Persistent/BUYProduct.h"; sourceTree = "<group>"; };
 		CFABBA4C96343592483BBA34DF1B5F6E /* _BUYMaskedCreditCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _BUYMaskedCreditCard.h; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYMaskedCreditCard.h"; sourceTree = "<group>"; };
 		D03584F2EE75E155FE455B1A4670D36F /* BUYCreditCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYCreditCard.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/BUYCreditCard.m"; sourceTree = "<group>"; };
@@ -387,6 +386,7 @@
 		D6C2696C70C8678C9DB7158C758F0AEF /* BUYGroupOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYGroupOperation.m; path = "Mobile Buy SDK/Mobile Buy SDK/Operations/BUYGroupOperation.m"; sourceTree = "<group>"; };
 		D96ABFB53AB87285AA3D4C8E512D0CFD /* BUYShippingRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYShippingRate.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/BUYShippingRate.m"; sourceTree = "<group>"; };
 		DA913761508C5D9F3A8164A01A7CFF1C /* Mobile-Buy-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mobile-Buy-SDK-prefix.pch"; sourceTree = "<group>"; };
+		DE6AD4FB321CE5AEF4E78B37DE58AD24 /* libPods-WeShipLove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WeShipLove.a"; path = "libPods-WeShipLove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF40DDD500503C8DDE8C1720B3019F88 /* BUYIdentityTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BUYIdentityTransformer.m; path = "Mobile Buy SDK/Mobile Buy SDK/Value Transformers/BUYIdentityTransformer.m"; sourceTree = "<group>"; };
 		DF55B5830E6D54E205AF7AD61099F7FB /* _BUYShippingRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _BUYShippingRate.m; path = "Mobile Buy SDK/Mobile Buy SDK/Models/Transient/_BUYShippingRate.m"; sourceTree = "<group>"; };
 		DFA204AB4C6C743F68D46D8441693EB1 /* NSDecimalNumber+BUYAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+BUYAdditions.m"; path = "Mobile Buy SDK/Mobile Buy SDK/Additions/NSDecimalNumber+BUYAdditions.m"; sourceTree = "<group>"; };
@@ -421,19 +421,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A196C85BF25BE6CEEE16C379A573FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				169DEEFF8DCFD451FC4671ACC97AB1AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91EFD9275580E52A2435F80798B6DB7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				573C0A75DA21BEC40F09021383CAC575 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE1BD64CAE3C23A9E68F77B98911E1AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				173E48A92921DAC7C9C17933422C36FF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,29 +448,37 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		14E43DF28D5681C87D1E640DE7D7BF82 /* Products */ = {
+		4D21699BE2F6FB78D6033B22C7C99080 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CCA4F41734E14D1E7AF5FBC86407C350 /* Buy.bundle */,
-				36B609D7A24FA3FA10A61A0CF91BEA0C /* libMobile-Buy-SDK.a */,
-				7516E18F6E1FA35DDEB68E3A50BEE9F3 /* libPods-mqdf.a */,
+				633AA89187600ADBE6BE91C135C0639A /* Pods-WeShipLove */,
 			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6B957E4963D253FBF1CD2969ECFE9183 /* Pods-mqdf */ = {
+		633AA89187600ADBE6BE91C135C0639A /* Pods-WeShipLove */ = {
 			isa = PBXGroup;
 			children = (
-				38321D0506125088B2B6769FC1B85199 /* Pods-mqdf-acknowledgements.markdown */,
-				1A85C44A1FDC31FFF915442B7C54155D /* Pods-mqdf-acknowledgements.plist */,
-				60683065134062FADF12D21C0D863FDD /* Pods-mqdf-dummy.m */,
-				0AC76FF6F7F0A355E7458E278494DD0C /* Pods-mqdf-frameworks.sh */,
-				8BB33C2039D5D8F2AED3888492120D83 /* Pods-mqdf-resources.sh */,
-				8A9C8561E50E0CA1487D566C85DE759E /* Pods-mqdf.debug.xcconfig */,
-				A37321AB5B3EA9DA5CEF1F9032915600 /* Pods-mqdf.release.xcconfig */,
+				BF87B882765AD6CACD4D9FE780D2329C /* Pods-WeShipLove-acknowledgements.markdown */,
+				87DCFEB9E42B24BB5E8379A65DDDA03B /* Pods-WeShipLove-acknowledgements.plist */,
+				32C47090F8C7A90E66F5A378D73840AE /* Pods-WeShipLove-dummy.m */,
+				35E0039A4A68E8F1A096056F5549E431 /* Pods-WeShipLove-frameworks.sh */,
+				1D48029201836E7714A25D15CD88A165 /* Pods-WeShipLove-resources.sh */,
+				C4F0A10C013E257D9250A6995DB99884 /* Pods-WeShipLove.debug.xcconfig */,
+				AB057D6CFD2B1682C2AEA562AFF75626 /* Pods-WeShipLove.release.xcconfig */,
 			);
-			name = "Pods-mqdf";
-			path = "Target Support Files/Pods-mqdf";
+			name = "Pods-WeShipLove";
+			path = "Target Support Files/Pods-WeShipLove";
+			sourceTree = "<group>";
+		};
+		6FAE67B05EDCD114EACC2E58DCD0DD0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6A34C8EBF9A21DDC072989FAE0C516A /* Buy.bundle */,
+				B2F4A6BBF6829804A08E682B39817838 /* libMobile-Buy-SDK.a */,
+				DE6AD4FB321CE5AEF4E78B37DE58AD24 /* libPods-WeShipLove.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -487,8 +495,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				C830C1BCF1B9BDB087787163F517F760 /* Pods */,
-				14E43DF28D5681C87D1E640DE7D7BF82 /* Products */,
-				E000B98EBFA92481DA3C7CF5A4429576 /* Targets Support Files */,
+				6FAE67B05EDCD114EACC2E58DCD0DD0F /* Products */,
+				4D21699BE2F6FB78D6033B22C7C99080 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -711,14 +719,6 @@
 			path = "Mobile-Buy-SDK";
 			sourceTree = "<group>";
 		};
-		E000B98EBFA92481DA3C7CF5A4429576 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6B957E4963D253FBF1CD2969ECFE9183 /* Pods-mqdf */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -842,24 +842,24 @@
 			);
 			name = "Mobile-Buy-SDK";
 			productName = "Mobile-Buy-SDK";
-			productReference = 36B609D7A24FA3FA10A61A0CF91BEA0C /* libMobile-Buy-SDK.a */;
+			productReference = B2F4A6BBF6829804A08E682B39817838 /* libMobile-Buy-SDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E30E85E0758ECBF828A586D53D53ABBE /* Pods-mqdf */ = {
+		D88017E4CACA817CC8ECE28E050096B3 /* Pods-WeShipLove */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E8D89D17882A393DCEF76390FC4665A /* Build configuration list for PBXNativeTarget "Pods-mqdf" */;
+			buildConfigurationList = 3EEC414CE928C35E5865BA51B6EDE3DD /* Build configuration list for PBXNativeTarget "Pods-WeShipLove" */;
 			buildPhases = (
-				612316AF96FD692E706CAD72280A1E11 /* Sources */,
-				AE1BD64CAE3C23A9E68F77B98911E1AD /* Frameworks */,
+				628AAA68459116F1F036CA54F883E138 /* Sources */,
+				6A196C85BF25BE6CEEE16C379A573FEC /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7EDB1C5464457EC5FF2C014C0F0D4C35 /* PBXTargetDependency */,
+				BBD77AC78712E33D681F43E36FAE93C8 /* PBXTargetDependency */,
 			);
-			name = "Pods-mqdf";
-			productName = "Pods-mqdf";
-			productReference = 7516E18F6E1FA35DDEB68E3A50BEE9F3 /* libPods-mqdf.a */;
+			name = "Pods-WeShipLove";
+			productName = "Pods-WeShipLove";
+			productReference = DE6AD4FB321CE5AEF4E78B37DE58AD24 /* libPods-WeShipLove.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		EAB7276915F119321D7CFECF1F1D01AC /* Mobile-Buy-SDK-Buy */ = {
@@ -876,7 +876,7 @@
 			);
 			name = "Mobile-Buy-SDK-Buy";
 			productName = "Mobile-Buy-SDK-Buy";
-			productReference = CCA4F41734E14D1E7AF5FBC86407C350 /* Buy.bundle */;
+			productReference = A6A34C8EBF9A21DDC072989FAE0C516A /* Buy.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -896,13 +896,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 14E43DF28D5681C87D1E640DE7D7BF82 /* Products */;
+			productRefGroup = 6FAE67B05EDCD114EACC2E58DCD0DD0F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6260A1384F4A20539B7BD8471136FB46 /* Mobile-Buy-SDK */,
 				EAB7276915F119321D7CFECF1F1D01AC /* Mobile-Buy-SDK-Buy */,
-				E30E85E0758ECBF828A586D53D53ABBE /* Pods-mqdf */,
+				D88017E4CACA817CC8ECE28E050096B3 /* Pods-WeShipLove */,
 			);
 		};
 /* End PBXProject section */
@@ -1013,11 +1013,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		612316AF96FD692E706CAD72280A1E11 /* Sources */ = {
+		628AAA68459116F1F036CA54F883E138 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47AC26AC978CE8DD1182B1D52935CA73 /* Pods-mqdf-dummy.m in Sources */,
+				FA970936881CF12DAAB237057BDEB2B3 /* Pods-WeShipLove-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,11 +1037,11 @@
 			target = EAB7276915F119321D7CFECF1F1D01AC /* Mobile-Buy-SDK-Buy */;
 			targetProxy = 5E55CEEB232D04D49903983BD2EBA869 /* PBXContainerItemProxy */;
 		};
-		7EDB1C5464457EC5FF2C014C0F0D4C35 /* PBXTargetDependency */ = {
+		BBD77AC78712E33D681F43E36FAE93C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mobile-Buy-SDK";
 			target = 6260A1384F4A20539B7BD8471136FB46 /* Mobile-Buy-SDK */;
-			targetProxy = BF6611141076F4FDA9794777C1CDDD78 /* PBXContainerItemProxy */;
+			targetProxy = 2BEFE91BDF4E3D2EEC5E29B8B526B991 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1112,29 +1112,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
-		};
-		25AA49F16DC8BA8D6BD862ECB27FAF84 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A37321AB5B3EA9DA5CEF1F9032915600 /* Pods-mqdf.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
 		};
 		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1210,9 +1187,9 @@
 			};
 			name = Release;
 		};
-		E394CD99806F19FBC96C731ED94FC554 /* Debug */ = {
+		7A112A717A8CCB64DD53F21604B6687C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A9C8561E50E0CA1487D566C85DE759E /* Pods-mqdf.debug.xcconfig */;
+			baseConfigurationReference = C4F0A10C013E257D9250A6995DB99884 /* Pods-WeShipLove.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1232,6 +1209,29 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		DA00782860E678661E2BDF3352455DD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB057D6CFD2B1682C2AEA562AFF75626 /* Pods-WeShipLove.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		F7586683BA2BE51F2DCF124022C7F0BB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1277,11 +1277,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E8D89D17882A393DCEF76390FC4665A /* Build configuration list for PBXNativeTarget "Pods-mqdf" */ = {
+		3EEC414CE928C35E5865BA51B6EDE3DD /* Build configuration list for PBXNativeTarget "Pods-WeShipLove" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E394CD99806F19FBC96C731ED94FC554 /* Debug */,
-				25AA49F16DC8BA8D6BD862ECB27FAF84 /* Release */,
+				7A112A717A8CCB64DD53F21604B6687C /* Debug */,
+				DA00782860E678661E2BDF3352455DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

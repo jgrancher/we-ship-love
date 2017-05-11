@@ -34,7 +34,7 @@ SHOPIFY_DOMAIN=myshopname.myshopify.com
 ```bash
 cd ios
 pod install
-open mqdf.xcworkspace
+open WeShipLove.xcworkspace
 ```
 
 ## Links
