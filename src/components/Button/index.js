@@ -5,7 +5,7 @@ import React, { PropTypes } from 'react';
 import {
   StyledButton,
   StyledText,
-  underlayColor,
+  getUnderlayColor,
 } from './styles';
 
 const propTypes = {
@@ -20,7 +20,7 @@ const defaultProps = {
 const Button = props => (
   <StyledButton
     {...props}
-    underlayColor={underlayColor}
+    underlayColor={getUnderlayColor(props.type)}
     type={props.type}
   >
     <StyledText>

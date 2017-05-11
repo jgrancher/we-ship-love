@@ -10,13 +10,15 @@ import {
   white,
 } from '../../styles/colors';
 
+function getColor(type) {
+  if (type === 'danger') return red;
+  if (type === 'success') return turquoise;
+  return greyLight;
+}
+
 export const StyledButton = styled.TouchableHighlight`
   align-items: center;
-  background-color: ${(props) => {
-    if (props.type === 'danger') return red;
-    if (props.type === 'success') return turquoise;
-    return greyLight;
-  }};
+  background-color: ${props => getColor(props.type)};
   flex-grow: 1;
   height: 50;
   justify-content: center;
@@ -27,4 +29,4 @@ export const StyledText = styled.Text`
   color: ${props => (props.type === 'default' ? black : white)};
 `;
 
-export const underlayColor = white;
+export const getUnderlayColor = type => getColor(type);
