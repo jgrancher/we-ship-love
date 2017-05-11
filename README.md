@@ -1,8 +1,6 @@
-# MQDF - Mobile Storefront
+# We Ship Love - Mobile application
 
-> [Mieux Que Des Fleurs](http://www.mieuxquedesfleurs.com/) (Literal meaning: "Better than flowers") is a French website whose aim is to spread love by shipping it: order and send balloons to your beloved ones!
-
-*This repository is the mobile storefront of MQDF. It has been built with React Native, the Shopify SDK, Redux and Styled-Components. The goal of exposing the source code is to show to the community an example of React Native application using the Shopify APIs and their Mobile Buy SDK. Also, it can be seen as a showcase to demonstrate what I'm currently busy with. Any feedback is welcome! :)*
+This repository contains the mobile storefront source code for [We Ship Love](https://weshiplove.com/). It has been built with React Native, the Shopify SDK, Redux and Styled-Components. The goal of exposing the source code is to show to the community an example of React Native application using the Shopify APIs and their Mobile Buy SDK. Also, it can be seen as a showcase to demonstrate what I'm currently busy with. Any feedback is welcome! :)
 
 **Still in development!**
 
@@ -10,7 +8,6 @@
 
 ## Installation
 
-* Install node > v4.0 (NVM strongly recommended).
 * Install 'watchman' with brew: `brew install watchman`.
 * Intall 'react-native-cli' globally: `npm install -g react-native-cli`.
 * Install all the node modules required: `npm install`.
