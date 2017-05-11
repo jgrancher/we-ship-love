@@ -14,8 +14,12 @@ This repository contains the mobile storefront source code for [We Ship Love](ht
 
 ## Configuration
 
-* You will need your Shopify administration access to get it running!
-* Create a `.env` file where you define private credentials from your Shopify administration:
+You will need your Shopify administration access to get it running!
+
+* Create a `.env` file where you define private credentials from your Shopify administration.
+* The `API_KEY` is accessible from the 'Sales channels > Mobile App' menu.
+* THE `SDK_KEY` and `PASSWORD` are set in the 'Apps > Private apps' menu.
+
 ```
 SHOPIFY_API_KEY=XXX
 SHOPIFY_SDK_KEY=XXX
