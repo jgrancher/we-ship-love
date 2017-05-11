@@ -9,15 +9,15 @@ import { handleFetchResponse } from './helpers';
 const {
   SHOPIFY_DOMAIN,
   SHOPIFY_API_KEY,
-  SHOPIFY_SDK_KEY,
-  SHOPIFY_PASSWORD,
+  SHOPIFY_BUY_SDK_KEY,
+  SHOPIFY_API_PASSWORD,
 } = Config;
 
 // Buy SDK object
-Shopify.initialize(SHOPIFY_DOMAIN, SHOPIFY_SDK_KEY);
+Shopify.initialize(SHOPIFY_DOMAIN, SHOPIFY_BUY_SDK_KEY);
 
 // API URL
-const URL = `https://${SHOPIFY_API_KEY}:${SHOPIFY_PASSWORD}@${SHOPIFY_DOMAIN}/admin/`;
+const URL = `https://${SHOPIFY_API_KEY}:${SHOPIFY_API_PASSWORD}@${SHOPIFY_DOMAIN}/admin/`;
 
 // API helper
 const setRequest = (method = 'POST', body = {}) => ({
