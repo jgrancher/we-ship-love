@@ -8,6 +8,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-native": "^0.41.2",
+    "react-native-code-push": "^2.0.3-beta",
     "react-native-collapsible": "^0.8.0",
     "react-native-config": "^0.3.1",
     "react-native-db-models": "^0.1.3",

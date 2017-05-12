@@ -1,4 +1,5 @@
 // Externals
+import codePush from 'react-native-code-push';
 import React from 'react';
 import { Provider } from 'react-redux';
 
@@ -17,4 +18,4 @@ const Application = () => (
   </Provider>
 );
 
-export default Application;
+export default codePush(Application);
