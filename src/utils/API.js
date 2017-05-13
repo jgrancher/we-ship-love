@@ -30,16 +30,13 @@ const setRequest = (method = 'POST', body = {}) => ({
 
 // API methods
 const API = {
-  getCountries: () =>
-    fetch(`${URL}/countries.json`)
+  getCountries: () => fetch(`${URL}/countries.json`)
     .then(handleFetchResponse),
 
-  getPages: () =>
-    fetch(`${URL}/pages.json`)
+  getPages: () => fetch(`${URL}/pages.json`)
     .then(handleFetchResponse),
 
-  setOrder: (id, order) =>
-    fetch(`${URL}/orders/${id}.json`, setRequest('PUT', order))
+  setOrder: (id, order) => fetch(`${URL}/orders/${id}.json`, setRequest('PUT', order))
     .then(handleFetchResponse),
 };
 
