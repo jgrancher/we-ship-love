@@ -46,6 +46,8 @@
 		D08145491CCE192A0004BFA7 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145431CCE192A0004BFA7 /* SourceSansPro-Bold.ttf */; };
 		D081454A1CCE192A0004BFA7 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145441CCE192A0004BFA7 /* SourceSansPro-Italic.ttf */; };
 		D081454B1CCE192A0004BFA7 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145451CCE192A0004BFA7 /* SourceSansPro-Regular.ttf */; };
+		D0DC2DFE1EC628F800B3CC7F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC2DFD1EC628F800B3CC7F /* GameKit.framework */; };
+		D0DC2E001EC628FA00B3CC7F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC2DFF1EC628FA00B3CC7F /* StoreKit.framework */; };
 		F4244C5BCAD34E3EB8F4A047 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05829E7421564F2592CB6974 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
@@ -296,12 +298,15 @@
 		B7B83838BC864533958506AB /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		BFAA0475C2716B1909911A36 /* Pods-WeShipLove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeShipLove.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeShipLove/Pods-WeShipLove.release.xcconfig"; sourceTree = "<group>"; };
 		C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShopify.xcodeproj; path = "../node_modules/react-native-shopify/ios/RNShopify.xcodeproj"; sourceTree = "<group>"; };
+		D01C0FA11EC629DA00CC4936 /* WeShipLove.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WeShipLove.entitlements; path = WeShipLove/WeShipLove.entitlements; sourceTree = "<group>"; };
 		D08145401CCE192A0004BFA7 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D08145411CCE192A0004BFA7 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		D08145421CCE192A0004BFA7 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		D08145431CCE192A0004BFA7 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Bold.ttf"; path = "fonts/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		D08145441CCE192A0004BFA7 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Italic.ttf"; path = "fonts/SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		D08145451CCE192A0004BFA7 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Regular.ttf"; path = "fonts/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		D0DC2DFD1EC628F800B3CC7F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		D0DC2DFF1EC628FA00B3CC7F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA3A4579DA249AD6DE40922C /* libPods-WeShipLove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeShipLove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -327,10 +332,12 @@
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
+				D0DC2E001EC628FA00B3CC7F /* StoreKit.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				597C991AB9AC40B0A4F57ACE /* libReactNativeConfig.a in Frameworks */,
 				9D412A665CD09E0D0F9413EA /* libPods-WeShipLove.a in Frameworks */,
+				D0DC2DFE1EC628F800B3CC7F /* GameKit.framework in Frameworks */,
 				50FDE72A2307400A80BEB533 /* libRNShopify.a in Frameworks */,
 				951FA7768B72480C89AF2962 /* libCodePush.a in Frameworks */,
 				F4244C5BCAD34E3EB8F4A047 /* libz.tbd in Frameworks */,
@@ -442,6 +449,7 @@
 		13B07FAE1A68108700A75B9A /* WeShipLove */ = {
 			isa = PBXGroup;
 			children = (
+				D01C0FA11EC629DA00CC4936 /* WeShipLove.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -471,6 +479,8 @@
 		1B0052260E9813671EE6ED47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0DC2DFF1EC628FA00B3CC7F /* StoreKit.framework */,
+				D0DC2DFD1EC628F800B3CC7F /* GameKit.framework */,
 				FA3A4579DA249AD6DE40922C /* libPods-WeShipLove.a */,
 				05829E7421564F2592CB6974 /* libz.tbd */,
 			);
@@ -672,15 +682,28 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = D4ACMF7WW6;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = D4ACMF7WW6;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1150,6 +1173,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1165,6 +1190,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeShipLove.app/WeShipLove";
 			};
 			name = Debug;
@@ -1173,7 +1199,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeShipLoveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1185,6 +1213,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeShipLove.app/WeShipLove";
 			};
 			name = Release;
@@ -1194,6 +1223,8 @@
 			baseConfigurationReference = A069DF3054C14512D5747DDE /* Pods-WeShipLove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeShipLove/WeShipLove.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = D4ACMF7WW6;
@@ -1206,8 +1237,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weshiplove.storefront;
 				PRODUCT_NAME = WeShipLove;
-				PROVISIONING_PROFILE = "9ee96a4d-7358-44e2-ad98-6e6bb5fb41f7";
-				PROVISIONING_PROFILE_SPECIFIER = "WeShipLove development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1217,8 +1248,10 @@
 			baseConfigurationReference = BFAA0475C2716B1909911A36 /* Pods-WeShipLove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeShipLove/WeShipLove.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D4ACMF7WW6;
 				INFOPLIST_FILE = WeShipLove/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1228,6 +1261,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weshiplove.storefront;
 				PRODUCT_NAME = WeShipLove;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1242,6 +1277,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WeShipLove-tvOS/Info.plist";
@@ -1256,6 +1292,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.WeShipLove-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -1273,6 +1310,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WeShipLove-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1286,6 +1324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.WeShipLove-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
