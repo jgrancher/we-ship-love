@@ -12,10 +12,16 @@ import createStore from './store';
 // Creating store
 const store = createStore();
 
-const Application = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+class Application extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+  render() {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+  }
+
+}
 
 export default codePush(Application);
