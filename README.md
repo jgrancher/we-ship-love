@@ -37,5 +37,26 @@ pod install
 open WeShipLove.xcworkspace
 ```
 
+## Deployment
+
+* This app uses [CodePush](http://microsoft.github.io/code-push/) to deploy updates instantly.
+* To check the existing deployment keys of CodePush:
+
+```bash
+code-push deployment ls WeShipLove -k
+```
+
+* To release an update (that will use the key set into `Info.plist`):
+
+```bash
+code-push release-react WeShipLove ios
+```
+
+* To promote a release from `Staging` to `Release` environment:
+
+```bash
+code-push promote
+```
+
 ## Links
 * [React Native Shopify](https://github.com/shoutem/react-native-shopify) has been used to bridge the Shopify SDK to React Native.
