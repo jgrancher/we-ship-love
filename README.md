@@ -52,10 +52,10 @@ code-push deployment ls WeShipLove -k
 code-push release-react WeShipLove ios
 ```
 
-* To promote a release from `Staging` to `Release` environment:
+* To promote a release from `Staging` to `Production` environment:
 
 ```bash
-code-push promote
+code-push promote WeShipLove Staging Production
 ```
 
 ## Links
