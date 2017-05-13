@@ -138,15 +138,6 @@ class Delivery extends React.Component {
 // Composes the component with reduxForm
 const DeliveryForm = reduxForm({
   form: 'delivery',
-  initialValues: {
-    lastName: 'Grancher',
-    firstName: 'Jeremy',
-    address1: '6 rue Saint-Vincent de Paul',
-    zip: '75010',
-    city: 'Paris',
-    email: 'jgrancher@outlook.com',
-    countryCode: 'FR',
-  },
   onSubmit: (values, dispatch, props) => {
     // Set the order delivery then go to the next screen
     dispatch(setOrderDelivery(values));
