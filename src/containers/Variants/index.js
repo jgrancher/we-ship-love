@@ -8,7 +8,7 @@ import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import Product from '../../components/Product';
+import ProgressiveImage from '../../components/ProgressiveImage';
 import Slider from '../../components/Slider';
 
 // Actions
@@ -63,9 +63,9 @@ class Variants extends React.Component {
           const image = this.props.images.find(i => i.variant_ids[0] === item.id);
 
           return (
-            <Product
+            <ProgressiveImage
               key={item.id}
-              image={image && image.src}
+              source={image && image.src}
               widthRatio={1.15}
             />
           );

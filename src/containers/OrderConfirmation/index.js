@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
-import Product from '../../components/Product';
+import ProgressiveImage from '../../components/ProgressiveImage';
 import Text from '../../components/Text';
 
 // Actions
@@ -47,9 +47,9 @@ class OrderConfirmation extends React.Component {
           <Text marginBottom>
             Vous recevrez un email de confirmation dès que votre commande sera envoyée.
           </Text>
-          <Product
+          <ProgressiveImage
             height={0}
-            image={this.props.image}
+            source={this.props.image}
           />
         </ContentView>
         <Banner

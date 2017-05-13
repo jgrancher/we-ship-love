@@ -8,7 +8,7 @@ import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import Product from '../../components/Product';
+import ProgressiveImage from '../../components/ProgressiveImage';
 import RefreshButton from '../../components/RefreshButton';
 import Slider from '../../components/Slider';
 
@@ -57,6 +57,15 @@ class Products extends React.Component {
     this.props.pushNextScene();
   }
 
+  getProductImage = (product, size = 'large') => {
+    // Split the original product image URL to get a smaller image from the API.
+    const original = product.images[0].src;
+    const splitted = original.split('.');
+    splitted[splitted.length - 2] = `${splitted[splitted.length - 2]}_${size}`;
+
+    return splitted.join('.');
+  }
+
   renderContent() {
     if (this.props.isFetching) {
       return <LoadingIndicator />;
@@ -69,9 +78,10 @@ class Products extends React.Component {
     return (
       <Slider onIndexChange={this.onIndexChange}>
         {this.props.products.map(item => (
-          <Product
+          <ProgressiveImage
             key={item.product_id}
-            image={item.images[0].src}
+            source={this.getProductImage(item)}
+            thumbnailSource={this.getProductImage(item, 'thumb')}
             widthRatio={0.85}
           />
         ))}
