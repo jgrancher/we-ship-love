@@ -2,14 +2,18 @@
 import styled from 'styled-components/native';
 
 // Styles
-import { white } from '../../styles/colors';
 import { raleway } from '../../styles/fonts';
+import {
+  turquoise,
+  white,
+} from '../../styles/colors';
 import {
   heightCTA,
   widthWindow,
 } from '../../styles/sizes';
 
 export const StyledButton = styled.TouchableHighlight`
+  background-color: ${turquoise};
   bottom: 0;
   height: ${heightCTA};
   left: 0;
