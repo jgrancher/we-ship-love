@@ -57,7 +57,6 @@ class Payment extends React.Component {
           name="number"
           autoCapitalize="none"
           autoCorrect={false}
-          autoFocus
           format={formatCreditCard}
           keyboardType="numeric"
           maxLength={19}
@@ -104,6 +103,7 @@ class Payment extends React.Component {
           name="lastName"
           autoCapitalize="words"
           placeholder="Nom sur la carte"
+          returnKeyType="done"
         />
       </ScrollView>
     );
