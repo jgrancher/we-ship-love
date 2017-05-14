@@ -117,7 +117,6 @@ class Shipping extends React.Component {
         <Field
           component={Input}
           name="note"
-          autoFocus
           placeholder="Au matin de la fête des mères"
           ref={(c) => { this.input = c; }}
           returnKeyType="default"
