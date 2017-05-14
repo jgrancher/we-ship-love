@@ -17,6 +17,7 @@ import fetchProducts from './actions';
 import { setOrderProduct } from '../App/actions';
 
 // Utils
+import { getResizedImageSource } from '../../utils/helpers';
 import {
   productShape,
   stepShape,
@@ -57,15 +58,6 @@ class Products extends React.Component {
     this.props.pushNextScene();
   }
 
-  getProductImage = (product, size = 'large') => {
-    // Split the original product image URL to get a smaller image from the API.
-    const original = product.images[0].src;
-    const splitted = original.split('.');
-    splitted[splitted.length - 2] = `${splitted[splitted.length - 2]}_${size}`;
-
-    return splitted.join('.');
-  }
-
   renderContent() {
     if (this.props.isFetching) {
       return <LoadingIndicator />;
@@ -80,8 +72,8 @@ class Products extends React.Component {
         {this.props.products.map(item => (
           <ProgressiveImage
             key={item.product_id}
-            source={this.getProductImage(item)}
-            thumbnailSource={this.getProductImage(item, 'thumb')}
+            source={getResizedImageSource(item.images[0].src)}
+            thumbnailSource={getResizedImageSource(item.images[0].src, 'thumb')}
             widthRatio={0.85}
           />
         ))}

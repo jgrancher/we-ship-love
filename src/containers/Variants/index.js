@@ -18,6 +18,7 @@ import {
 } from '../App/actions';
 
 // Utils
+import { getResizedImageSource } from '../../utils/helpers';
 import {
   productImageShape,
   stepShape,
@@ -61,11 +62,13 @@ class Variants extends React.Component {
       <Slider onIndexChange={this.onIndexChange}>
         {this.props.variants.map((item) => {
           const image = this.props.images.find(i => i.variant_ids[0] === item.id);
+          const source = image ? image.src : null;
 
           return (
             <ProgressiveImage
               key={item.id}
-              source={image && image.src}
+              source={getResizedImageSource(source)}
+              thumbnailSource={getResizedImageSource(source, 'thumb')}
               widthRatio={1.15}
             />
           );

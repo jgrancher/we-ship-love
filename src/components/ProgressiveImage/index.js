@@ -54,21 +54,13 @@ class ProgressiveImage extends React.Component {
     const w = (widthRatio < 1) ? width / widthRatio : width;
 
     // Styles
-    const imageStyles = [
-      { position: 'absolute' },
-      getStyles(this.props),
-    ];
-
-    const thumbnailStyles = [
-      { opacity: this.state.opacity },
-      getStyles(this.props),
-    ];
+    const props = { height: this.props.height, width: w };
+    const viewStyles = [{ position: 'relative' }, getStyles(props)];
+    const imageStyles = [{ position: 'absolute' }, getStyles(props)];
+    const thumbnailStyles = [{ opacity: this.state.opacity }, getStyles(props)];
 
     return (
-      <View
-        height={this.props.height}
-        width={w}
-      >
+      <View style={viewStyles}>
         {this.props.thumbnailSource && (
           <Animated.Image
             onLoad={this.onThumbnailLoad}
@@ -77,13 +69,14 @@ class ProgressiveImage extends React.Component {
             style={thumbnailStyles}
           />
         )}
-        <Animated.Image
-          onLoad={this.onLoad}
-          onError={this.onLoadError}
-          resizeMode="cover"
-          source={{ uri: this.props.source }}
-          style={imageStyles}
-        />
+        {this.props.source && (
+          <Animated.Image
+            onLoad={this.onLoad}
+            resizeMode="cover"
+            source={{ uri: this.props.source }}
+            style={imageStyles}
+          />
+        )}
       </View>
     );
   }

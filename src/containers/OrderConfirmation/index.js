@@ -14,6 +14,7 @@ import Text from '../../components/Text';
 import { resetOrder } from '../App/actions';
 
 // Utils
+import { getResizedImageSource } from '../../utils/helpers';
 import { stepShape } from '../../utils/shapes';
 
 class OrderConfirmation extends React.Component {
@@ -23,10 +24,12 @@ class OrderConfirmation extends React.Component {
     popFirstScene: PropTypes.func.isRequired,
     resetOrder: PropTypes.func.isRequired,
     step: stepShape.isRequired,
+    thumbnail: PropTypes.string,
   };
 
   static defaultProps = {
     image: null,
+    thumbnail: null,
   };
 
   onNextStep = () => {
@@ -50,6 +53,7 @@ class OrderConfirmation extends React.Component {
           <ProgressiveImage
             height={0}
             source={this.props.image}
+            thumbnailSource={this.props.thumbnail}
           />
         </ContentView>
         <Banner
@@ -67,9 +71,11 @@ export default connect(
     // Get the image of the selected variant, before the order reset (order.product would be null)
     const product = state.products.data.find(p => p.product_id === state.order.product);
     const img = product ? product.images.find(i => i.variant_ids[0] === state.order.variant) : null;
+    const source = img ? img.src : null;
 
     return {
-      image: img ? img.src : null,
+      image: getResizedImageSource(source),
+      thumbnail: getResizedImageSource(source, 'thumb'),
     };
   },
   dispatch => bindActionCreators({

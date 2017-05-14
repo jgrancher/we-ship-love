@@ -1,4 +1,20 @@
 /**
+ * Helper to get a specific size of an image based on its default source
+ * @param  {String} source      The default source of the image
+ * @param  {String} size        The size wanted. Can be: 'thumb', 'small', 'medium', 'large'.
+ * @return {String}             The URL of the desired image: http://abc.com/image_large.jpg
+ */
+export const getResizedImageSource = (source, size = 'large') => {
+  if (!source) return null;
+
+  // Split the original product image URL to get a smaller image from the API.
+  const splitted = source.split('.');
+  splitted[splitted.length - 2] = `${splitted[splitted.length - 2]}_${size}`;
+
+  return splitted.join('.');
+};
+
+/**
  * Helper to test if a string is an email
  * @param  {String} string      The string to test
  * @return {Boolean}
