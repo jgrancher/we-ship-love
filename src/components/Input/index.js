@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-bind */
+
 // Externals
 import React, { PropTypes } from 'react';
 
@@ -7,38 +9,48 @@ import StyledTextInput from './styles';
 // Utils
 import { inputShape } from '../../utils/shapes';
 
-const propTypes = {
-  input: inputShape.isRequired,
-  keyboardAppearance: PropTypes.string,
-  keyboardType: PropTypes.string,
-  returnKeyType: PropTypes.string,
-};
+class Input extends React.Component {
 
-const defaultProps = {
-  keyboardAppearance: 'light',
-  keyboardType: 'default',
-  returnKeyType: 'next',
-};
+  static propTypes = {
+    focus: PropTypes.bool,
+    input: inputShape.isRequired,
+    keyboardAppearance: PropTypes.string,
+    keyboardType: PropTypes.string,
+    returnKeyType: PropTypes.string,
+  };
 
-const Input = (props) => {
-  const { input, ...inputProps } = props;
+  static defaultProps = {
+    focus: false,
+    keyboardAppearance: 'light',
+    keyboardType: 'default',
+    returnKeyType: 'next',
+  };
 
-  // Show an error if the input is changed and invalid
-  const showError = inputProps.meta.touched && inputProps.meta.error;
+  componentWillUpdate(nextProps) {
+    if (!this.props.focus && nextProps.focus) {
+      this.input.focus();
+    }
+  }
 
-  return (
-    <StyledTextInput
-      {...inputProps}
-      onBlur={input.onBlur}
-      onChangeText={input.onChange}
-      onFocus={input.onFocus}
-      showError={showError}
-      value={input.value}
-    />
-  );
-};
+  render() {
+    const { input, ...inputProps } = this.props;
 
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
+    // Show an error if the input is changed and invalid
+    const showError = inputProps.meta.touched && inputProps.meta.error;
+
+    return (
+      <StyledTextInput
+        {...inputProps}
+        innerRef={(c) => { this.input = c; }}
+        onBlur={input.onBlur}
+        onChangeText={input.onChange}
+        onFocus={input.onFocus}
+        showError={showError}
+        value={input.value}
+      />
+    );
+  }
+
+}
 
 export default Input;

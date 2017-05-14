@@ -47,8 +47,16 @@ class Delivery extends React.Component {
     valid: PropTypes.bool.isRequired,
   };
 
+  state = {
+    focus: 0,
+  };
+
   componentWillMount() {
     this.props.fetchCountries();
+  }
+
+  onSubmitEditing = () => {
+    this.setState({ focus: this.state.focus + 1 });
   }
 
   renderContent() {
@@ -66,36 +74,47 @@ class Delivery extends React.Component {
           component={Input}
           name="lastName"
           autoCapitalize="words"
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Nom"
         />
         <Field
           component={Input}
           name="firstName"
           autoCapitalize="words"
+          focus={this.state.focus === 1}
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Prénom"
         />
         <Field
           component={Input}
           name="address1"
           autoCapitalize="words"
+          focus={this.state.focus === 2}
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Adresse"
         />
         <Field
           component={Input}
           name="address2"
           autoCapitalize="words"
+          focus={this.state.focus === 3}
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Complément d'adresse"
         />
         <Field
           component={Input}
           name="zip"
           autoCapitalize="none"
+          focus={this.state.focus === 4}
           keyboardType="numbers-and-punctuation"
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Code postal"
         />
         <Field
           component={Input}
           name="city"
+          focus={this.state.focus === 5}
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Ville"
         />
         <Field
@@ -103,12 +122,15 @@ class Delivery extends React.Component {
           name="email"
           autoCapitalize="none"
           autoCorrect={false}
+          focus={this.state.focus === 6}
           keyboardType="email-address"
+          onSubmitEditing={this.onSubmitEditing}
           placeholder="Email"
         />
         <Field
           component={Input}
           name="phone"
+          focus={this.state.focus === 7}
           keyboardType="phone-pad"
           placeholder="Téléphone"
         />
