@@ -53,7 +53,11 @@ class Delivery extends React.Component {
 
   renderContent() {
     if (this.props.isFetching) {
-      return <LoadingIndicator />;
+      return (
+        <ContentView>
+          <LoadingIndicator />
+        </ContentView>
+      );
     }
 
     return (
@@ -121,9 +125,7 @@ class Delivery extends React.Component {
   render() {
     return (
       <FlexView>
-        <ContentView>
-          {this.renderContent()}
-        </ContentView>
+        {this.renderContent()}
         <Banner
           {...this.props.step}
           enabled={!this.props.isFetching && this.props.valid}
