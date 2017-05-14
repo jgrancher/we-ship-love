@@ -1,5 +1,6 @@
 // Externals
 import React, { PropTypes } from 'react';
+import { Alert } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -8,7 +9,6 @@ import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import ProgressiveImage from '../../components/ProgressiveImage';
-import Text from '../../components/Text';
 
 // Actions
 import { resetOrder } from '../App/actions';
@@ -32,6 +32,13 @@ class OrderConfirmation extends React.Component {
     thumbnail: null,
   };
 
+  componentDidMount() {
+    Alert.alert(
+      'Merci pour votre commande ! 🎈',
+      'Vous recevrez un email de confirmation dès que votre commande sera envoyée.',
+    );
+  }
+
   onNextStep = () => {
     this.props.resetOrder();
     this.props.popFirstScene();
@@ -44,14 +51,7 @@ class OrderConfirmation extends React.Component {
           alignItems="center"
           justifyContent="center"
         >
-          <Text fontSize={24}>
-            Merci pour votre commande !
-          </Text>
-          <Text marginBottom>
-            Vous recevrez un email de confirmation dès que votre commande sera envoyée.
-          </Text>
           <ProgressiveImage
-            height={0}
             source={this.props.image}
             thumbnailSource={this.props.thumbnail}
           />
