@@ -48,16 +48,21 @@ class Delivery extends React.Component {
   };
 
   state = {
-    focus: 0,
+    focus: null,
   };
 
   componentWillMount() {
     this.props.fetchCountries();
   }
 
-  onSubmitEditing = () => {
-    this.setState({ focus: this.state.focus + 1 });
-  }
+  // Calbacks to focus on the next field
+  onSubmitLastName = () => this.setState({ focus: 'firstName' })
+  onSubmitFirstName = () => this.setState({ focus: 'address1' })
+  onSubmitAddress1 = () => this.setState({ focus: 'address2' })
+  onSubmitAddress2 = () => this.setState({ focus: 'zip' })
+  onSubmitZip = () => this.setState({ focus: 'city' })
+  onSubmitCity = () => this.setState({ focus: 'email' })
+  onSubmitEmail = () => this.setState({ focus: 'phone' })
 
   renderContent() {
     if (this.props.isFetching) {
@@ -74,47 +79,47 @@ class Delivery extends React.Component {
           component={Input}
           name="lastName"
           autoCapitalize="words"
-          onSubmitEditing={this.onSubmitEditing}
+          onSubmitEditing={this.onSubmitLastName}
           placeholder="Nom"
         />
         <Field
           component={Input}
           name="firstName"
           autoCapitalize="words"
-          focus={this.state.focus === 1}
-          onSubmitEditing={this.onSubmitEditing}
+          focus={this.state.focus === 'firstName'}
+          onSubmitEditing={this.onSubmitFirstName}
           placeholder="Prénom"
         />
         <Field
           component={Input}
           name="address1"
           autoCapitalize="words"
-          focus={this.state.focus === 2}
-          onSubmitEditing={this.onSubmitEditing}
+          focus={this.state.focus === 'address1'}
+          onSubmitEditing={this.onSubmitAddress1}
           placeholder="Adresse"
         />
         <Field
           component={Input}
           name="address2"
           autoCapitalize="words"
-          focus={this.state.focus === 3}
-          onSubmitEditing={this.onSubmitEditing}
+          focus={this.state.focus === 'address2'}
+          onSubmitEditing={this.onSubmitAddress2}
           placeholder="Complément d'adresse"
         />
         <Field
           component={Input}
           name="zip"
           autoCapitalize="none"
-          focus={this.state.focus === 4}
+          focus={this.state.focus === 'zip'}
           keyboardType="numbers-and-punctuation"
-          onSubmitEditing={this.onSubmitEditing}
+          onSubmitEditing={this.onSubmitZip}
           placeholder="Code postal"
         />
         <Field
           component={Input}
           name="city"
-          focus={this.state.focus === 5}
-          onSubmitEditing={this.onSubmitEditing}
+          focus={this.state.focus === 'city'}
+          onSubmitEditing={this.onSubmitCity}
           placeholder="Ville"
         />
         <Field
@@ -122,17 +127,18 @@ class Delivery extends React.Component {
           name="email"
           autoCapitalize="none"
           autoCorrect={false}
-          focus={this.state.focus === 6}
+          focus={this.state.focus === 'email'}
           keyboardType="email-address"
-          onSubmitEditing={this.onSubmitEditing}
+          onSubmitEditing={this.onSubmitEmail}
           placeholder="Email"
         />
         <Field
           component={Input}
           name="phone"
-          focus={this.state.focus === 7}
+          focus={this.state.focus === 'phone'}
           keyboardType="phone-pad"
           placeholder="Téléphone"
+          returnKeyType="done"
         />
         <Field
           component={AccordionPicker}
