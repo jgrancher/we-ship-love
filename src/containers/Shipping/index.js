@@ -119,7 +119,7 @@ class Shipping extends React.Component {
           name="note"
           placeholder="Au matin de la fête des mères"
           ref={(c) => { this.input = c; }}
-          returnKeyType="default"
+          returnKeyType="done"
         />
         <FlexView
           alignItems="center"
