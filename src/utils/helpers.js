@@ -1,10 +1,10 @@
 /**
  * Helper to get a specific size of an image based on its default source
  * @param  {String} source      The default source of the image
- * @param  {String} size        The size wanted. Can be: 'thumb', 'small', 'medium', 'large'.
+ * @param  {String} size        The size wanted. Can be: 'thumb', 'small', 'medium', 'large', etc.
  * @return {String}             The URL of the desired image: http://abc.com/image_large.jpg
  */
-export const getResizedImageSource = (source, size = 'large') => {
+export const getResizedImageSource = (source, size = '1024x1024') => {
   if (!source) return null;
 
   // Split the original product image URL to get a smaller image from the API.
