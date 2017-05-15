@@ -29,7 +29,6 @@ export const StyledTextInput = styled.TextInput`
   color: ${brown};
   font-family: ${raleway};
   font-size: 20;
-  height: 240;
-  text-align: center;
-  width: 240;
+  height: 250;
+  width: 210;
 `;
