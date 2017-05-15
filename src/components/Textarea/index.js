@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-bind */
+
 // Externals
 import React, { PropTypes } from 'react';
 
@@ -15,38 +17,46 @@ import { inputShape } from '../../utils/shapes';
 // Images
 import background from './background.png';
 
-const propTypes = {
-  blurOnSubmit: PropTypes.bool,
-  input: inputShape.isRequired,
-  numberOfLines: PropTypes.number,
-};
+class Textarea extends React.Component {
 
-const defaultProps = {
-  blurOnSubmit: true,
-  numberOfLines: 5,
-};
+  static propTypes = {
+    input: inputShape.isRequired,
+    numberOfLines: PropTypes.number,
+  };
 
-const Textarea = (props) => {
-  const { input, ...inputProps } = props;
+  static defaultProps = {
+    numberOfLines: 5,
+  };
 
-  return (
-    <StyledKeyboardAvoidingView behavior="padding">
-      <StyledView>
-        <StyledImage source={background} />
-        <StyledTextInput
-          {...inputProps}
-          multiline
-          onBlur={input.onBlur}
-          onChangeText={input.onChange}
-          onFocus={input.onFocus}
-          value={input.value}
-        />
-      </StyledView>
-    </StyledKeyboardAvoidingView>
-  );
-};
+  onResponderRelease = () => this.input.blur();
 
-Textarea.propTypes = propTypes;
-Textarea.defaultProps = defaultProps;
+  onStartShouldSetResponder = () => true;
+
+  render() {
+    const { input, ...inputProps } = this.props;
+
+    return (
+      <StyledKeyboardAvoidingView
+        behavior="padding"
+        onStartShouldSetResponder={this.onStartShouldSetResponder}
+        onResponderRelease={this.onResponderRelease}
+      >
+        <StyledView>
+          <StyledImage source={background} />
+          <StyledTextInput
+            {...inputProps}
+            innerRef={(c) => { this.input = c; }}
+            multiline
+            onBlur={input.onBlur}
+            onChangeText={input.onChange}
+            onFocus={input.onFocus}
+            value={input.value}
+          />
+        </StyledView>
+      </StyledKeyboardAvoidingView>
+    );
+  }
+
+}
 
 export default Textarea;
