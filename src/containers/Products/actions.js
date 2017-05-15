@@ -1,12 +1,6 @@
 // API
 import API from '../../utils/API';
 
-// Helpers
-import {
-  fetchFail,
-  fetchSuccess,
-} from '../../utils/helpers';
-
 // Constants
 import {
   FETCH_PRODUCTS,
@@ -14,10 +8,12 @@ import {
   FETCH_PRODUCTS_SUCCESS,
 } from './constants';
 
+// Utils
+import { API_COLLECTION_MOBILE } from '../../utils/constants';
 import {
-  API_COLLECTION_FANTASIES,
-  API_COLLECTION_HEARTS,
-} from '../../utils/constants';
+  fetchFail,
+  fetchSuccess,
+} from '../../utils/helpers';
 
 /**
  * Fetch all the products (by collections)
@@ -34,11 +30,7 @@ export default () =>
 
     dispatch({ type: FETCH_PRODUCTS });
 
-    return Promise.all([
-      API.getProducts(1, API_COLLECTION_HEARTS),
-      API.getProducts(1, API_COLLECTION_FANTASIES),
-    ])
-      .then(results => results.reduce((a, b) => a.concat(b)))
+    return API.getProducts(1, API_COLLECTION_MOBILE)
       .then(data => fetchSuccess(dispatch, FETCH_PRODUCTS_SUCCESS, data))
       .catch(error => fetchFail(dispatch, FETCH_PRODUCTS_FAIL, error));
   }
