@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Components
-import Banner from '../../components/Banner';
 import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import LoadingIndicator from '../../components/LoadingIndicator';
@@ -32,14 +31,8 @@ class Page extends React.Component {
   }
 
   renderContent() {
-    // Adding ContentView around to make sure the indicator is vertically aligned
-    // It is not around the content so that we can see the fields underneath the banner.
     if (this.props.isFetching) {
-      return (
-        <ContentView>
-          <LoadingIndicator />
-        </ContentView>
-      );
+      return <LoadingIndicator />;
     }
 
     if (!this.props.content) {
@@ -58,7 +51,6 @@ class Page extends React.Component {
     return (
       <FlexView>
         {this.renderContent()}
-        <Banner />
       </FlexView>
     );
   }

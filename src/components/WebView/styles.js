@@ -1,6 +1,3 @@
-// Externals
-import styled from 'styled-components/native';
-
 // Styles
 import { source } from '../../styles/fonts';
 import {
@@ -11,10 +8,6 @@ import {
   spaceNormal,
   spaceBig,
 } from '../../styles/sizes';
-
-export const StyledWebView = styled.WebView`
-  margin-bottom: 80;
-`;
 
 // CSS styles injected into WebView
 export const embeddedStyles = `

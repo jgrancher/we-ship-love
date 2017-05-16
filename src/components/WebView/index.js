@@ -1,12 +1,12 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Linking } from 'react-native';
+import {
+  Linking,
+  WebView as NativeWebView,
+} from 'react-native';
 
 // Styles
-import {
-  StyledWebView,
-  embeddedStyles,
-} from './styles';
+import { embeddedStyles } from './styles';
 
 class WebView extends React.Component {
 
@@ -28,7 +28,7 @@ class WebView extends React.Component {
     const html = `<style>${embeddedStyles}</style><body>${body}</body>`;
 
     return (
-      <StyledWebView
+      <NativeWebView
         onNavigationStateChange={this.onNavigationStateChange}
         ref={(c) => { this.webView = c; }}
         source={{ html }}
