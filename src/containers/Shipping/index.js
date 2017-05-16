@@ -15,7 +15,7 @@ import ContentView from '../../components/ContentView';
 import FlexView from '../../components/FlexView';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import Modal from '../../components/Modal';
+import Prompt from '../../components/Prompt';
 import ShippingButton from '../../components/ShippingButton';
 import Text from '../../components/Text';
 
@@ -55,7 +55,7 @@ class Shipping extends React.Component {
 
   state = {
     index: -1,
-    modal: false,
+    isModalVisible: false,
   };
 
   componentWillMount() {
@@ -65,15 +65,15 @@ class Shipping extends React.Component {
   onCancelNote = () => {
     this.setState({
       index: -1,
-      modal: false,
+      isModalVisible: false,
     });
   }
 
   onIndexChange = (index) => {
     // Display modal if the specific day is selected
-    const modal = this.props.rates[index].id === API_SHIPPING_ID_SPECIFIC_DAY;
+    const isModalVisible = this.props.rates[index].id === API_SHIPPING_ID_SPECIFIC_DAY;
 
-    this.setState({ index, modal });
+    this.setState({ index, isModalVisible });
   }
 
   onNextStep = () => {
@@ -87,7 +87,7 @@ class Shipping extends React.Component {
   onValidateNote = () => {
     // Set the order note, disable the modal, and go the next screen
     this.props.setOrderNote(this.input.value);
-    this.setState({ modal: false });
+    this.setState({ isModalVisible: false });
     this.onNextStep();
   }
 
@@ -110,7 +110,7 @@ class Shipping extends React.Component {
     });
   }
 
-  renderModalContent() {
+  renderPromptContent() {
     return (
       <FlexView justifyContent="space-between">
         <Text marginBottom>Merci de renseigner le jour de livraison souhaité:</Text>
@@ -147,9 +147,9 @@ class Shipping extends React.Component {
   render() {
     return (
       <FlexView>
-        <Modal visible={this.state.modal}>
-          {this.renderModalContent()}
-        </Modal>
+        <Prompt visible={this.state.isModalVisible}>
+          {this.renderPromptContent()}
+        </Prompt>
         <ContentView
           alignItems="center"
           justifyContent="center"
