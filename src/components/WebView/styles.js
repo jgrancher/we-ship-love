@@ -10,7 +10,7 @@ import {
 } from '../../styles/sizes';
 
 // CSS styles injected into WebView
-export const embeddedStyles = `
+export default `
   body { font-family: ${source}, sans-serif; padding: ${spaceNormal}px; }
   h1, strong { color: ${turquoise}; }
   h1 { font-size: 22px; margin: 0 0 ${spaceBig}px; }

@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 
 // Styles
-import { embeddedStyles } from './styles';
+import embeddedStyles from './styles';
 
 class WebView extends React.Component {
 
