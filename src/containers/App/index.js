@@ -1,11 +1,16 @@
 // Externals
 import React from 'react';
 import SideMenu from 'react-native-side-menu';
-import { Navigator } from 'react-native';
+import {
+  AsyncStorage,
+  Navigator,
+} from 'react-native';
 
 // Components
 import FlexView from '../../components/FlexView';
+import Introduction from '../../components/Introduction';
 import Menu from '../../components/Menu';
+import Modal from '../../components/Modal';
 import Navbar from '../../components/Navbar';
 import NavbarBackButton from '../../components/NavbarBackButton';
 import NavbarMenuButton from '../../components/NavbarMenuButton';
@@ -19,6 +24,10 @@ import { widthMenu } from '../../styles/sizes';
 
 // Utils
 import routes from '../../utils/routes';
+import {
+  STORE_ID,
+  STORE_KEY_LOADED,
+} from '../../utils/constants';
 
 class Application extends React.Component {
 
@@ -32,7 +41,38 @@ class Application extends React.Component {
 
   state = {
     isMenuOpen: false,
+    isModalVisible: false,
   };
+
+  componentWillMount() {
+    this.checkStoredKeyModal();
+  }
+
+  onCloseModal = () => {
+    this.setState({ isModalVisible: false });
+    this.setStoredKeyModal();
+  }
+
+  setStoredKeyModal = () => {
+    // Set persisted data to not load the Introduction Modal again
+    try {
+      AsyncStorage.setItem(`${STORE_ID}:${STORE_KEY_LOADED}`, 'true');
+    } catch (error) {
+      // Nothing to do here.
+    }
+  }
+
+  checkStoredKeyModal = () => {
+    // Get persisted data to possibly load the Introduction Modal
+    try {
+      AsyncStorage.getItem(`${STORE_ID}:${STORE_KEY_LOADED}`)
+        .then((loaded) => {
+          if (!loaded) this.setState({ isModalVisible: true });
+        });
+    } catch (error) {
+      // Nothing to do here.
+    }
+  }
 
   navigate = (route) => {
     // Toggle Menu
@@ -90,6 +130,9 @@ class Application extends React.Component {
   render() {
     return (
       <FlexView background={brownDark}>
+        <Modal visible={this.state.isModalVisible}>
+          <Introduction onClose={this.onCloseModal} />
+        </Modal>
         <SideMenu
           isOpen={this.state.isMenuOpen}
           menu={<Menu navigate={this.navigate} />}
