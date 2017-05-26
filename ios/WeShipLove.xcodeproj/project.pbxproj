@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -47,8 +48,8 @@
 		D081454B1CCE192A0004BFA7 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D08145451CCE192A0004BFA7 /* SourceSansPro-Regular.ttf */; };
 		D0DC2DFE1EC628F800B3CC7F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC2DFD1EC628F800B3CC7F /* GameKit.framework */; };
 		D0DC2E001EC628FA00B3CC7F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC2DFF1EC628FA00B3CC7F /* StoreKit.framework */; };
-		F4244C5BCAD34E3EB8F4A047 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05829E7421564F2592CB6974 /* libz.tbd */; };
 		E9865476FA1D489F8F3F08A0 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DAB0BF3BD342ACB8FA8875 /* libRCTVideo.a */; };
+		F4244C5BCAD34E3EB8F4A047 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05829E7421564F2592CB6974 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +242,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		D00CD9CF1ED860E000CFCEA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8A443BE7456410DB3085B35 /* RCTVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTVideo;
+		};
 		D018C1A71E9D150200E5D79C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */;
@@ -291,6 +299,7 @@
 		54819A1B81784D5788B5BBE7 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		5AD7212B20A94159B5463136 /* libRNShopify.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShopify.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		62DAB0BF3BD342ACB8FA8875 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9DC512DD549442E7A1E30C6E /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
@@ -298,6 +307,7 @@
 		B7B83838BC864533958506AB /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		BFAA0475C2716B1909911A36 /* Pods-WeShipLove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeShipLove.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeShipLove/Pods-WeShipLove.release.xcconfig"; sourceTree = "<group>"; };
 		C7A43684F9D84576AAA52491 /* RNShopify.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShopify.xcodeproj; path = "../node_modules/react-native-shopify/ios/RNShopify.xcodeproj"; sourceTree = "<group>"; };
+		C8A443BE7456410DB3085B35 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		D01C0FA11EC629DA00CC4936 /* WeShipLove.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WeShipLove.entitlements; path = WeShipLove/WeShipLove.entitlements; sourceTree = "<group>"; };
 		D08145401CCE192A0004BFA7 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		D08145411CCE192A0004BFA7 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
@@ -308,8 +318,6 @@
 		D0DC2DFD1EC628F800B3CC7F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D0DC2DFF1EC628FA00B3CC7F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA3A4579DA249AD6DE40922C /* libPods-WeShipLove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeShipLove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8A443BE7456410DB3085B35 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		62DAB0BF3BD342ACB8FA8875 /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +581,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D00CD9CC1ED860E000CFCEA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D00CD9D01ED860E000CFCEA3 /* libRCTVideo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D018C1A41E9D150200E5D79C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +783,10 @@
 				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
+				},
+				{
+					ProductGroup = D00CD9CC1ED860E000CFCEA3 /* Products */;
+					ProjectRef = C8A443BE7456410DB3085B35 /* RCTVideo.xcodeproj */;
 				},
 				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
@@ -969,6 +989,13 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D00CD9D01ED860E000CFCEA3 /* libRCTVideo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTVideo.a;
+			remoteRef = D00CD9CF1ED860E000CFCEA3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D018C1A81E9D150200E5D79C /* libRNShopify.a */ = {
