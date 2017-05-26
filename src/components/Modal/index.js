@@ -1,9 +1,18 @@
 // Externals
 import React, { PropTypes } from 'react';
-import { Modal as NativeModal } from 'react-native';
+import {
+  Modal as NativeModal,
+  StatusBar,
+} from 'react-native';
 
 // Components
 import FlexView from '../FlexView';
+
+// Styles
+import {
+  backgroundColor,
+  barStyle,
+} from './styles';
 
 const propTypes = {
   animationType: PropTypes.oneOf(['fade', 'none', 'slide']),
@@ -21,6 +30,10 @@ const Modal = props => (
     animationType={props.animationType}
     visible={props.visible}
   >
+    <StatusBar
+      backgroundColor={backgroundColor}
+      barStyle={barStyle}
+    />
     <FlexView>
       {props.children}
     </FlexView>
