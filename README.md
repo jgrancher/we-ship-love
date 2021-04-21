@@ -1,4 +1,6 @@
-# We Ship Love - Mobile application
+# [ARCHIVED] We Ship Love - Mobile application
+
+**⚠️ Update - April 2021**: Project archived. It was mainly intended to be a showcase/demo of what was possible to do in React Native & the Shopify SDK, but was not maintained afterwards.
 
 This repository contains the mobile storefront source code for [We Ship Love](https://weshiplove.com/). It has been built with React Native, the Shopify SDK, Redux and Styled-Components. The goal of exposing the source code is to show to the community an example of React Native application using the Shopify APIs and their Mobile Buy SDK. Also, it can be seen as a showcase to demonstrate what I'm currently busy with. Any feedback is welcome! :)
 
